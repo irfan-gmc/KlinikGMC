@@ -85,7 +85,8 @@
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div>
           <span class="inline-flex items-center gap-2 bg-white/20 text-white px-4 py-1.5 rounded-full text-sm font-medium backdrop-blur-sm mb-4">
-            ✔ Sudah bekerjasama dengan BPJS Kesehatan
+            <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1 15L6 12l1.41-1.41L11 14.17l5.59-5.59L18 10l-7 7z"/></svg>
+            Sudah bekerjasama dengan <strong class="ml-1">BPJS Kesehatan</strong>
           </span>
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mb-4">
             Pelayanan Kesehatan <br class="hidden sm:inline" />Ramah • Cepat • Profesional
@@ -99,89 +100,47 @@
           </div>
         </div>
         <div class="hidden lg:block">
-          <img src="https://cdn-icons-png.flaticon.com/512/2966/2966484.png" alt="Klinik" class="rounded-2xl shadow-lg w-full">
+          <div class="card bg-white text-gray-800 p-8">
+            <h3 class="text-2xl font-bold text-green-700 mb-4">Identitas Klinik</h3>
+            <p class="text-sm text-gray-600 mb-4">Klinik Girimukti Medical Center – Yayasan IMC Garut</p>
+            <ul class="space-y-3 text-gray-700">
+              <li><strong>Sertifikat Standar:</strong> 91203057521250001</li>
+              <li><strong>NIB:</strong> 120305752125</li>
+              <li><strong>Alamat:</strong> Jl. Raya Cikadu, RT 001, RW 003, Desa Girimukti, Kec. Singajaya, Kab. Garut (44173)</li>
+              <li><strong>Telepon/WA:</strong> <a href="tel:085223128163" class="text-green-600 hover:underline">0852 2312 8163</a></li>
+              <li><strong>Email:</strong> <a href="mailto:klinik.gmc.01@gmail.com" class="text-green-600 hover:underline">klinik.gmc.01@gmail.com</a></li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Info Strip -->
-  <section class="bg-white py-12">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="card">
-          <h3 class="text-lg font-bold text-green-700 mb-2">Jam Operasional</h3>
-          <p class="text-gray-600">
-            Rawat Jalan & Rawat Inap: 24 Jam<br/>
-            UGD: 24 Jam<br/>
-            Persalinan: 24 Jam<br/>
-            KIA: 07.00 – 17.00 WIB
-          </p>
-        </div>
-        <div class="card">
-          <h3 class="text-lg font-bold text-green-700 mb-2">Tenaga Profesional</h3>
-          <p class="text-gray-600">
-            Dokter umum, bidan, perawat terlatih dan ramah.
-          </p>
-        </div>
-        <div class="card">
-          <h3 class="text-lg font-bold text-green-700 mb-2">Keamanan & Kenyamanan</h3>
-          <p class="text-gray-600">
-            Fasilitas bersih, ruang tunggu nyaman, standar keselamatan pasien.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services Section -->
-  <section id="layanan" class="py-16 sm:py-24">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="section-title">Layanan Kami</h2>
-      <p class="section-subtitle">Kami melayani dengan sepenuh hati untuk kebutuhan kesehatan Anda.</p>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="card">
-          <h3 class="font-bold text-xl mb-2">Pemeriksaan Umum</h3>
-          <p class="text-gray-600">Konsultasi keluhan kesehatan, pemeriksaan fisik, pengobatan dasar.</p>
-        </div>
-        <div class="card">
-          <h3 class="font-bold text-xl mb-2">KIA</h3>
-          <p class="text-gray-600">Pemeriksaan ibu hamil, antenatal care, edukasi ibu & bayi.</p>
-        </div>
-        <div class="card">
-          <h3 class="font-bold text-xl mb-2">Persalinan 24 Jam</h3>
-          <p class="text-gray-600">Persalinan normal dengan dokter & bidan berpengalaman.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BPJS Section -->
+  <!-- BPJS Section (with Logo) -->
   <section id="bpjs" class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
     <div class="card p-8 flex flex-col md:flex-row items-center gap-6">
-      <div class="w-16 h-16 flex items-center justify-center bg-green-700 text-white rounded-xl text-3xl font-bold flex-shrink-0">
-        BPJS
-      </div>
+      <img src="logobpjs.png" alt="Logo BPJS" class="w-24 h-auto object-contain flex-shrink-0" />
       <div class="flex-grow text-center md:text-left">
         <h3 class="text-2xl font-bold text-green-700 mb-1">Kerjasama BPJS Kesehatan</h3>
-        <p class="text-gray-600">Peserta JKN-KIS dapat berobat di Klinik Girimukti Medical Center sesuai ketentuan BPJS Kesehatan.</p>
+        <p class="text-gray-600">Peserta JKN-KIS dapat berobat di Klinik Girimukti Medical Center sesuai ketentuan BPJS Kesehatan. Pendaftaran lebih mudah melalui <strong>Mobile JKN</strong> atau langsung di klinik.</p>
       </div>
       <a class="btn btn-cta flex-shrink-0" href="https://wa.me/6285223128163" target="_blank" rel="noopener">Daftar via WhatsApp</a>
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- Google Maps Section -->
   <section id="kontak" class="py-16 sm:py-24 bg-white rounded-t-3xl shadow-inner">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-8">
         <div>
           <h2 class="text-3xl font-bold text-green-700 mb-4">Hubungi Kami</h2>
-          <p class="text-lg text-gray-600 mb-6">Silakan hubungi kami untuk pendaftaran atau informasi layanan.</p>
-          <ul class="space-y-4 text-gray-700">
-            <li><strong>Alamat:</strong> Jl. Raya Cikadu, RT 001, RW 003, Desa Girimukti, Kec. Singajaya, Kab. Garut</li>
-            <li><strong>Telepon/WA:</strong> <a href="tel:085223128163" class="text-green-600 hover:underline">0852 2312 8163</a></li>
-            <li><strong>Email:</strong> <a href="mailto:klinik.gmc.01@gmail.com" class="text-green-600 hover:underline">klinik.gmc.01@gmail.com</a></li>
-          </ul>
+          <p class="text-lg text-gray-600 mb-6">Silakan hubungi kami untuk pendaftaran, informasi layanan, atau konsultasi jadwal.</p>
+          <div class="card p-6">
+            <h3 class="text-xl font-bold text-green-700 mb-4">Detail Kontak</h3>
+            <p><strong>Alamat:</strong> Jl. Raya Cikadu, RT 001, RW 003, Desa Girimukti, Kec. Singajaya, Kab. Garut (44173)</p>
+            <p><strong>Telepon/WA:</strong> <a href="tel:085223128163" class="text-green-600 hover:underline">0852 2312 8163</a></p>
+            <p><strong>Email:</strong> <a href="mailto:klinik.gmc.01@gmail.com" class="text-green-600 hover:underline">klinik.gmc.01@gmail.com</a></p>
+          </div>
         </div>
         <div>
           <h3 class="text-xl font-bold text-green-700 mb-4">Lokasi (Google Maps)</h3>
@@ -207,6 +166,5 @@
       <small>© 2025 Klinik Girimukti Medical Center — Yayasan Insan Medika Cendikia Garut.</small>
     </div>
   </footer>
-
 </body>
 </html>
