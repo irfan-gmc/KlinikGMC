@@ -11,7 +11,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- ✅ Tailwind Play CDN: izinkan @apply -->
   <style type="text/tailwindcss">
     :root {
       --green-soft: #d1fae5;
@@ -22,11 +21,10 @@
     }
     html { scroll-behavior: smooth; }
     body {
-      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans';
       color: var(--text-color);
       background-color: var(--bg-color);
     }
-
     @layer components {
       .btn { @apply inline-flex items-center justify-center rounded-full font-semibold px-6 py-3 transition-colors duration-200 ease-in-out; }
       .btn-primary { @apply bg-white text-green-700 border-2 border-white shadow-lg hover:bg-gray-100; }
@@ -35,9 +33,6 @@
       .card { @apply bg-white p-6 rounded-3xl shadow-lg; }
       .section-title { @apply text-3xl font-bold text-center text-green-800 mb-2; }
       .section-subtitle { @apply text-lg text-center text-gray-500 mb-8; }
-      .chat-bubble { @apply p-4 rounded-xl max-w-lg mb-2 text-sm whitespace-pre-line; }
-      .chat-bubble.user { @apply bg-blue-500 text-white ml-auto rounded-br-none; }
-      .chat-bubble.ai { @apply bg-gray-100 text-gray-800 mr-auto rounded-bl-none; }
     }
   </style>
 </head>
@@ -47,17 +42,8 @@
   <header class="sticky top-0 z-40 bg-white/95 backdrop-blur shadow-sm">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
       <a href="#" class="flex items-center gap-3">
-        <!-- ✅ Logo dengan fallback -->
-        <div class="relative w-12 h-12 flex-shrink-0">
-          <img
-            src="logogmc.png" alt="Logo Klinik GMC"
-            class="w-12 h-12 rounded-xl object-contain bg-green-50 p-2"
-            loading="lazy"
-            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-          />
-          <div class="hidden absolute inset-0 items-center justify-center bg-green-100 rounded-xl text-green-700 font-bold text-xl">
-            GMC
-          </div>
+        <div class="relative w-16 h-16 flex-shrink-0">
+          <img src="logogmc.png" alt="Logo Klinik GMC" class="w-16 h-16 rounded-xl object-contain bg-green-50 p-2" loading="lazy"/>
         </div>
         <div class="flex flex-col leading-tight">
           <small class="text-xs text-gray-500 font-medium">Yayasan Insan Medika Cendikia</small>
@@ -65,511 +51,84 @@
         </div>
       </a>
 
-      <!-- Desktop Nav -->
-      <nav class="hidden md:flex items-center gap-6" aria-label="Primary">
-        <a href="#layanan" class="text-gray-600 hover:text-green-700 font-medium transition-colors">Layanan</a>
-        <a href="#bpjs" class="text-gray-600 hover:text-green-700 font-medium transition-colors">BPJS</a>
-        <a href="#kontak" class="text-gray-600 hover:text-green-700 font-medium transition-colors">Kontak</a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="#layanan" class="text-gray-600 hover:text-green-700 font-medium">Layanan</a>
+        <a href="#bpjs" class="text-gray-600 hover:text-green-700 font-medium">BPJS</a>
+        <a href="#kontak" class="text-gray-600 hover:text-green-700 font-medium">Kontak</a>
       </nav>
 
       <div class="hidden md:block">
-        <a href="https://wa.me/6285223128163" target="_blank" rel="noopener" class="btn btn-cta">WhatsApp</a>
+        <a href="https://wa.me/6285223128163" target="_blank" class="btn btn-cta">WhatsApp</a>
       </div>
-
-      <!-- Mobile menu button -->
-      <button id="menu-btn" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl border border-gray-200 text-gray-700" aria-label="Buka menu">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"/></svg>
-      </button>
     </div>
-
-    <!-- Mobile Nav -->
-    <nav id="mobile-nav" class="md:hidden hidden border-t border-gray-100">
-      <div class="px-4 sm:px-6 lg:px-8 py-3 flex flex-col gap-2 bg-white">
-        <a href="#layanan" class="py-2 text-gray-700 hover:text-green-700">Layanan</a>
-        <a href="#bpjs" class="py-2 text-gray-700 hover:text-green-700">BPJS</a>
-        <a href="#kontak" class="py-2 text-gray-700 hover:text-green-700">Kontak</a>
-        <a href="https://wa.me/6285223128163" target="_blank" rel="noopener" class="btn btn-cta w-full">WhatsApp</a>
-      </div>
-    </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section class="bg-green-700 text-white py-16 sm:py-24 overflow-hidden rounded-b-3xl">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <span class="inline-flex items-center gap-2 bg-white/20 text-white px-4 py-1.5 rounded-full text-sm font-medium backdrop-blur-sm mb-4">
-            <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1 15L6 12l1.41-1.41L11 14.17l5.59-5.59L18 10l-7 7z"/></svg>
-            Sudah bekerjasama dengan <strong class="ml-1">BPJS Kesehatan</strong>
-          </span>
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mb-4">
-            Pelayanan Kesehatan <br class="hidden sm:inline" />Ramah • Cepat • Profesional
-          </h1>
-          <p class="text-lg opacity-90 max-w-xl mb-8">
-            Rawat jalan & rawat inap 24 jam, UGD 24 jam, Persalinan 24 jam, KIA, Laboratorium, Apotek – ditangani dokter dan bidan berpengalaman.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4">
-            <a href="https://wa.me/6285223128163" target="_blank" rel="noopener" class="btn btn-primary">WhatsApp Pendaftaran</a>
-            <a href="#layanan" class="btn btn-outline">Lihat Layanan</a>
-          </div>
+  <!-- Hero -->
+  <section class="bg-green-700 text-white py-16 sm:py-24 rounded-b-3xl">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <h1 class="text-4xl sm:text-5xl font-extrabold mb-4">Pelayanan Kesehatan <br class="hidden sm:inline"/>Ramah • Cepat • Profesional</h1>
+        <p class="text-lg opacity-90 mb-8">Rawat jalan & inap 24 jam, UGD, Persalinan, KIA, Laboratorium, Apotek – oleh dokter & bidan berpengalaman.</p>
+        <div class="flex gap-4">
+          <a href="https://wa.me/6285223128163" target="_blank" class="btn btn-primary">WhatsApp Pendaftaran</a>
+          <a href="#layanan" class="btn btn-outline">Lihat Layanan</a>
         </div>
-        <div class="hidden lg:block">
-          <div class="card bg-white text-gray-800 p-8">
-            <h3 class="text-2xl font-bold text-green-700 mb-4">Identitas Klinik</h3>
-            <div class="space-y-4">
-              <p class="text-sm text-gray-600">Klinik Girimukti Medical Center – Yayasan IMC Garut</p>
-              <ul class="space-y-2 text-gray-700">
-                <li class="flex items-start gap-3">
-                  <svg class="w-6 h-6 text-green-500 mt-0.5" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M10.5 2H12l-1 2-1 2-1 2-1 2v4c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2v-4l4-8h1.5l-2.73 5.46a.5.5 0 0 1 .45.91l.82-.47a.5.5 0 0 1 .23.41v1.6l1 2v2h4v-2l1-2v-1.6c0-.18.06-.34.17-.47a.5.5 0 0 1 .37-.16l.87.5a.5.5 0 0 1 .41-.23z"/></svg>
-                  <div><strong class="font-medium">Sertifikat Standar:</strong> <span class="text-gray-600">91203057521250001</span></div>
-                </li>
-                <li class="flex items-start gap-3">
-                  <svg class="w-6 h-6 text-green-500 mt-0.5" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M18 10h-2V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v4H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2zM6 6h8v4H6V6zm12 14H2v-8h16v8z"/></svg>
-                  <div><strong class="font-medium">NIB:</strong> <span class="text-gray-600">120305752125</span></div>
-                </li>
-                <li class="flex items-start gap-3">
-                  <svg class="w-6 h-6 text-green-500 mt-0.5" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2c-3.86 0-7 3.14-7 7 0 5.25 7 13 7 13s7-7.75 7-13c0-3.86-3.14-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
-                  <div><strong class="font-medium">Alamat:</strong> <span class="text-gray-600">Jl. Raya Cikadu, RT 001, RW 003, Desa Girimukti, Kec. Singajaya, Kab. Garut (44173)</span></div>
-                </li>
-                <li class="flex items-start gap-3">
-                  <svg class="w-6 h-6 text-green-500 mt-0.5" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 4.5c.34 0 .66.07.96.18l-1.92-3.84a1 1 0 0 0-.96-.54H9.46a1 1 0 0 0-.96.54L6.58 4.68c.3.11.62.17.96.17H17.5zM12 21.5c.34 0 .66-.07.96-.18l1.92 3.84a1 1 0 0 0 .96.54h7.08a1 1 0 0 0 .96-.54l1.92-3.84c-.3-.11-.62-.17-.96-.17H12z"/></svg>
-                  <div><strong class="font-medium">Telepon/WA:</strong> <a href="tel:085223128163" class="text-green-600 hover:underline">0852 2312 8163</a></div>
-                </li>
-                <li class="flex items-start gap-3">
-                  <svg class="w-6 h-6 text-green-500 mt-0.5" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg>
-                  <div><strong class="font-medium">Email:</strong> <a href="mailto:klinik.gmc.01@gmail.com" class="text-green-600 hover:underline">klinik.gmc.01@gmail.com</a></div>
-                </li>
-              </ul>
-            </div>
-          </div>
+      </div>
+      <div class="hidden lg:block">
+        <div class="card">
+          <h3 class="text-2xl font-bold text-green-700 mb-4">Identitas Klinik</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li><strong>Sertifikat Standar:</strong> 91203057521250001</li>
+            <li><strong>NIB:</strong> 120305752125</li>
+            <li><strong>Alamat:</strong> Jl. Raya Cikadu, Desa Girimukti, Singajaya, Garut</li>
+            <li><strong>Telepon/WA:</strong> 0852 2312 8163</li>
+            <li><strong>Email:</strong> klinik.gmc.01@gmail.com</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Info Strip -->
-  <section class="bg-white py-12">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="card p-6 border border-gray-100">
-          <h3 class="flex items-center text-lg font-bold text-green-700 mb-2">
-            <svg class="w-6 h-6 mr-2 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2c-5.523 0-10 4.477-10 10s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm1 15h-2V7h2v10zM12 7c-2.761 0-5 2.239-5 5s2.239 5 5 5 5-2.239 5-5-2.239-5-5-5z"/></svg>
-            Jam Operasional
-          </h3>
-          <p class="text-gray-600">
-            Rawat Jalan & Rawat Inap: 24 Jam<br/>
-            UGD: 24 Jam<br/>
-            Persalinan: 24 Jam<br/>
-            KIA: 07.00 – 17.00 WIB
-          </p>
-        </div>
-        <div class="card p-6 border border-gray-100">
-          <h3 class="flex items-center text-lg font-bold text-green-700 mb-2">
-            <svg class="w-6 h-6 mr-2 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2c-3.86 0-7 3.14-7 7 0 5.25 7 13 7 13s7-7.75 7-13c0-3.86-3.14-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
-            Tenaga Profesional
-          </h3>
-          <p class="text-gray-600">
-            Dokter umum, bidan, perawat terlatih dan ramah.
-          </p>
-        </div>
-        <div class="card p-6 border border-gray-100">
-          <h3 class="flex items-center text-lg font-bold text-green-700 mb-2">
-            <svg class="w-6 h-6 mr-2 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2c-5.523 0-10 4.477-10 10s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1 15h-2V7h2v10zM12 7c-2.761 0-5 2.239-5 5s2.239 5 5 5 5-2.239 5-5-2.239-5-5-5z"/></svg>
-            Keamanan & Kenyamanan
-          </h3>
-          <p class="text-gray-600">
-            Fasilitas bersih, ruang tunggu nyaman, standar keselamatan pasien.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Gemini AI Features Section -->
-  <section id="ai-features" class="py-16 sm:py-24 bg-gray-100">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="section-title">Fitur Berbasis AI</h2>
-      <p class="section-subtitle">Tanyakan pada AI kami untuk informasi umum atau dapatkan tips kesehatan harian!</p>
-      
-      <div class="grid md:grid-cols-2 gap-8 items-start">
-        <!-- AI Consultation Chat -->
-        <div class="card p-6 bg-white shadow-xl">
-          <h3 class="text-xl font-bold text-green-700 mb-4">Konsultasi Cerdas ✨</h3>
-          <p class="text-red-500 font-bold mb-4">Penting: Informasi yang diberikan AI ini bukan pengganti diagnosis, nasihat, atau pengobatan medis profesional. Selalu konsultasikan dengan dokter atau penyedia layanan kesehatan yang berkualifikasi.</p>
-          <div id="chat-container" class="h-80 overflow-y-auto mb-4 p-4 bg-gray-50 rounded-lg border border-gray-200">
-            <div class="chat-bubble ai">
-              Halo! Saya adalah asisten AI dari Klinik Girimukti Medical Center. Saya bisa menjawab pertanyaan umum seputar kesehatan. Tanyakan sesuatu!
-            </div>
-          </div>
-          <div class="flex items-center gap-2">
-            <input type="text" id="chat-input" placeholder="Tulis pertanyaan Anda di sini..." class="flex-grow p-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500" />
-            <button id="chat-send-btn" class="btn btn-cta px-4 py-2" aria-label="Kirim pesan">
-              <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
-            </button>
-          </div>
-        </div>
-        
-        <!-- Health Tip Generator -->
-        <div class="card p-6 bg-white shadow-xl flex flex-col justify-between">
-          <div>
-            <h3 class="text-xl font-bold text-green-700 mb-4">Tips Sehat Harian ✨</h3>
-            <div id="health-tip-display" class="bg-green-50 p-6 rounded-2xl text-green-800 text-lg italic text-center">
-              Tekan tombol di bawah untuk mendapatkan tips kesehatan acak!
-            </div>
-          </div>
-          <button id="generate-tip-btn" class="btn btn-cta mt-6 self-start md:self-center">
-            Dapatkan Tips!
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services Section -->
-  <section id="layanan" class="py-16 sm:py-24">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="section-title">Layanan Kami</h2>
-      <p class="section-subtitle">Kami melayani dengan sepenuh hati untuk kebutuhan kesehatan Anda.</p>
-      <div id="services-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="card service" data-description="Konsultasi keluhan kesehatan, pemeriksaan fisik, pengobatan dasar.">
-          <div class="w-12 h-12 flex items-center justify-center bg-green-100 text-green-700 rounded-xl mb-4 text-2xl">🩺</div>
-          <h3 class="font-bold text-xl mb-2">Pemeriksaan Umum</h3>
-          <p class="text-gray-600 mb-4 service-desc">Konsultasi keluhan kesehatan, pemeriksaan fisik, pengobatan dasar.</p>
-          <button class="btn-listen btn btn-outline !bg-green-700 !text-white !border-green-700 px-4 py-2 text-sm !rounded-full">Dengarkan</button>
-        </div>
-        <div class="card service" data-description="Antenatal care, pemeriksaan ibu hamil, edukasi ibu & bayi. Jam pelayanan 07.00 – 17.00 WIB.">
-          <div class="w-12 h-12 flex items-center justify-center bg-green-100 text-green-700 rounded-xl mb-4 text-2xl">🤱</div>
-          <h3 class="font-bold text-xl mb-2">KIA</h3>
-          <p class="text-gray-600 mb-4 service-desc">Antenatal care, pemeriksaan ibu hamil, edukasi ibu & bayi. Jam pelayanan 07.00 – 17.00 WIB.</p>
-          <button class="btn-listen btn btn-outline !bg-green-700 !text-white !border-green-700 px-4 py-2 text-sm !rounded-full">Dengarkan</button>
-        </div>
-        <div class="card service" data-description="Persalinan normal dengan dokter dan bidan berpengalaman.">
-          <div class="w-12 h-12 flex items-center justify-center bg-green-100 text-green-700 rounded-xl mb-4 text-2xl">👶</div>
-          <h3 class="font-bold text-xl mb-2">Persalinan 24 Jam</h3>
-          <p class="text-gray-600 mb-4 service-desc">Persalinan normal dengan dokter & bidan berpengalaman.</p>
-          <button class="btn-listen btn btn-outline !bg-green-700 !text-white !border-green-700 px-4 py-2 text-sm !rounded-full">Dengarkan</button>
-        </div>
-        <div class="card service" data-description="Penanganan kasus gawat darurat medis setiap saat.">
-          <div class="w-12 h-12 flex items-center justify-center bg-green-100 text-green-700 rounded-xl mb-4 text-2xl">🚑</div>
-          <h3 class="font-bold text-xl mb-2">UGD 24 Jam</h3>
-          <p class="text-gray-600 mb-4 service-desc">Penanganan kasus gawat darurat medis setiap saat.</p>
-          <button class="btn-listen btn btn-outline !bg-green-700 !text-white !border-green-700 px-4 py-2 text-sm !rounded-full">Dengarkan</button>
-        </div>
-        <div class="card service" data-description="Layanan khitan modern, aman, nyaman untuk anak dan dewasa.">
-          <div class="w-12 h-12 flex items-center justify-center bg-green-100 text-green-700 rounded-xl mb-4 text-2xl">✂️</div>
-          <h3 class="font-bold text-xl mb-2">Khitan</h3>
-          <p class="text-gray-600 mb-4 service-desc">Layanan khitan modern, aman, nyaman untuk anak & dewasa.</p>
-          <button class="btn-listen btn btn-outline !bg-green-700 !text-white !border-green-700 px-4 py-2 text-sm !rounded-full">Dengarkan</button>
-        </div>
-        <div class="card service" data-description="Pelayanan medis observasi dan perawatan penuh waktu.">
-          <div class="w-12 h-12 flex items-center justify-center bg-green-100 text-green-700 rounded-xl mb-4 text-2xl">🏥</div>
-          <h3 class="font-bold text-xl mb-2">Rawat Jalan & Rawat Inap 24 Jam</h3>
-          <p class="text-gray-600 mb-4 service-desc">Pelayanan medis observasi & perawatan penuh waktu.</p>
-          <button class="btn-listen btn btn-outline !bg-green-700 !text-white !border-green-700 px-4 py-2 text-sm !rounded-full">Dengarkan</button>
-        </div>
-        <div class="card service" data-description="Pemeriksaan penunjang: hematologi, kimia klinik, urin, dll.">
-          <div class="w-12 h-12 flex items-center justify-center bg-green-100 text-green-700 rounded-xl mb-4 text-2xl">🧪</div>
-          <h3 class="font-bold text-xl mb-2">Laboratorium</h3>
-          <p class="text-gray-600 mb-4 service-desc">Pemeriksaan penunjang: hematologi, kimia klinik, urin, dll.</p>
-          <button class="btn-listen btn btn-outline !bg-green-700 !text-white !border-green-700 px-4 py-2 text-sm !rounded-full">Dengarkan</button>
-        </div>
-        <div class="card service" data-description="Obat aman, terjangkau, sesuai resep dokter.">
-          <div class="w-12 h-12 flex items-center justify-center bg-green-100 text-green-700 rounded-xl mb-4 text-2xl">💊</div>
-          <h3 class="font-bold text-xl mb-2">Apotek</h3>
-          <p class="text-gray-600 mb-4 service-desc">Obat aman, terjangkau, sesuai resep dokter.</p>
-          <button class="btn-listen btn btn-outline !bg-green-700 !text-white !border-green-700 px-4 py-2 text-sm !rounded-full">Dengarkan</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BPJS Section -->
-  <section id="bpjs" class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
-    <div class="card p-8 flex flex-col md:flex-row items-center gap-6">
-      <div class="w-16 h-16 flex items-center justify-center bg-green-700 text-white rounded-xl text-3xl font-bold flex-shrink-0">
-        BPJS
-      </div>
+  <!-- BPJS -->
+  <section id="bpjs" class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="card flex flex-col md:flex-row items-center gap-6">
+      <img src="logobpjs.png" alt="Logo BPJS" class="w-24 h-auto" loading="lazy"/>
       <div class="flex-grow text-center md:text-left">
         <h3 class="text-2xl font-bold text-green-700 mb-1">Kerjasama BPJS Kesehatan</h3>
-        <p class="text-gray-600">Peserta JKN-KIS dapat berobat di Klinik Girimukti Medical Center sesuai ketentuan BPJS Kesehatan. Pendaftaran lebih mudah melalui <strong>Mobile JKN</strong> atau langsung di klinik.</p>
+        <p class="text-gray-600">Peserta JKN-KIS dapat berobat di Klinik Girimukti Medical Center sesuai ketentuan BPJS. Pendaftaran mudah via Mobile JKN atau langsung di klinik.</p>
       </div>
-      <a class="btn btn-cta flex-shrink-0" href="https://wa.me/6285223128163" target="_blank" rel="noopener">Daftar via WhatsApp</a>
+      <a class="btn btn-cta" href="https://wa.me/6285223128163" target="_blank">Daftar via WhatsApp</a>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="kontak" class="py-16 sm:py-24 bg-white rounded-t-3xl shadow-inner">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-8">
-        <div>
-          <h2 class="text-3xl font-bold text-green-700 mb-4">Hubungi Kami</h2>
-          <p class="text-lg text-gray-600 mb-6">Silakan hubungi kami untuk pendaftaran, informasi layanan, atau konsultasi jadwal.</p>
-          <div class="card p-6">
-            <h3 class="text-xl font-bold text-green-700 mb-4">Detail Kontak</h3>
-            <ul class="space-y-4 text-gray-700">
-              <li class="flex items-center gap-3">
-                <svg class="w-6 h-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2c-3.86 0-7 3.14-7 7 0 5.25 7 13 7 13s7-7.75 7-13c0-3.86-3.14-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
-                <div class="text-gray-600">
-                  <strong class="font-medium block">Alamat:</strong> Jl. Raya Cikadu, RT 001, RW 003, Desa Girimukti, Kec. Singajaya, Kab. Garut (44173)
-                </div>
-              </li>
-              <li class="flex items-center gap-3">
-                <svg class="w-6 h-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M19 12.998h-6v6h-2v-6H5v-2h6V4.998h2v6h6z"/></svg>
-                <div class="text-gray-600">
-                  <strong class="font-medium block">Telepon/WA:</strong> <a href="tel:085223128163" class="text-green-600 hover:underline">0852 2312 8163</a>
-                </div>
-              </li>
-              <li class="flex items-center gap-3">
-                <svg class="w-6 h-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg>
-                <div class="text-gray-600">
-                  <strong class="font-medium block">Email:</strong> <a href="mailto:klinik.gmc.01@gmail.com" class="text-green-600 hover:underline">klinik.gmc.01@gmail.com</a>
-                </div>
-              </li>
-            </ul>
-          </div>
+  <!-- Kontak -->
+  <section id="kontak" class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-8">
+      <div>
+        <h2 class="text-3xl font-bold text-green-700 mb-4">Hubungi Kami</h2>
+        <p class="text-lg text-gray-600 mb-6">Silakan hubungi kami untuk informasi atau pendaftaran.</p>
+        <div class="card">
+          <ul class="space-y-4">
+            <li><strong>Alamat:</strong> Jl. Raya Cikadu, Desa Girimukti, Garut</li>
+            <li><strong>Telepon/WA:</strong> <a href="tel:085223128163" class="text-green-600">0852 2312 8163</a></li>
+            <li><strong>Email:</strong> <a href="mailto:klinik.gmc.01@gmail.com" class="text-green-600">klinik.gmc.01@gmail.com</a></li>
+          </ul>
         </div>
-        <div>
-          <h3 class="text-xl font-bold text-green-700 mb-4">Lokasi (Google Maps)</h3>
-          <div class="card h-80 overflow-hidden">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.933907786628!2d107.8883834735748!3d-7.472551073667738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e660313aaaaaaab%3A0xb7491d6f7131440b!2sKlinik%20Girimukti%20Medical%20Center!5e0!3m2!1sid!2sid!4v1756305269685!5m2!1sid!2sid"
-              width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-          </div>
+      </div>
+      <div>
+        <h3 class="text-xl font-bold text-green-700 mb-4">Lokasi (Google Maps)</h3>
+        <div class="card h-80 overflow-hidden">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.933907786628!2d107.8883834735748!3d-7.472551073667738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e660313aaaaaaab%3A0xb7491d6f7131440b!2sKlinik%20Girimukti%20Medical%20Center!5e0!3m2!1sid!2sid!4v1756305269685!5m2!1sid!2sid"
+            width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"></iframe>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="bg-green-800 text-green-200 py-6 text-center">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="container mx-auto px-4">
       <small>© 2025 Klinik Girimukti Medical Center — Yayasan Insan Medika Cendikia Garut.</small>
     </div>
   </footer>
-
-  <script>
-    // Mobile menu
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileNav = document.getElementById('mobile-nav');
-    if (menuBtn && mobileNav) {
-      menuBtn.addEventListener('click', () => {
-        mobileNav.classList.toggle('hidden');
-      });
-    }
-
-    const chatInput = document.getElementById('chat-input');
-    const chatSendBtn = document.getElementById('chat-send-btn');
-    const chatContainer = document.getElementById('chat-container');
-    const generateTipBtn = document.getElementById('generate-tip-btn');
-    const healthTipDisplay = document.getElementById('health-tip-display');
-    const listenButtons = document.querySelectorAll('.btn-listen');
-    
-    // --- Gemini Text API Integration (Chat & Health Tips) ---
-    const GEMINI_TEXT_MODEL = 'gemini-2.5-flash-preview-05-20';
-    const GEMINI_TTS_MODEL = 'gemini-2.5-flash-preview-tts';
-    // TODO: isi API key Anda di bawah ini
-    const GEMINI_API_KEY = "";
-
-    function addMessage(role, text) {
-      const messageDiv = document.createElement('div');
-      messageDiv.classList.add('chat-bubble', role);
-      messageDiv.textContent = text; // ✅ aman dari HTML injection
-      chatContainer.appendChild(messageDiv);
-      chatContainer.scrollTop = chatContainer.scrollHeight;
-    }
-
-    async function callGemini(prompt, model = GEMINI_TEXT_MODEL, isJson = false) {
-      const apiKey = GEMINI_API_KEY;
-      if (!apiKey) {
-        console.warn('API key belum diisi.');
-      }
-      const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
-      const payload = { contents: [{ role: "user", parts: [{ text: prompt }] }] };
-
-      if (isJson) {
-        payload.generationConfig = {
-          responseMimeType: "application/json",
-          responseSchema: { type: "OBJECT", properties: { tip: { type: "STRING" } } }
-        };
-      }
-      
-      let response;
-      let retries = 0;
-      const maxRetries = 3;
-      const initialDelay = 1000;
-
-      while (retries < maxRetries) {
-        try {
-          response = await fetch(url, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
-          });
-
-          if (response.ok) {
-            return await response.json();
-          } else {
-            console.error(`HTTP error! Status: ${response.status}`);
-            throw new Error(`HTTP error! Status: ${response.status}`);
-          }
-        } catch (error) {
-          console.error('Fetch error:', error);
-          retries++;
-          const delay = initialDelay * Math.pow(2, retries - 1);
-          if (retries < maxRetries) {
-            await new Promise(resolve => setTimeout(resolve, delay));
-          } else {
-            throw error;
-          }
-        }
-      }
-    }
-    
-    // Kirim chat
-    chatSendBtn.addEventListener('click', async () => {
-      const prompt = chatInput.value.trim();
-      if (prompt === '') return;
-      
-      addMessage('user', prompt);
-      chatInput.value = '';
-      chatInput.focus();
-      const loadingId = document.createElement('div');
-      loadingId.className = 'chat-bubble ai';
-      loadingId.textContent = '...';
-      chatContainer.appendChild(loadingId);
-      chatContainer.scrollTop = chatContainer.scrollHeight;
-      
-      try {
-        const response = await callGemini(
-          `Anda adalah asisten AI untuk klinik di Indonesia. 
-          Berikan jawaban yang informatif namun umum untuk pertanyaan tentang kesehatan. 
-          JANGAN PERNAH memberikan diagnosis atau nasihat medis profesional. 
-          Selalu sertakan peringatan di akhir jawaban bahwa ini bukan nasihat medis. 
-          Jawablah pertanyaan ini dalam bahasa Indonesia: "${prompt}"`
-        );
-
-        const aiMessage =
-          response?.candidates?.[0]?.content?.parts?.[0]?.text ||
-          'Maaf, saya tidak bisa memproses pertanyaan tersebut saat ini.';
-
-        loadingId.remove();
-        addMessage('ai', aiMessage);
-      } catch (error) {
-        loadingId.remove();
-        addMessage('ai', 'Maaf, terjadi kesalahan. Silakan coba lagi nanti.');
-        console.error('Error:', error);
-      }
-    });
-    
-    // Enter untuk kirim
-    chatInput.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        chatSendBtn.click();
-      }
-    });
-    
-    // Generate tips
-    generateTipBtn.addEventListener('click', async () => {
-      healthTipDisplay.textContent = 'Mencari tips...';
-      try {
-        const response = await callGemini(
-          'Berikan satu tips kesehatan yang singkat, positif, dan mudah dilakukan dalam bahasa Indonesia. Jangan sertakan judul.',
-          GEMINI_TEXT_MODEL
-        );
-        const tipText = response?.candidates?.[0]?.content?.parts?.[0]?.text || 'Minum air putih yang cukup hari ini.';
-        healthTipDisplay.textContent = tipText;
-      } catch (error) {
-        healthTipDisplay.textContent = 'Maaf, gagal mendapatkan tips. Silakan coba lagi.';
-        console.error('Error:', error);
-      }
-    });
-
-    // --- Gemini TTS API Integration ---
-    function base64ToArrayBuffer(base64) {
-      const binaryString = window.atob(base64);
-      const len = binaryString.length;
-      const bytes = new Uint8Array(len);
-      for (let i = 0; i < len; i++) bytes[i] = binaryString.charCodeAt(i);
-      return bytes.buffer;
-    }
-
-    function writeString(view, offset, string) {
-      for (let i = 0; i < string.length; i++) view.setUint8(offset + i, string.charCodeAt(i));
-    }
-
-    function pcmToWav(pcmData, sampleRate) {
-      const dataLength = pcmData.byteLength;
-      const buffer = new ArrayBuffer(44 + dataLength);
-      const view = new DataView(buffer);
-      writeString(view, 0, 'RIFF');
-      view.setUint32(4, 36 + dataLength, true);
-      writeString(view, 8, 'WAVE');
-      writeString(view, 12, 'fmt ');
-      view.setUint32(16, 16, true);
-      view.setUint16(20, 1, true);
-      view.setUint16(22, 1, true);
-      view.setUint32(24, sampleRate, true);
-      view.setUint32(28, sampleRate * 2, true);
-      view.setUint16(32, 2, true);
-      view.setUint16(34, 16, true);
-      writeString(view, 36, 'data');
-      view.setUint32(40, dataLength, true);
-      let offset = 44;
-      for (let i = 0; i < pcmData.length; i++) {
-        view.setInt16(offset, pcmData[i], true);
-        offset += 2;
-      }
-      return new Blob([view], { type: 'audio/wav' });
-    }
-
-    async function textToSpeech(text) {
-      const apiKey = GEMINI_API_KEY;
-      const url = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_TTS_MODEL}:generateContent?key=${apiKey}`;
-      const payload = {
-        contents: [{ parts: [{ text }] }],
-        generationConfig: {
-          responseModalities: ["AUDIO"],
-          speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: "Puck" } } }
-        }
-      };
-      try {
-        const response = await fetch(url, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
-        });
-        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-
-        const result = await response.json();
-        const part = result?.candidates?.[0]?.content?.parts?.[0];
-        const audioData = part?.inlineData?.data;
-        const mimeType = part?.inlineData?.mimeType;
-
-        if (audioData && mimeType) {
-          const sampleRateMatch = mimeType.match(/rate=(\d+)/);
-          const sampleRate = sampleRateMatch ? parseInt(sampleRateMatch[1], 10) : 16000;
-          const pcmBuffer = base64ToArrayBuffer(audioData);
-          const wavBlob = pcmToWav(new Int16Array(pcmBuffer), sampleRate);
-          const audioUrl = URL.createObjectURL(wavBlob);
-          new Audio(audioUrl).play();
-        } else {
-          console.error("No audio data found in response.");
-        }
-      } catch (error) {
-        console.error("Error generating or playing audio:", error);
-      }
-    }
-
-    // Dengarkan tombol
-    listenButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const description = button.closest('.service').dataset.description;
-        textToSpeech(description);
-      });
-    });
-  </script>
 </body>
 </html>
