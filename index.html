@@ -12,20 +12,18 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style type="text/tailwindcss">
-    @layer base {
-      :root {
-        --green-soft: #d1fae5;
-        --green-dark: #065f46;
-        --green-primary: #10b981;
-        --text-color: #1f2937;
-        --bg-color: #f0fdf4;
-      }
-      html { scroll-behavior: smooth; }
-      body {
-        font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-        color: var(--text-color);
-        background-color: var(--bg-color);
-      }
+    :root {
+      --green-soft: #d1fae5;
+      --green-dark: #065f46;
+      --green-primary: #10b981;
+      --text-color: #1f2937;
+      --bg-color: #f0fdf4;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+      color: var(--text-color);
+      background-color: var(--bg-color);
     }
 
     @layer components {
@@ -47,10 +45,10 @@
   <header class="sticky top-0 z-40 bg-white/95 backdrop-blur shadow-sm">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
       <a href="#" class="flex items-center gap-3">
-        <div class="relative w-16 h-16 flex-shrink-0">
+        <div class="relative w-12 h-12 flex-shrink-0">
           <img
             src="logogmc.png" alt="Logo Klinik GMC"
-            class="w-16 h-16 rounded-2xl object-contain bg-green-50 p-2"
+            class="w-12 h-12 rounded-xl object-contain bg-green-50 p-2"
             loading="lazy"
             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
           />
@@ -60,7 +58,7 @@
         </div>
         <div class="flex flex-col leading-tight">
           <small class="text-xs text-gray-500 font-medium">Yayasan Insan Medika Cendikia</small>
-          <strong class="text-lg text-green-700">Klinik Girimukti Medical Center</strong>
+          <strong class="text-sm text-green-700">Klinik Girimukti Medical Center</strong>
         </div>
       </a>
 
@@ -94,7 +92,7 @@
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div>
           <span class="inline-flex items-center gap-2 bg-white/20 text-white px-4 py-1.5 rounded-full text-sm font-medium backdrop-blur-sm mb-4">
-            <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1 15L6 12l1.41-1.41L11 14.17l5.59-5.59L18 10l-7 7z"/></svg>
+            <img src="logobpjs.png" alt="BPJS Logo" class="w-7 h-7" loading="lazy">
             Sudah bekerjasama dengan <strong class="ml-1">BPJS Kesehatan</strong>
           </span>
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mb-4">
@@ -275,8 +273,8 @@
 
   <section id="bpjs" class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
     <div class="card p-8 flex flex-col md:flex-row items-center gap-6">
-      <div class="w-16 h-16 flex items-center justify-center bg-green-700 text-white rounded-xl text-3xl font-bold flex-shrink-0">
-        BPJS
+      <div class="w-24 h-24 flex items-center justify-center flex-shrink-0">
+        <img src="logobpjs.png" alt="Logo BPJS Kesehatan" class="w-full h-full object-contain">
       </div>
       <div class="flex-grow text-center md:text-left">
         <h3 class="text-2xl font-bold text-green-700 mb-1">Kerjasama BPJS Kesehatan</h3>
@@ -295,19 +293,19 @@
           <div class="card p-6">
             <h3 class="text-xl font-bold text-green-700 mb-4">Detail Kontak</h3>
             <ul class="space-y-4 text-gray-700">
-              <li class="flex items-center gap-3">
+              <li class="flex items-start gap-3">
                 <svg class="w-6 h-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2c-3.86 0-7 3.14-7 7 0 5.25 7 13 7 13s7-7.75 7-13c0-3.86-3.14-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
                 <div class="text-gray-600">
                   <strong class="font-medium block">Alamat:</strong> Jl. Raya Cikadu, RT 001, RW 003, Desa Girimukti, Kec. Singajaya, Kab. Garut (44173)
                 </div>
               </li>
-              <li class="flex items-center gap-3">
+              <li class="flex items-start gap-3">
                 <svg class="w-6 h-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M19 12.998h-6v6h-2v-6H5v-2h6V4.998h2v6h6z"/></svg>
                 <div class="text-gray-600">
                   <strong class="font-medium block">Telepon/WA:</strong> <a href="tel:085223128163" class="text-green-600 hover:underline">0852 2312 8163</a>
                 </div>
               </li>
-              <li class="flex items-center gap-3">
+              <li class="flex items-start gap-3">
                 <svg class="w-6 h-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg>
                 <div class="text-gray-600">
                   <strong class="font-medium block">Email:</strong> <a href="mailto:klinik.gmc.01@gmail.com" class="text-green-600 hover:underline">klinik.gmc.01@gmail.com</a>
@@ -320,7 +318,7 @@
           <h3 class="text-xl font-bold text-green-700 mb-4">Lokasi (Google Maps)</h3>
           <div class="card h-80 overflow-hidden">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.070631853995!2d108.01639017424683!3d-7.228547492780777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f42a0b12c7599%3A0x6a0c5c3d1b6e41b2!2sKlinik%20Girimukti%20Medical%20Center!5e0!3m2!1sid!2sid!4v1724810619119!5m2!1sid!2sid"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.5684714150827!2d107.82270921477546!3d-7.289945394747861!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6616a9a7a9344f%3A0x6b1e60f2e0a2977d!2sKlinik%20Girimukti%20Medical%20Center!5e0!3m2!1sid!2sid!4v1626078028169!5m2!1sid!2sid"
               width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
               referrerpolicy="no-referrer-when-downgrade">
             </iframe>
@@ -362,7 +360,7 @@
     function addMessage(role, text) {
       const messageDiv = document.createElement('div');
       messageDiv.classList.add('chat-bubble', role);
-      messageDiv.textContent = text;
+      messageDiv.textContent = text; // ✅ aman dari HTML injection
       chatContainer.appendChild(messageDiv);
       chatContainer.scrollTop = chatContainer.scrollHeight;
     }
@@ -371,7 +369,6 @@
       const apiKey = GEMINI_API_KEY;
       if (!apiKey) {
         console.warn('API key belum diisi.');
-        return;
       }
       const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
       const payload = { contents: [{ role: "user", parts: [{ text: prompt }] }] };
@@ -464,7 +461,8 @@
       healthTipDisplay.textContent = 'Mencari tips...';
       try {
         const response = await callGemini(
-          'Berikan satu tips kesehatan yang singkat, positif, dan mudah dilakukan dalam bahasa Indonesia. Jangan sertakan judul.'
+          'Berikan satu tips kesehatan yang singkat, positif, dan mudah dilakukan dalam bahasa Indonesia. Jangan sertakan judul.',
+          GEMINI_TEXT_MODEL
         );
         const tipText = response?.candidates?.[0]?.content?.parts?.[0]?.text || 'Minum air putih yang cukup hari ini.';
         healthTipDisplay.textContent = tipText;
