@@ -1,229 +1,128 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Klinik Girimukti Medical Center</title>
-  <meta name="description" content="Klinik Girimukti Medical Center – Layanan kesehatan ramah, cepat, profesional. Sudah bekerjasama dengan BPJS Kesehatan." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --green:#0f7a4f;
-      --green-2:#0b5d3b;
-      --accent:#0ea5a2;
-      --bg:#f6faf8;
-      --text:#1f2937;
-      --soft-green:#ecfdf5;
+    /* Reset dan gaya dasar */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans";color:var(--text);background:var(--bg)}
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-    .container{max-width:1120px;margin:0 auto;padding:0 20px}
-    .btn{display:inline-block;padding:12px 18px;border-radius:999px;font-weight:600;transition:.2s ease}
-    .btn-primary{background:#fff;color:var(--green);border:2px solid #fff}
-    .btn-outline{background:transparent;color:#fff;border:2px solid #fff}
-    .btn-green{background:var(--green);color:#fff;border:2px solid var(--green)}
-    .btn:hover{opacity:.9}
-    /* Header */
-    header{position:sticky;top:0;z-index:40;background:#fff;border-bottom:1px solid #e5e7eb;box-shadow:0 2px 8px rgba(0,0,0,.05)}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
-    .brand{display:flex;align-items:center;gap:10px}
-    .brand img{width:48px;height:48px;object-fit:contain;border-radius:8px}
-    .brand-text{display:flex;flex-direction:column;line-height:1.2}
-    .brand-text small{font-size:13px;color:#6b7280}
-    .brand-text strong{font-size:16px;color:var(--green)}
-    .menu{display:flex;gap:20px}
-    .menu a{padding:8px 10px;border-radius:8px;font-weight:500;color:var(--green-2);transition:.2s}
-    .menu a:hover{background:var(--soft-green)}
-    /* Hero */
-    .hero{background:linear-gradient(135deg,var(--green),var(--green-2));color:#fff}
-    .hero-inner{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center;padding:48px 0}
-    .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.15);padding:6px 12px;border-radius:999px;font-weight:600}
-    .hero h1{font-size:36px;line-height:1.15;margin:14px 0 10px}
-    .hero p{opacity:.95}
-    .hero-cta{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
-    .hero-card{background:#fff;color:var(--text);border-radius:16px;padding:18px;box-shadow:0 10px 25px rgba(0,0,0,.12)}
-    .grid{display:grid;gap:18px}
-    /* Info strip */
-    .strip{background:#fff;border-top:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb}
-    .strip .items{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:18px 0}
-    .card{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:18px;transition:transform .2s ease, box-shadow .2s ease}
-    .card:hover{transform:translateY(-4px);box-shadow:0 8px 16px rgba(0,0,0,.06)}
-    .card h3{margin:0 0 8px;color:var(--green)}
-    .icon{width:28px;height:28px;border-radius:8px;display:inline-grid;place-items:center;background:var(--soft-green);color:var(--green);margin-right:8px}
-    /* Services */
-    .services{padding:50px 0}
-    .services h2{text-align:center;color:var(--green);margin-bottom:8px}
-    .services .grid{grid-template-columns:repeat(3,1fr)}
-    .service{transition:transform .2s ease, box-shadow .2s ease}
-    .service:hover{transform:translateY(-4px);box-shadow:0 10px 20px rgba(0,0,0,.08)}
-    /* Contact */
-    .contact{background:#fff;padding:50px 0;border-top:1px solid #e5e7eb}
-    .contact h2{color:var(--green)}
-    .contact .grid{grid-template-columns:1.2fr .8fr}
-    footer{background:var(--green-2);color:#d1fae5;text-align:center;padding:20px}
-    small,.muted{opacity:.8}
-    iframe{width:100%;height:100%;border:0;border-radius:12px}
-    /* Responsive */
-    @media (max-width: 900px){
-      .hero-inner{grid-template-columns:1fr}
-      .services .grid{grid-template-columns:1fr 1fr}
-      .contact .grid{grid-template-columns:1fr}
-      .strip .items{grid-template-columns:1fr}
+
+    /* Header dengan background hijau elegan */
+    header {
+      background-color: #006b4f;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
     }
-    @media (max-width: 560px){
-      .services .grid{grid-template-columns:1fr}
-      .menu{display:none}
-      .hero h1{font-size:28px}
+
+    header img {
+      max-width: 220px;
+      width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    header h1 {
+      margin: 10px 0 5px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    header p {
+      font-size: 16px;
+      margin: 0;
+      color: #e0f7ef;
+    }
+
+    /* Container Maps */
+    .map-container {
+      margin: 30px auto;
+      max-width: 900px;
+      text-align: center;
+      padding: 0 10px;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 400px;
+      border: 0;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Footer */
+    footer {
+      background-color: #004d3a;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 14px;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .footer-box {
+      max-width: 300px;
+      text-align: left;
+    }
+
+    .footer-box strong {
+      display: block;
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    /* Responsif */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 20px;
+      }
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Header -->
+  <!-- Header dengan Logo dan Identitas -->
   <header>
-    <div class="container nav">
-      <div class="brand">
-        <img src="logogmc.png" alt="Logo GMC" onerror="this.onerror=null;this.src='https://via.placeholder.com/48x48?text=GMC';" />
-        <div class="brand-text">
-          <small>Yayasan Insan Medika Cendikia Garut</small>
-          <strong>Klinik Girimukti Medical Center</strong>
-        </div>
-      </div>
-      <nav class="menu">
-        <a href="#layanan">Layanan</a>
-        <a href="#bpjs">BPJS</a>
-        <a href="#kontak">Kontak</a>
-      </nav>
-    </div>
+    <img src="logo-gmc-new-revisi.png" alt="Logo Klinik GMC">
+    <h1>Klinik Girimukti Medical Center</h1>
+    <p>Ramah • Cepat • Profesional</p>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container hero-inner">
-      <div>
-        <span class="badge" id="bpjs"><span class="icon">✔</span>Sudah bekerjasama dengan <strong>BPJS Kesehatan</strong></span>
-        <h1>Pelayanan Kesehatan <br/>Ramah • Cepat • Profesional</h1>
-        <p>Rawat jalan & rawat inap 24 jam, UGD 24 jam, Persalinan 24 jam, KIA, Laboratorium, Apotek – ditangani dokter dan bidan berpengalaman.</p>
-        <div class="hero-cta">
-          <a class="btn btn-primary" href="https://wa.me/6285223128163" target="_blank" rel="noopener">WhatsApp Pendaftaran</a>
-          <a class="btn btn-outline" href="#layanan">Lihat Layanan</a>
-        </div>
-      </div>
-      <div class="hero-card">
-        <h3 style="margin:0 0 10px;color:var(--green)">Identitas Klinik</h3>
-        <div class="muted">Klinik Girimukti Medical Center – Yayasan IMC Garut</div>
-        <div style="margin-top:10px">
-          <div><span class="icon">🏷</span><strong>Sertifikat Standar:</strong> 91203057521250001</div>
-          <div><span class="icon">🧾</span><strong>NIB:</strong> 120305752125</div>
-          <div><span class="icon">📍</span>Jl. Raya Cikadu, RT 001, RW 003, Desa Girimukti, Kec. Singajaya, Kab. Garut (44173)</div>
-          <div><span class="icon">☎</span>0852 2312 8163</div>
-          <div><span class="icon">✉</span>klinik.gmc.01@gmail.com</div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- Google Maps -->
+  <div class="map-container">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.933907786628!2d107.8883834735748!3d-7.472551073667738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e660313aaaaaaab%3A0xb7491d6f7131440b!2sKlinik%20Girimukti%20Medical%20Center!5e0!3m2!1sid!2sid!4v1756305269685!5m2!1sid!2sid" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
 
-  <!-- Info strip -->
-  <section class="strip">
-    <div class="container items">
-      <div class="card">
-        <h3><span class="icon">🕒</span>Jam Operasional</h3>
-        <p>
-          Rawat Jalan & Rawat Inap: 24 Jam<br/>
-          UGD: 24 Jam<br/>
-          Persalinan: 24 Jam<br/>
-          KIA: 07.00 – 17.00 WIB
-        </p>
-      </div>
-      <div class="card">
-        <h3><span class="icon">🧑‍⚕️</span>Tenaga Profesional</h3>
-        <p>Dokter umum, bidan, perawat terlatih dan ramah.</p>
-      </div>
-      <div class="card">
-        <h3><span class="icon">🛡</span>Keamanan & Kenyamanan</h3>
-        <p>Fasilitas bersih, ruang tunggu nyaman, standar keselamatan pasien.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services -->
-  <section id="layanan" class="services container">
-    <h2>Layanan Klinik</h2>
-    <p style="text-align:center" class="muted">Kami melayani dengan sepenuh hati untuk kebutuhan kesehatan Anda.</p>
-    <div class="grid">
-      <div class="card service">
-        <h3><span class="icon">🩺</span>Pemeriksaan Umum</h3>
-        <p>Konsultasi keluhan kesehatan, pemeriksaan fisik, pengobatan dasar.</p>
-      </div>
-      <div class="card service">
-        <h3><span class="icon">🤱</span>KIA</h3>
-        <p>Antenatal care, pemeriksaan ibu hamil, edukasi ibu & bayi. Jam pelayanan 07.00 – 17.00 WIB.</p>
-      </div>
-      <div class="card service">
-        <h3><span class="icon">👶</span>Persalinan 24 Jam</h3>
-        <p>Persalinan normal dengan dokter & bidan berpengalaman.</p>
-      </div>
-      <div class="card service">
-        <h3><span class="icon">🚑</span>UGD 24 Jam</h3>
-        <p>Penanganan kasus gawat darurat medis setiap saat.</p>
-      </div>
-      <div class="card service">
-        <h3><span class="icon">✂</span>Khitan</h3>
-        <p>Layanan khitan modern, aman, nyaman untuk anak & dewasa.</p>
-      </div>
-      <div class="card service">
-        <h3><span class="icon">🏥</span>Rawat Jalan & Rawat Inap 24 Jam</h3>
-        <p>Pelayanan medis observasi & perawatan penuh waktu.</p>
-      </div>
-      <div class="card service">
-        <h3><span class="icon">🧪</span>Laboratorium</h3>
-        <p>Pemeriksaan penunjang: hematologi, kimia klinik, urin, dll.</p>
-      </div>
-      <div class="card service">
-        <h3><span class="icon">💊</span>Apotek</h3>
-        <p>Obat aman, terjangkau, sesuai resep dokter.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- BPJS Section -->
-  <section class="container" style="padding:10px 0 40px">
-    <div class="card" style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
-      <div class="icon" style="font-weight:700">BPJS</div>
-      <div>
-        <h3 style="margin:0;color:var(--green)">Kerjasama BPJS Kesehatan</h3>
-        <p style="margin:6px 0 0" class="muted">Peserta JKN-KIS dapat berobat di Klinik Girimukti Medical Center sesuai ketentuan BPJS Kesehatan. Pendaftaran lebih mudah melalui <strong>Mobile JKN</strong> atau langsung di klinik.</p>
-      </div>
-      <div style="margin-left:auto"><a class="btn btn-green" href="https://wa.me/6285223128163" target="_blank" rel="noopener">Daftar via WhatsApp</a></div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="kontak" class="contact">
-    <div class="container grid">
-      <div>
-        <h2>Hubungi Kami</h2>
-        <p>Silakan hubungi kami untuk pendaftaran, informasi layanan, atau konsultasi jadwal.</p>
-        <div class="card" style="margin-top:12px">
-          <p><strong>Alamat:</strong><br/>Jl. Raya Cikadu, RT 001, RW 003, Desa Girimukti, Kec. Singajaya, Kab. Garut (44173)</p>
-          <p><strong>Telepon/WA:</strong> 0852 2312 8163</p>
-          <p><strong>Email:</strong> klinik.gmc.01@gmail.com</p>
-        </div>
-      </div>
-      <div class="card" style="height:320px">
-        <h3 style="margin-top:0">Lokasi (Maps)</h3>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.933907786628!2d107.8883834735748!3d-7.472551073667738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e660313aaaaaaab%3A0xb7491d6f7131440b!2sKlinik%20Girimukti%20Medical%20Center!5e0!3m2!1sid!2sid!4v1756305269685!5m2!1sid!2sid" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-    </div>
-  </section>
-
+  <!-- Footer -->
   <footer>
-    <div class="container">
-      <small>© 2025 Klinik Girimukti Medical Center — Yayasan Insan Medika Cendikia Garut.</small>
+    <div class="footer-container">
+      <div class="footer-box">
+        <strong>Pelayanan Kesehatan</strong>
+        Ramah • Cepat • Profesional
+      </div>
+      <div class="footer-box">
+        <strong>Identitas Klinik</strong>
+        Klinik Girimukti Medical Center<br>
+        Yayasan GMC Girut
+      </div>
     </div>
+    <p style="margin-top: 10px;">&copy; 2025 Klinik GMC. Semua Hak Dilindungi.</p>
   </footer>
 </body>
 </html>
