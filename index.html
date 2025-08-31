@@ -17,7 +17,7 @@
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.3/css/all.min.css"
       integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ98VAnw/M/uNP5bTq5pB3I7mQ3vR5tA4T7jR12a2A/8W7VvNl/p8Fj5+B6vW0g=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
@@ -267,7 +267,7 @@
             </h1>
             <p class="text-lg text-gray-600 max-w-xl mb-8">
               Layanan kesehatan terpercaya dengan teknologi modern dan tim
-              medis berpengalaman di Kabupaten Garut, Jawa Barat.
+              medis berpengalaman di Bandung, Jawa Barat.
             </p>
             <div class="flex flex-col sm:flex-row gap-4">
               <a
@@ -275,7 +275,7 @@
                 target="_blank"
                 rel="noopener"
                 class="btn btn-primary"
-                >Call Center</a
+                >Konsultasi Gratis</a
               >
               <a href="#layanan" class="btn btn-outline">Lihat Layanan</a>
             </div>
@@ -363,9 +363,9 @@
             <h3 class="font-bold text-2xl text-[var(--color-text-dark)] mb-4">
               <i class="fa-solid fa-bullseye icon-sm-inline"></i> Misi
             </h3>
-            <ul class="list-none text-[var(--color-text-light)] space-y-2 text-lg text-left max-w-xs mx-auto"> <li class="flex items-start"><i class="fa-solid fa-circle-check text-[var(--color-primary-dark)] mr-2 mt-1 flex-shrink-0"></i> Menyediakan SDM yang santun dan berbudi.</li>
-              <li class="flex items-start"><i class="fa-solid fa-circle-check text-[var(--color-primary-dark)] mr-2 mt-1 flex-shrink-0"></i> Mengembangkan fasilitas yang dapat mewujudkan kondisi nyaman dan aman.</li>
-              <li class="flex items-start"><i class="fa-solid fa-circle-check text-[var(--color-primary-dark)] mr-2 mt-1 flex-shrink-0"></i> Memberikan pelayanan bermutu berlandaskan Etika Profesionalisme.</li>
+            <ul class="list-none text-[var(--color-text-light)] space-y-2 text-left max-w-xs mx-auto"> <li class="flex items-start text-lg"><i class="fa-solid fa-circle-check text-[var(--color-primary-dark)] mr-2 mt-1 flex-shrink-0"></i> Menyediakan SDM yang santun dan berbudi.</li>
+              <li class="flex items-start text-lg"><i class="fa-solid fa-circle-check text-[var(--color-primary-dark)] mr-2 mt-1 flex-shrink-0"></i> Mengembangkan fasilitas yang dapat mewujudkan kondisi nyaman dan aman.</li>
+              <li class="flex items-start text-lg"><i class="fa-solid fa-circle-check text-[var(--color-primary-dark)] mr-2 mt-1 flex-shrink-0"></i> Memberikan pelayanan bermutu berlandaskan Etika Profesionalisme.</li>
             </ul>
           </div>
           <div class="card p-8 border border-gray-100 flex flex-col items-center justify-center text-center"> <h3 class="font-bold text-2xl text-[var(--color-text-dark)] mb-4">
@@ -682,7 +682,7 @@
             </h3>
             <div class="grid md:grid-cols-2 gap-4">
                 <div class="testimonial-card">
-                    <img src="https://via.placeholder.com/150/d1fae5/10b981?text=A" alt="Avatar Asep" class="testimonial-avatar interactive-shadow">
+                    <img src="https://via.placeholder.com/150/d1fae5/10b981?text=C" alt="Avatar Cecep" class="testimonial-avatar interactive-shadow">
                     <div class="text-yellow-400 mb-2">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -718,7 +718,7 @@
                     <span class="font-semibold text-sm text-[var(--color-primary-dark)]">— Euis, Pasien Persalinan</span>
                 </div>
                 <div class="testimonial-card">
-                    <img src="https://via.placeholder.com/150/d1fae5/10b981?text=N" alt="Avatar Neng" class="testimonial-avatar interactive-shadow">
+                    <img src="https://via.placeholder.com/150/d1fae5/10b981?text=N" alt="Avatar Neneng" class="testimonial-avatar interactive-shadow">
                     <div class="text-yellow-400 mb-2">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -752,6 +752,98 @@
           mobileNav.classList.toggle('hidden');
         });
       }
+
+      // AI Consultation & Daily Tips functionality
+      const userInput = document.getElementById('user-input');
+      const sendBtn = document.getElementById('send-btn');
+      const chatWindow = document.getElementById('chat-window');
+      const getTipBtn = document.getElementById('get-tip-btn');
+      const dailyTipElement = document.getElementById('daily-tip');
+
+      // Simple AI response logic
+      function getAiResponse(message) {
+        const lowerCaseMessage = message.toLowerCase();
+        let response = "";
+        
+        if (lowerCaseMessage.includes("sakit tenggorokan") || lowerCaseMessage.includes("demam")) {
+          response = "Untuk sakit tenggorokan dan demam ringan, cobalah istirahat yang cukup, minum banyak air hangat, dan konsumsi makanan bergizi. Jika gejala tidak membaik dalam 3 hari, atau semakin parah, segera periksakan diri ke dokter di klinik kami.";
+        } else if (lowerCaseMessage.includes("kehamilan") || lowerCaseMessage.includes("ibu hamil")) {
+          response = "Menjaga kesehatan selama kehamilan sangat penting. Pastikan Anda rutin melakukan pemeriksaan ANC di layanan KIA kami, konsumsi vitamin yang diresepkan, dan hindari stres.";
+        } else if (lowerCaseMessage.includes("poli umum")) {
+          response = "Layanan Poli Umum kami melayani konsultasi dan pemeriksaan awal untuk berbagai keluhan kesehatan. Silakan datang selama jam operasional atau buat janji temu.";
+        } else if (lowerCaseMessage.includes("bpjs")) {
+          response = "Klinik kami sudah bekerja sama dengan BPJS Kesehatan. Anda bisa mendaftar antrean melalui aplikasi Mobile JKN atau datang langsung ke klinik dengan membawa kartu JKN-KIS Anda.";
+        } else if (lowerCaseMessage.includes("jam buka") || lowerCaseMessage.includes("jam operasional")) {
+          response = "Klinik kami buka 24 jam untuk layanan gawat darurat (UGD), rawat inap, dan persalinan. Untuk layanan Poli Umum dan KIA, jam operasionalnya 07.00 - 17.00 WIB.";
+        } else {
+          response = "Terima kasih atas pertanyaannya. Jika Anda memiliki keluhan atau pertanyaan spesifik, silakan sampaikan. Namun, untuk diagnosis medis yang akurat, kunjungi klinik kami untuk konsultasi langsung dengan dokter.";
+        }
+        
+        return response;
+      }
+
+      // Function to add a chat message to the chat window
+      function addMessage(text, isUser) {
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('chat-message', isUser ? 'user' : 'bot');
+        
+        const messageP = document.createElement('p');
+        messageP.textContent = text;
+        
+        messageDiv.appendChild(messageP);
+        chatWindow.prepend(messageDiv);
+        
+        // Auto scroll to the bottom
+        chatWindow.scrollTop = chatWindow.scrollHeight;
+      }
+
+      // Event listener for the send button
+      sendBtn.addEventListener('click', () => {
+        const message = userInput.value.trim();
+        if (message) {
+          addMessage(message, true); // Add user message
+          userInput.value = ''; // Clear input field
+
+          // Simulate AI response after a short delay
+          setTimeout(() => {
+            const aiResponse = getAiResponse(message);
+            addMessage(aiResponse, false);
+          }, 1000);
+        }
+      });
+
+      // Event listener for pressing Enter in the input field
+      userInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+          sendBtn.click();
+        }
+      });
+
+      // Array of daily health tips
+      const dailyTips = [
+        "Minumlah setidaknya 8 gelas air per hari untuk menjaga tubuh tetap terhidrasi.",
+        "Cobalah berjalan kaki selama 30 menit setiap hari untuk meningkatkan kesehatan jantung.",
+        "Pastikan Anda mendapatkan waktu tidur yang cukup, 7-8 jam per malam, untuk memulihkan energi.",
+        "Tambahkan lebih banyak buah dan sayuran ke dalam menu harian Anda untuk asupan vitamin yang cukup.",
+        "Mencuci tangan dengan sabun secara rutin adalah cara terbaik untuk mencegah penyebaran kuman.",
+        "Lakukan peregangan ringan di pagi hari untuk melancarkan peredaran darah.",
+        "Jangan lewatkan sarapan! Sarapan membantu memberikan energi untuk memulai aktivitas harian.",
+        "Kelola stres dengan baik melalui meditasi atau hobi yang Anda nikmati.",
+        "Lindungi kulit Anda dari sinar matahari berlebih dengan menggunakan tabir surya.",
+        "Kurangi konsumsi gula berlebih untuk menjaga berat badan dan mencegah diabetes."
+      ];
+
+      // Function to get a random daily tip
+      function getRandomTip() {
+        const randomIndex = Math.floor(Math.random() * dailyTips.length);
+        return dailyTips[randomIndex];
+      }
+
+      // Event listener for the "Dapatkan Tips!" button
+      getTipBtn.addEventListener('click', () => {
+        const randomTip = getRandomTip();
+        dailyTipElement.innerHTML = `<p class="font-medium text-gray-700">${randomTip}</p>`;
+      });
     </script>
   </body>
 </html>
