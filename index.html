@@ -59,6 +59,11 @@
         .card {
           @apply bg-white p-8 rounded-3xl shadow-xl transition-transform duration-300 hover:scale-[1.01];
         }
+        /* Adjusted card shadow for soft green glow */
+        .card-green-glow:hover {
+          box-shadow: 0 10px 15px -3px rgba(52, 211, 153, 0.3),
+                      0 4px 6px -2px rgba(52, 211, 153, 0.15);
+        }
         .section-title {
           @apply text-4xl font-bold text-center text-gray-800 mb-4;
         }
@@ -91,27 +96,33 @@
             var(--color-primary-light)
           );
         }
+        /* Header background for soft green */
+        .header-bg-soft-green {
+          background-color: var(--color-primary-light); /* Using the light green */
+          /* Or you can use a lighter variant if needed */
+          /* background-color: #81e6d9; */
+        }
       }
     </style>
   </head>
   <body class="bg-gray-50">
-    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm">
+    <header class="sticky top-0 z-40 header-bg-soft-green backdrop-blur-md shadow-md">
       <div class="container mx-auto px-4 py-3 flex items-center justify-between">
         <a href="#" class="flex items-center gap-3">
           <div class="relative w-12 h-12 flex-shrink-0">
             <img
               src="logogmc.png"
               alt="Logo Klinik GMC"
-              class="w-12 h-12 rounded-full object-contain p-1"
+              class="w-12 h-12 rounded-full object-contain p-1 bg-white"
               loading="lazy"
               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
             />
           </div>
           <div class="flex flex-col leading-tight">
-            <small class="text-xs text-gray-500 font-medium"
+            <small class="text-xs text-white/90 font-medium"
               >Yayasan Insan Medika Cendikia</small
             >
-            <strong class="text-base text-gray-700"
+            <strong class="text-base text-white"
               >Klinik Girimukti Medical Center</strong
             >
           </div>
@@ -119,27 +130,27 @@
         <nav class="hidden md:flex items-center gap-6" aria-label="Primary">
           <a
             href="#layanan"
-            class="text-gray-600 hover:text-[var(--color-primary-dark)] font-medium transition-colors"
+            class="text-white/90 hover:text-white font-medium transition-colors"
             >Layanan</a
           >
           <a
             href="#bpjs"
-            class="text-gray-600 hover:text-[var(--color-primary-dark)] font-medium transition-colors"
+            class="text-white/90 hover:text-white font-medium transition-colors"
             >BPJS</a
           >
           <a
             href="#ai-feature"
-            class="text-gray-600 hover:text-[var(--color-primary-dark)] font-medium transition-colors"
+            class="text-white/90 hover:text-white font-medium transition-colors"
             >Konsultasi AI</a
           >
           <a
             href="#kontak"
-            class="text-gray-600 hover:text-[var(--color-primary-dark)] font-medium transition-colors"
+            class="text-white/90 hover:text-white font-medium transition-colors"
             >Kontak</a
           >
           <a
             href="#visi-misi"
-            class="text-gray-600 hover:text-[var(--color-primary-dark)] font-medium transition-colors"
+            class="text-white/90 hover:text-white font-medium transition-colors"
             >Visi & Misi</a
           >
         </nav>
@@ -148,13 +159,13 @@
             href="https://wa.me/6285223128163"
             target="_blank"
             rel="noopener"
-            class="btn btn-primary"
+            class="btn bg-white text-[var(--color-primary-dark)] border-2 border-white shadow-md hover:bg-gray-100 hover:border-gray-100"
             >WhatsApp</a
           >
         </div>
         <button
           id="menu-btn"
-          class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl border border-gray-200 text-gray-700"
+          class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl border border-white/50 text-white"
           aria-label="Buka menu"
         >
           <svg
@@ -173,28 +184,28 @@
           </svg>
         </button>
       </div>
-      <nav id="mobile-nav" class="md:hidden hidden border-t border-gray-100">
-        <div class="px-4 py-3 flex flex-col gap-2 bg-white">
-          <a href="#layanan" class="py-2 text-gray-700 hover:text-[var(--color-primary-dark)]"
+      <nav id="mobile-nav" class="md:hidden hidden border-t border-white/20">
+        <div class="px-4 py-3 flex flex-col gap-2 bg-[var(--color-primary-light)]">
+          <a href="#layanan" class="py-2 text-white hover:text-gray-100"
             >Layanan</a
           >
-          <a href="#bpjs" class="py-2 text-gray-700 hover:text-[var(--color-primary-dark)]"
+          <a href="#bpjs" class="py-2 text-white hover:text-gray-100"
             >BPJS</a
           >
-          <a href="#ai-feature" class="py-2 text-gray-700 hover:text-[var(--color-primary-dark)]"
+          <a href="#ai-feature" class="py-2 text-white hover:text-gray-100"
             >Konsultasi AI</a
           >
-          <a href="#kontak" class="py-2 text-gray-700 hover:text-[var(--color-primary-dark)]"
+          <a href="#kontak" class="py-2 text-white hover:text-gray-100"
             >Kontak</a
           >
-          <a href="#visi-misi" class="py-2 text-gray-700 hover:text-[var(--color-primary-dark)]"
+          <a href="#visi-misi" class="py-2 text-white hover:text-gray-100"
             >Visi & Misi</a
           >
           <a
             href="https://wa.me/6285223128163"
             target="_blank"
             rel="noopener"
-            class="btn btn-primary w-full"
+            class="btn bg-white text-[var(--color-primary-dark)] w-full"
             >WhatsApp</a
           >
         </div>
@@ -232,8 +243,8 @@
                 <div class="absolute w-20 h-20 bg-white/10 rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-50"></div>
 
                 <div class="relative z-10 text-white">
-                    <div class="flex items-center justify-between mb-6">
-                        <div class="flex items-center gap-3">
+                    <div class="flex flex-col items-center justify-center text-center mb-6">
+                        <div class="flex items-center justify-center gap-3 mb-2">
                             <img
                               src="logogmc.png"
                               alt="Logo Klinik GMC"
@@ -244,6 +255,12 @@
                                 <small class="text-xs text-white/80 font-medium">Klinik Pratama</small>
                                 <strong class="text-base text-white">Girimukti Medical Center</strong>
                             </div>
+                            <img
+                              src="logobpjsputih.png"
+                              alt="Logo BPJS Kesehatan"
+                              class="w-10 h-10 object-contain p-1 bg-white rounded-full"
+                              loading="lazy"
+                            />
                         </div>
                         <i class="fa-solid fa-plus text-white text-2xl"></i>
                     </div>
@@ -251,12 +268,12 @@
                     <h2 class="text-3xl font-bold text-center mb-6">SELAMAT DATANG DI KLINIK GMC</h2>
 
                     <div class="relative rounded-xl overflow-hidden shadow-inner w-full aspect-video mb-6">
-                        <video 
-                          class="w-full h-full object-cover" 
-                          src="vidgmc.mp4" 
-                          autoplay 
-                          muted 
-                          loop 
+                        <video
+                          class="w-full h-full object-cover"
+                          src="vidgmc.mp4"
+                          autoplay
+                          muted
+                          loop
                           playsinline
                         ></video>
                     </div>
@@ -303,7 +320,7 @@
           Nilai-nilai yang kami pegang teguh dalam melayani Anda.
         </p>
         <div class="grid md:grid-cols-3 gap-8">
-          <div class="card p-8 border border-gray-100">
+          <div class="card card-green-glow p-8 border border-gray-100 text-center">
             <h3 class="font-bold text-2xl text-[var(--color-text-dark)] mb-2">
               <i class="fa-solid fa-eye icon-sm-inline"></i> Visi
             </h3>
@@ -311,17 +328,17 @@
               “Menjadi KLINIK Pilihan dan Kepercayaan Masyarakat”.
             </p>
           </div>
-          <div class="card p-8 border border-gray-100">
+          <div class="card card-green-glow p-8 border border-gray-100 text-center">
             <h3 class="font-bold text-2xl text-[var(--color-text-dark)] mb-2">
               <i class="fa-solid fa-bullseye icon-sm-inline"></i> Misi
             </h3>
-            <ul class="list-disc list-inside text-[var(--color-text-light)] space-y-2 text-lg">
-              <li>Menyediakan SDM yang santun dan berbudi.</li>
-              <li>Mengembangkan fasilitas yang dapat mewujudkan kondisi nyaman dan aman.</li>
-              <li>Memberikan pelayanan bermutu berlandaskan Etika Profesionalisme.</li>
+            <ul class="list-none text-[var(--color-text-light)] space-y-2 text-lg text-left inline-block">
+              <li><i class="fa-solid fa-circle-check text-[var(--color-primary-dark)] mr-2"></i> Menyediakan SDM yang santun dan berbudi.</li>
+              <li><i class="fa-solid fa-circle-check text-[var(--color-primary-dark)] mr-2"></i> Mengembangkan fasilitas yang dapat mewujudkan kondisi nyaman dan aman.</li>
+              <li><i class="fa-solid fa-circle-check text-[var(--color-primary-dark)] mr-2"></i> Memberikan pelayanan bermutu berlandaskan Etika Profesionalisme.</li>
             </ul>
           </div>
-          <div class="card p-8 border border-gray-100">
+          <div class="card card-green-glow p-8 border border-gray-100 text-center">
             <h3 class="font-bold text-2xl text-[var(--color-text-dark)] mb-2">
               <i class="fa-solid fa-flag-checkered icon-sm-inline"></i> Tujuan
             </h3>
