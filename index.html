@@ -8,8 +8,7 @@
       name="description"
       content="Klinik Girimukti Medical Center – Layanan kesehatan ramah, cepat, profesional. Sudah bekerjasama dengan BPJS Kesehatan."
     />
-    <meta name="theme-color" content="#065f46" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <meta name="theme-color" content="#A7F3D0" /> <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
@@ -22,11 +21,12 @@
     <style type="text/tailwindcss">
       @layer base {
         :root {
-          --green-soft: #d1fae5;
-          --green-dark: #065f46;
-          --green-primary: #10b981;
-          --text-color: #1f2937;
-          --bg-color: #f0fdf4;
+          /* Perubahan Warna: Lebih lembut dan fresh */
+          --green-soft: #D1FAE5; /* Tetap sama untuk aksen paling ringan */
+          --green-dark: #047857; /* Sedikit lebih gelap dari primary untuk kontras */
+          --green-primary: #34D399; /* Hijau utama yang lebih cerah dan segar */
+          --text-color: #1F2937; /* Warna teks tetap gelap untuk keterbacaan */
+          --bg-color: #F0FDF4; /* Latar belakang sangat terang, mendekati putih */
         }
         html {
           scroll-behavior: smooth;
@@ -168,12 +168,12 @@
         </div>
       </nav>
     </header>
-    <section class="bg-green-700 text-white py-16 rounded-b-[40px] md:rounded-b-[80px]">
+    <section class="bg-[var(--green-primary)] text-white py-16 rounded-b-[40px] md:rounded-b-[80px]">
       <div class="container mx-auto px-4">
         <div class="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <span
-              class="inline-flex items-center gap-2 bg-white/20 text-white px-4 py-1.5 rounded-full text-sm font-medium backdrop-blur-sm mb-4"
+              class="inline-flex items-center gap-2 bg-white/30 text-white px-4 py-1.5 rounded-full text-sm font-medium backdrop-blur-sm mb-4"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -215,15 +215,13 @@
           </div>
           <div class="hidden lg:block">
             <div class="card bg-white text-gray-800 p-8">
-              <h3 class="text-2xl font-bold text-green-700 mb-4">
-                Informasi Klinik
+              <h3 class="text-2xl font-bold text-[var(--green-dark)] mb-4"> Informasi Klinik
               </h3>
               <ul class="space-y-4 text-gray-700">
                 <li class="flex items-start gap-3">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6 text-green-500 mt-0.5"
-                    fill="none"
+                    class="h-6 w-6 text-[var(--green-primary)] mt-0.5" fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
                     stroke-width="2"
@@ -242,8 +240,7 @@
                 <li class="flex items-start gap-3">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6 text-green-500 mt-0.5"
-                    fill="none"
+                    class="h-6 w-6 text-[var(--green-primary)] mt-0.5" fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
                     stroke-width="2"
@@ -262,8 +259,7 @@
                 <li class="flex items-start gap-3">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6 text-green-500 mt-0.5"
-                    fill="none"
+                    class="h-6 w-6 text-[var(--green-primary)] mt-0.5" fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
                     stroke-width="2"
@@ -301,22 +297,19 @@
         </p>
         <div class="grid md:grid-cols-3 gap-6">
           <div class="card p-6 border border-gray-200">
-            <h3 class="font-bold text-xl text-green-700 mb-2">Visi</h3>
-            <p class="text-gray-600">
+            <h3 class="font-bold text-xl text-[var(--green-dark)] mb-2">Visi</h3> <p class="text-gray-600">
               “Menjadi KLINIK Pilihan dan Kepercayaan Masyarakat”.
             </p>
           </div>
           <div class="card p-6 border border-gray-200">
-            <h3 class="font-bold text-xl text-green-700 mb-2">Misi</h3>
-            <ul class="list-disc list-inside text-gray-600 space-y-2">
+            <h3 class="font-bold text-xl text-[var(--green-dark)] mb-2">Misi</h3> <ul class="list-disc list-inside text-gray-600 space-y-2">
               <li>Menyediakan SDM yang santun dan berbudi.</li>
               <li>Mengembangkan fasilitas yang dapat mewujudkan kondisi nyaman dan aman dalam pelayanan kesehatan.</li>
               <li>Memberikan pelayanan bermutu berorientasi pada kecepatan, ketepatan, keselamatan dan kenyamanan berlandaskan Etika Profesionalisme.</li>
             </ul>
           </div>
           <div class="card p-6 border border-gray-200">
-            <h3 class="font-bold text-xl text-green-700 mb-2">Tujuan</h3>
-            <p class="text-gray-600">
+            <h3 class="font-bold text-xl text-[var(--green-dark)] mb-2">Tujuan</h3> <p class="text-gray-600">
               Memberikan pelayanan kesehatan yang berorientasi pada pelayanan dan kepuasan pasien.
             </p>
           </div>
@@ -327,10 +320,8 @@
       <div class="container mx-auto px-4">
         <div class="grid md:grid-cols-3 gap-6">
           <div class="card p-6 border border-gray-100">
-            <h3 class="flex items-center text-lg font-bold text-green-700 mb-2">
-              <svg
-                class="w-6 h-6 mr-2 text-green-500"
-                xmlns="http://www.w3.org/2000/svg"
+            <h3 class="flex items-center text-lg font-bold text-[var(--green-dark)] mb-2"> <svg
+                class="w-6 h-6 mr-2 text-[var(--green-primary)]" xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
@@ -347,10 +338,8 @@
             </p>
           </div>
           <div class="card p-6 border border-gray-100">
-            <h3 class="flex items-center text-lg font-bold text-green-700 mb-2">
-              <svg
-                class="w-6 h-6 mr-2 text-green-500"
-                xmlns="http://www.w3.org/2000/svg"
+            <h3 class="flex items-center text-lg font-bold text-[var(--green-dark)] mb-2"> <svg
+                class="w-6 h-6 mr-2 text-[var(--green-primary)]" xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
@@ -365,10 +354,8 @@
             </p>
           </div>
           <div class="card p-6 border border-gray-100">
-            <h3 class="flex items-center text-lg font-bold text-green-700 mb-2">
-              <svg
-                class="w-6 h-6 mr-2 text-green-500"
-                xmlns="http://www.w3.org/2000/svg"
+            <h3 class="flex items-center text-lg font-bold text-[var(--green-dark)] mb-2"> <svg
+                class="w-6 h-6 mr-2 text-[var(--green-primary)]" xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
@@ -395,8 +382,7 @@
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <div class="card service">
             <div
-              class="w-12 h-12 flex items-center justify-center bg-green-100 text-green-700 rounded-xl mb-4 text-2xl"
-            >
+              class="w-12 h-12 flex items-center justify-center bg-[var(--green-soft)] text-[var(--green-dark)] rounded-xl mb-4 text-2xl" >
               🩺
             </div>
             <h3 class="font-bold text-xl mb-2">Poli Umum</h3>
@@ -405,16 +391,14 @@
               dasar.
             </p>
             <button
-              class="btn btn-outline !bg-green-700 !text-white !border-green-700 px-4 py-2 text-sm !rounded-full listen-btn"
-              data-audio-url="URL_AUDIO_ANDA_UNTUK_PEMERIKSAAN_UMUM.mp3"
+              class="btn btn-outline !bg-[var(--green-primary)] !text-white !border-[var(--green-primary)] px-4 py-2 text-sm !rounded-full listen-btn" data-audio-url="URL_AUDIO_ANDA_UNTUK_PEMERIKSAAN_UMUM.mp3"
             >
               Dengarkan
             </button>
           </div>
           <div class="card service">
             <div
-              class="w-12 h-12 flex items-center justify-center bg-green-100 text-green-700 rounded-xl mb-4 text-2xl"
-            >
+              class="w-12 h-12 flex items-center justify-center bg-[var(--green-soft)] text-[var(--green-dark)] rounded-xl mb-4 text-2xl" >
               🤱
             </div>
             <h3 class="font-bold text-xl mb-2">Kesehatan Ibu & Anak (KIA)</h3>
@@ -423,16 +407,14 @@
               pelayanan 07.00 – 17.00 WIB.
             </p>
             <button
-              class="btn btn-outline !bg-green-700 !text-white !border-green-700 px-4 py-2 text-sm !rounded-full listen-btn"
-              data-audio-url="URL_AUDIO_ANDA_UNTUK_KIA.mp3"
+              class="btn btn-outline !bg-[var(--green-primary)] !text-white !border-[var(--green-primary)] px-4 py-2 text-sm !rounded-full listen-btn" data-audio-url="URL_AUDIO_ANDA_UNTUK_KIA.mp3"
             >
               Dengarkan
             </button>
           </div>
           <div class="card service">
             <div
-              class="w-12 h-12 flex items-center justify-center bg-green-100 text-green-700 rounded-xl mb-4 text-2xl"
-            >
+              class="w-12 h-12 flex items-center justify-center bg-[var(--green-soft)] text-[var(--green-dark)] rounded-xl mb-4 text-2xl" >
               👶
             </div>
             <h3 class="font-bold text-xl mb-2">Persalinan 24 Jam</h3>
@@ -441,16 +423,14 @@
               bidan berpengalaman.
             </p>
             <button
-              class="btn btn-outline !bg-green-700 !text-white !border-green-700 px-4 py-2 text-sm !rounded-full listen-btn"
-              data-audio-url="URL_AUDIO_ANDA_UNTUK_PERSALINAN.mpil"
+              class="btn btn-outline !bg-[var(--green-primary)] !text-white !border-[var(--green-primary)] px-4 py-2 text-sm !rounded-full listen-btn" data-audio-url="URL_AUDIO_ANDA_UNTUK_PERSALINAN.mpil"
             >
               Dengarkan
             </button>
           </div>
           <div class="card service">
             <div
-              class="w-12 h-12 flex items-center justify-center bg-green-100 text-green-700 rounded-xl mb-4 text-2xl"
-            >
+              class="w-12 h-12 flex items-center justify-center bg-[var(--green-soft)] text-[var(--green-dark)] rounded-xl mb-4 text-2xl" >
               🚑
             </div>
             <h3 class="font-bold text-xl mb-2">UGD & Rawat Inap 24 Jam</h3>
@@ -459,16 +439,14 @@
               penuh waktu.
             </p>
             <button
-              class="btn btn-outline !bg-green-700 !text-white !border-green-700 px-4 py-2 text-sm !rounded-full listen-btn"
-              data-audio-url="URL_AUDIO_ANDA_UNTUK_UGD.mp3"
+              class="btn btn-outline !bg-[var(--green-primary)] !text-white !border-[var(--green-primary)] px-4 py-2 text-sm !rounded-full listen-btn" data-audio-url="URL_AUDIO_ANDA_UNTUK_UGD.mp3"
             >
               Dengarkan
             </button>
           </div>
           <div class="card service">
             <div
-              class="w-12 h-12 flex items-center justify-center bg-green-100 text-green-700 rounded-xl mb-4 text-2xl"
-            >
+              class="w-12 h-12 flex items-center justify-center bg-[var(--green-soft)] text-[var(--green-dark)] rounded-xl mb-4 text-2xl" >
               🧪
             </div>
             <h3 class="font-bold text-xl mb-2">Laboratorium</h3>
@@ -477,16 +455,14 @@
               urin.
             </p>
             <button
-              class="btn btn-outline !bg-green-700 !text-white !border-green-700 px-4 py-2 text-sm !rounded-full listen-btn"
-              data-audio-url="URL_AUDIO_ANDA_UNTUK_LABORATORIUM.mp3"
+              class="btn btn-outline !bg-[var(--green-primary)] !text-white !border-[var(--green-primary)] px-4 py-2 text-sm !rounded-full listen-btn" data-audio-url="URL_AUDIO_ANDA_UNTUK_LABORATORIUM.mp3"
             >
               Dengarkan
             </button>
           </div>
           <div class="card service">
             <div
-              class="w-12 h-12 flex items-center justify-center bg-green-100 text-green-700 rounded-xl mb-4 text-2xl"
-            >
+              class="w-12 h-12 flex items-center justify-center bg-[var(--green-soft)] text-[var(--green-dark)] rounded-xl mb-4 text-2xl" >
               💊
             </div>
             <h3 class="font-bold text-xl mb-2">Apotek</h3>
@@ -495,8 +471,7 @@
               resep dokter.
             </p>
             <button
-              class="btn btn-outline !bg-green-700 !text-white !border-green-700 px-4 py-2 text-sm !rounded-full listen-btn"
-              data-audio-url="URL_AUDIO_ANDA_UNTUK_APOTEK.mp3"
+              class="btn btn-outline !bg-[var(--green-primary)] !text-white !border-[var(--green-primary)] px-4 py-2 text-sm !rounded-full listen-btn" data-audio-url="URL_AUDIO_ANDA_UNTUK_APOTEK.mp3"
             >
               Dengarkan
             </button>
@@ -513,8 +488,7 @@
         </p>
         <div class="grid md:grid-cols-2 gap-8">
           <div class="card p-6">
-            <h3 class="font-bold text-xl text-green-700 mb-2">
-              Konsultasi Gejala & Saran Mandiri ✨
+            <h3 class="font-bold text-xl text-[var(--green-dark)] mb-2"> Konsultasi Gejala & Saran Mandiri ✨
             </h3>
             <p class="text-sm text-red-500 font-medium mb-4">
               **DISCLAIMER:** Informasi ini hanyalah saran awal dan bukan pengganti
@@ -537,12 +511,10 @@
                 id="user-input"
                 type="text"
                 placeholder="Misalnya: 'Sakit tenggorokan, demam ringan' atau 'Tips menjaga kesehatan ibu hamil'"
-                class="flex-grow p-3 rounded-xl border border-gray-300 focus:ring-green-500 focus:border-green-500 outline-none transition-colors"
-              />
+                class="flex-grow p-3 rounded-xl border border-gray-300 focus:ring-[var(--green-primary)] focus:border-[var(--green-primary)] outline-none transition-colors" />
               <button
                 id="send-btn"
-                class="bg-green-700 text-white p-3 rounded-xl hover:bg-green-800 transition-colors"
-              >
+                class="bg-[var(--green-primary)] text-white p-3 rounded-xl hover:bg-[var(--green-dark)] transition-colors" >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="h-6 w-6"
@@ -562,8 +534,7 @@
           </div>
           <div class="card p-6 flex flex-col justify-between">
             <div>
-              <h3 class="font-bold text-xl text-green-700 mb-2">
-                Tips Sehat Harian ☀️
+              <h3 class="font-bold text-xl text-[var(--green-dark)] mb-2"> Tips Sehat Harian ☀️
               </h3>
               <p class="text-sm text-gray-500 mb-4">
                 Dapatkan tips kesehatan sederhana yang mudah diterapkan sehari-hari.
@@ -594,8 +565,7 @@
           />
         </div>
         <div class="flex-grow text-center md:text-left">
-          <h3 class="text-2xl font-bold text-green-700 mb-1">
-            Kerja Sama BPJS Kesehatan
+          <h3 class="text-2xl font-bold text-[var(--green-dark)] mb-1"> Kerja Sama BPJS Kesehatan
           </h3>
           <p class="text-gray-600">
             Peserta JKN-KIS dapat berobat di Klinik Girimukti Medical Center
@@ -640,20 +610,17 @@
       <div class="container mx-auto px-4">
         <div class="grid lg:grid-cols-2 gap-8">
           <div>
-            <h2 class="text-3xl font-bold text-green-700 mb-4">Hubungi Kami</h2>
-            <p class="text-lg text-gray-600 mb-6">
+            <h2 class="text-3xl font-bold text-[var(--green-dark)] mb-4">Hubungi Kami</h2> <p class="text-lg text-gray-600 mb-6">
               Untuk pendaftaran, informasi layanan, atau pertanyaan lainnya,
               silakan hubungi kami.
             </p>
             <div class="card p-6">
-              <h3 class="text-xl font-bold text-green-700 mb-4">
-                Detail Kontak
+              <h3 class="text-xl font-bold text-[var(--green-dark)] mb-4"> Detail Kontak
               </h3>
               <ul class="space-y-4 text-gray-700">
                 <li class="flex items-start gap-3">
                   <svg
-                    class="w-6 h-6 text-green-500"
-                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-6 h-6 text-[var(--green-primary)]" xmlns="http://www.w3.org/2000/svg"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
@@ -669,8 +636,7 @@
                 </li>
                 <li class="flex items-center gap-3">
                   <svg
-                    class="w-6 h-6 text-green-500"
-                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-6 h-6 text-[var(--green-primary)]" xmlns="http://www.w3.org/2000/svg"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
@@ -680,15 +646,13 @@
                   </svg>
                   <div class="text-gray-600">
                     <strong class="font-medium block">Telepon/WA:</strong>
-                    <a href="tel:085223128163" class="text-green-600 hover:underline"
-                      >0852 2312 8163</a
+                    <a href="tel:085223128163" class="text-[var(--green-dark)] hover:underline" >0852 2312 8163</a
                     >
                   </div>
                 </li>
                 <li class="flex items-center gap-3">
                   <svg
-                    class="w-6 h-6 text-green-500"
-                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-6 h-6 text-[var(--green-primary)]" xmlns="http://www.w3.org/2000/svg"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
@@ -700,8 +664,7 @@
                     <strong class="font-medium block">Email:</strong>
                     <a
                       href="mailto:klinik.gmc.01@gmail.com"
-                      class="text-green-600 hover:underline"
-                      >klinik.gmc.01@gmail.com</a
+                      class="text-[var(--green-dark)] hover:underline" >klinik.gmc.01@gmail.com</a
                     >
                   </div>
                 </li>
@@ -709,8 +672,7 @@
             </div>
           </div>
           <div>
-            <h3 class="text-xl font-bold text-green-700 mb-4">Lokasi Kami</h3>
-            <div class="card h-80 overflow-hidden">
+            <h3 class="text-xl font-bold text-[var(--green-dark)] mb-4">Lokasi Kami</h3> <div class="card h-80 overflow-hidden">
               <iframe
                 src="https://maps.google.com/maps?q=Klinik%20Girimukti%20Medical%20Center%20Garut&t=&z=13&ie=UTF8&iwloc=&output=embed"
                 width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
@@ -721,8 +683,7 @@
         </div>
       </div>
     </section>
-    <footer class="bg-green-800 text-green-200 py-6 text-center">
-      <div class="container mx-auto px-4">
+    <footer class="bg-[var(--green-dark)] text-green-200 py-6 text-center"> <div class="container mx-auto px-4">
         <small
           >© 2025 Klinik Girimukti Medical Center — Yayasan Insan Medika
           Cendikia Garut.</small
@@ -791,7 +752,8 @@
         
         const messageBubble = document.createElement('p');
         messageBubble.classList.add('px-4', 'py-2', 'rounded-xl', 'text-sm');
-        messageBubble.classList.add(sender === 'user' ? 'bg-green-600' : 'bg-green-200');
+        // Menggunakan warna yang diperbarui untuk gelembung chat
+        messageBubble.classList.add(sender === 'user' ? 'bg-[var(--green-primary)]' : 'bg-[var(--green-soft)]');
         messageBubble.classList.add(sender === 'user' ? 'text-white' : 'text-gray-800');
         messageBubble.innerText = message;
         
