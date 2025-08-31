@@ -57,6 +57,15 @@
         .section-subtitle {
           @apply text-lg text-center text-gray-500 mb-10;
         }
+        /* Perbaikan untuk chat AI */
+        .chat-message.user p {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        .chat-message.bot p {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+        }
       }
     </style>
 </head>
@@ -66,7 +75,7 @@
         <div class="container mx-auto px-6 py-4 flex items-center justify-between">
             <a href="#" class="flex items-center gap-3">
                 <div class="relative w-14 h-14 flex-shrink-0">
-                    <img src="logogmc.png" alt="Logo Klinik GMC" class="w-full h-full rounded-full object-contain p-1" loading="lazy" />
+                    <img id="logo-image" src="logogmc.png" alt="Logo Klinik GMC" class="w-full h-full rounded-full object-contain p-1" loading="lazy" onerror="this.src='logogmc.png'" />
                 </div>
                 <div class="flex flex-col leading-tight">
                     <small class="text-xs text-gray-500 font-medium tracking-wide">Yayasan Insan Medika</small>
@@ -323,7 +332,7 @@
             <h2 class="section-title">Video Edukasi</h2>
             <p class="section-subtitle">Tonton video panduan pendaftaran antrean BPJS Kesehatan via Mobile JKN.</p>
             <div class="card p-8">
-                <video class="w-full h-auto rounded-xl shadow-xl shadow-gray-300" controls autoplay muted loop playsinline>
+                <video class="w-full h-auto rounded-xl shadow-xl shadow-gray-300" controls loop>
                     <source src="video_edukasi_bpjs_kesehatan.mp4" type="video/mp4" />
                     Browser Anda tidak mendukung tag video.
                 </video>
@@ -368,7 +377,10 @@
                 <div>
                     <h3 class="text-3xl font-bold text-primary-color mb-4">Lokasi Kami</h3>
                     <div class="card h-96 overflow-hidden">
-                        <iframe src="https://maps.google.com/maps?q=Klinik%20Girimukti%20Medical%20Center%20Garut&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.568305788481!2d107.82281897463518!3d-7.288285971638294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68b12f6d2f3b97%3A0xc6c4f74d001e38c9!2sKlinik%20Girimukti%20Medical%20Center!5e0!3m2!1sid!2sid!4v1725026939987!5m2!1sid!2sid"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
                     </div>
                 </div>
             </div>
