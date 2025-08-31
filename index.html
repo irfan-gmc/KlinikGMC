@@ -141,13 +141,13 @@
             transform: translateY(-5px);
         }
 
-        /* Map iframe shadow and glow */
-        iframe {
-            @apply shadow-xl rounded-xl transition-all duration-300 ease-in-out;
+        /* Testimonial card */
+        .testimonial-card {
+          @apply bg-white p-6 rounded-2xl shadow-lg flex flex-col items-center text-center;
         }
-        iframe:hover {
-            box-shadow: 0 0 25px rgba(52, 211, 153, 0.7);
-            transform: translateY(-5px);
+
+        .testimonial-avatar {
+            @apply w-16 h-16 rounded-full mb-4;
         }
       }
     </style>
@@ -676,20 +676,59 @@
               </ul>
             </div>
           </div>
-          <div>
-            <h3 class="text-xl font-bold text-[var(--color-text-dark)] mb-4">
-              <i class="fa-solid fa-map-location-dot icon-sm-inline"></i> Lokasi Kami
+          <div class="flex flex-col gap-8">
+            <h3 class="text-xl font-bold text-[var(--color-text-dark)] mb-4 lg:mb-0">
+                <i class="fa-solid fa-star-half-stroke icon-sm-inline"></i> Apa Kata Pasien Kami?
             </h3>
-            <div class="card h-80 overflow-hidden p-0 border border-gray-200">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15830.430030514125!2d107.88729579999999!3d-7.42220975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e624c9c2d1b0d2d%3A0x7a8c3d9e0b1f0b1a!2sKlinik%20Pratama%20Girimukti%20Medical%20Center%20(GMC)!5e0!3m2!1sen!2sid!4v1717650645068!5m2!1sen!2sid"
-                width="100%"
-                height="100%"
-                style="border: 0"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-              ></iframe>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="testimonial-card">
+                    <img src="https://via.placeholder.com/150/d1fae5/10b981?text=A" alt="Avatar Asep" class="testimonial-avatar interactive-shadow">
+                    <div class="text-yellow-400 mb-2">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-sm italic text-gray-600 mb-3">"Pelayanan di sini cepat dan ramah. Dokter dan perawatnya sangat profesional. Recommended!"</p>
+                    <span class="font-semibold text-sm text-[var(--color-primary-dark)]">— Cecep, Pasien Poli Umum</span>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://via.placeholder.com/150/d1fae5/10b981?text=U" alt="Avatar Ujang" class="testimonial-avatar interactive-shadow">
+                    <div class="text-yellow-400 mb-2">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <p class="text-sm italic text-gray-600 mb-3">"Fasilitasnya bersih, nyaman banget. Saya jadi tidak khawatir saat harus rawat inap di sini. Terima kasih!"</p>
+                    <span class="font-semibold text-sm text-[var(--color-primary-dark)]">— Ujang, Pasien Rawat Inap</span>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://via.placeholder.com/150/d1fae5/10b981?text=E" alt="Avatar Euis" class="testimonial-avatar interactive-shadow">
+                    <div class="text-yellow-400 mb-2">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-sm italic text-gray-600 mb-3">"Sangat membantu saat persalinan anak pertama saya. Bidan dan dokternya sigap dan sangat sabar."</p>
+                    <span class="font-semibold text-sm text-[var(--color-primary-dark)]">— Euis, Pasien Persalinan</span>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://via.placeholder.com/150/d1fae5/10b981?text=N" alt="Avatar Neng" class="testimonial-avatar interactive-shadow">
+                    <div class="text-yellow-400 mb-2">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-sm italic text-gray-600 mb-3">"Pelayanan KIA-nya bagus, lengkap, dan informatif. Semua pertanyaan saya dijawab dengan jelas."</p>
+                    <span class="font-semibold text-sm text-[var(--color-primary-dark)]">— Neneng, Pasien KIA</span>
+                </div>
             </div>
           </div>
         </div>
