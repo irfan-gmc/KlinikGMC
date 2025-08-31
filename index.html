@@ -60,8 +60,8 @@
           @apply bg-white p-8 rounded-3xl shadow-xl transition-all duration-300 ease-in-out;
         }
         .card:hover {
-          box-shadow: 0 0 20px rgba(52, 211, 153, 0.6); /* Even glow on all sides */
-          transform: translateY(-3px); /* Slight lift effect on hover */
+          box-shadow: 0 0 25px rgba(52, 211, 153, 0.7);
+          transform: translateY(-5px);
         }
         .section-title {
           @apply text-4xl font-bold text-center text-gray-800 mb-4;
@@ -100,51 +100,54 @@
           background-color: var(--color-primary-light);
         }
 
-        /* New styles for consistent shadow and hover effects */
-        .shadow-on-hover {
-            @apply shadow-md transition-all duration-300 ease-in-out;
+        /* Styles for all interactive elements to have a consistent shadow/glow effect */
+        .interactive-shadow {
+          @apply shadow-lg transition-all duration-300 ease-in-out;
         }
-        .shadow-on-hover:hover {
-            box-shadow: 0 0 15px rgba(52, 211, 153, 0.5); /* Lighter glow for smaller elements */
-            transform: translateY(-2px);
+        .interactive-shadow:hover {
+          box-shadow: 0 0 20px rgba(52, 211, 153, 0.6);
+          transform: translateY(-3px);
+        }
+        .interactive-shadow:focus {
+          box-shadow: 0 0 20px rgba(52, 211, 153, 0.6);
+          outline: none;
         }
 
-        /* Specific adjustments for input and button */
+        /* Applying the new class to specific elements */
         #user-input {
-            @apply shadow-on-hover focus:ring-2 focus:ring-[var(--color-primary-light)] focus:border-transparent;
-        }
-        #send-btn {
-            @apply shadow-on-hover;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Initial subtle shadow for button */
-        }
-        #send-btn:hover {
-             box-shadow: 0 0 15px rgba(52, 211, 153, 0.5); /* Glow for send button */
+          @apply interactive-shadow;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+          @apply focus:ring-2 focus:ring-[var(--color-primary-light)] focus:border-transparent;
         }
 
-        #get-tip-btn {
-            @apply shadow-on-hover;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Initial subtle shadow for button */
-        }
-        #get-tip-btn:hover {
-            box-shadow: 0 0 15px rgba(52, 211, 153, 0.5); /* Glow for get tip button */
+        #send-btn, #get-tip-btn {
+          @apply interactive-shadow;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
 
-        /* Video element shadow */
+        #chat-window {
+            @apply card; /* Revert to using card class for full glow */
+        }
+        #daily-tip {
+            @apply card; /* Revert to using card class for full glow */
+        }
+
+        /* Video element shadow and glow */
         video {
-            @apply shadow-xl transition-all duration-300 ease-in-out;
+            @apply shadow-xl rounded-xl transition-all duration-300 ease-in-out;
         }
         video:hover {
-            box-shadow: 0 0 20px rgba(52, 211, 153, 0.6);
-            transform: translateY(-3px);
+            box-shadow: 0 0 25px rgba(52, 211, 153, 0.7);
+            transform: translateY(-5px);
         }
 
-        /* Map iframe shadow */
+        /* Map iframe shadow and glow */
         iframe {
-            @apply shadow-xl transition-all duration-300 ease-in-out;
+            @apply shadow-xl rounded-xl transition-all duration-300 ease-in-out;
         }
         iframe:hover {
-            box-shadow: 0 0 20px rgba(52, 211, 153, 0.6);
-            transform: translateY(-3px);
+            box-shadow: 0 0 25px rgba(52, 211, 153, 0.7);
+            transform: translateY(-5px);
         }
       }
     </style>
@@ -523,7 +526,7 @@
             </p>
             <div
               id="chat-window"
-              class="border border-gray-200 rounded-xl p-4 h-64 overflow-y-auto mb-4 bg-gray-50 flex flex-col-reverse shadow-on-hover"
+              class="card p-4 h-64 overflow-y-auto mb-4 bg-gray-50 flex flex-col-reverse"
             >
               <div class="chat-message bot">
                 <p class="text-sm text-gray-700">
@@ -536,7 +539,7 @@
                 id="user-input"
                 type="text"
                 placeholder="Misalnya: 'Sakit tenggorokan, demam ringan' atau 'Tips menjaga kesehatan ibu hamil'"
-                class="flex-grow p-3 rounded-xl border border-gray-300 outline-none transition-colors"
+                class="flex-grow p-3 rounded-xl border border-gray-300 outline-none"
               />
               <button
                 id="send-btn"
@@ -556,7 +559,7 @@
               </p>
               <div
                 id="daily-tip"
-                class="min-h-[220px] flex items-center justify-center p-4 text-center text-gray-500 bg-gray-50 rounded-xl border border-dashed border-gray-300 shadow-on-hover"
+                class="card min-h-[220px] flex items-center justify-center p-4 text-center text-gray-500 bg-gray-50 border border-dashed border-gray-300"
               >
                 <p>Klik tombol di bawah untuk mendapatkan tips sehat hari ini! 🍀</p>
               </div>
