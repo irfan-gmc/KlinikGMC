@@ -124,19 +124,19 @@
         }
 
         #chat-window {
-            @apply card; /* Revert to using card class for full glow */
+          @apply card; /* Revert to using card class for full glow */
         }
         #daily-tip {
-            @apply card; /* Revert to using card class for full glow */
+          @apply card; /* Revert to using card class for full glow */
         }
 
         /* Video element shadow and glow */
         video {
-            @apply shadow-xl rounded-xl transition-all duration-300 ease-in-out;
+          @apply shadow-xl rounded-xl transition-all duration-300 ease-in-out;
         }
         video:hover {
-            box-shadow: 0 0 25px rgba(52, 211, 153, 0.7);
-            transform: translateY(-5px);
+          box-shadow: 0 0 25px rgba(52, 211, 153, 0.7);
+          transform: translateY(-5px);
         }
 
         /* Testimonial card */
@@ -145,7 +145,7 @@
         }
 
         .testimonial-avatar {
-            @apply w-16 h-16 rounded-full mb-4;
+          @apply w-16 h-16 rounded-full mb-4;
         }
       }
     </style>
@@ -697,10 +697,10 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star-half-stroke"></i>
+                        <i class="fa-solid fa-star"></i>
                     </div>
-                    <p class="text-sm italic text-gray-600 mb-3">"Bidan di sini sangat teliti dan sabar saat membantu proses persalinan saya. Fasilitasnya juga bersih."</p>
-                    <span class="font-semibold text-sm text-[var(--color-primary-dark)]">— Ujang, Pasien Persalinan</span>
+                    <p class="text-sm italic text-gray-600 mb-3">"Kliniknya bersih dan nyaman. Petugasnya informatif dan membantu. Terima kasih GMC!"</p>
+                    <span class="font-semibold text-sm text-[var(--color-primary-dark)]">— Ujang, Pasien KIA</span>
                 </div>
             </div>
           </div>
@@ -708,135 +708,68 @@
       </div>
     </section>
 
-    <footer class="bg-[var(--color-primary-dark)] py-12 text-white">
-      <div class="container mx-auto px-4 text-center">
-        <div class="flex flex-col items-center mb-6">
-          <a href="#" class="flex items-center gap-3 mb-4">
-            <img src="logogmc.png" alt="Logo Klinik GMC" class="w-10 h-10 rounded-md object-contain p-1 bg-white" loading="lazy">
-            <div class="flex flex-col leading-tight text-white">
-              <strong class="text-sm font-bold">Klinik Pratama</strong>
-              <strong class="text-lg">Girimukti Medical Center</strong>
+    <footer class="bg-[var(--color-primary-light)] text-white py-12 md:py-16">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+          <div>
+            <h4 class="text-lg font-bold mb-4">Klinik Pratama Girimukti Medical Center</h4>
+            <p class="text-sm text-white/90 mb-4">Layanan kesehatan terpercaya untuk keluarga di Garut dan sekitarnya.</p>
+            <div class="flex gap-4 text-xl">
+                <a href="https://www.facebook.com/" target="_blank" class="hover:text-white/80 transition-colors"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/" target="_blank" class="hover:text-white/80 transition-colors"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/6285223128163" target="_blank" class="hover:text-white/80 transition-colors"><i class="fab fa-whatsapp"></i></a>
             </div>
-          </a>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-bold mb-4">Layanan</h4>
+            <ul class="space-y-2 text-sm text-white/90">
+              <li>Poli Umum</li>
+              <li>Kesehatan Ibu & Anak (KIA)</li>
+              <li>Persalinan</li>
+              <li>UGD & Rawat Inap</li>
+              <li>Laboratorium</li>
+              <li>Instalasi Apotek</li>
+              <li>Khitan</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-bold mb-4">Kontak</h4>
+            <ul class="space-y-2 text-sm text-white/90">
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-location-dot mt-1"></i>
+                <span>Jl. Raya Cikadu, RT 001, RW 003, Desa Girimukti, Kec. Singajaya, Kab. Garut (44173)</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-phone"></i>
+                <a href="tel:085223128163" class="hover:underline">0852 2312 8163</a>
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-envelope"></i>
+                <a href="mailto:klinik.gmc.01@gmail.com" class="hover:underline">klinik.gmc.01@gmail.com</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-bold mb-4">Jam Operasional</h4>
+            <ul class="space-y-2 text-sm text-white/90">
+              <li>Rawat Jalan: 24 Jam</li>
+              <li>Rawat Inap: 24 Jam</li>
+              <li>UGD: 24 Jam</li>
+              <li>Persalinan: 24 Jam</li>
+              <li>KIA: 07.00 - 17.00 WIB</li>
+              <li>Khitan: On Call</li>
+            </ul>
+          </div>
         </div>
-        <div class="flex justify-center gap-6 mb-6 text-xl">
-          <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="text-white/80 hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="text-white/80 hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
-          <a href="https://wa.me/6285223128163" target="_blank" rel="noopener" class="text-white/80 hover:text-white transition-colors"><i class="fab fa-whatsapp"></i></a>
-        </div>
-        <p class="text-sm text-white/70">© 2024 Klinik Girimukti Medical Center. All rights reserved.</p>
-        <p class="text-sm text-white/50 mt-1">Dibuat dengan ❤️ oleh Tim Dev GMC</p>
+      </div>
+      
+      <div class="border-t border-white/20 mt-8 pt-8 text-center text-sm text-white/70">
+        © 2023 Klinik Girimukti Medical Center. All rights reserved. Dibuat dengan ❤️ oleh Tim Dev GMC
       </div>
     </footer>
-
-    <script>
-      // JavaScript untuk mobile menu
-      const menuBtn = document.getElementById('menu-btn');
-      const mobileNav = document.getElementById('mobile-nav');
-
-      menuBtn.addEventListener('click', () => {
-        mobileNav.classList.toggle('hidden');
-      });
-
-      // JavaScript untuk fitur AI Chat
-      const chatWindow = document.getElementById('chat-window');
-      const userInput = document.getElementById('user-input');
-      const sendBtn = document.getElementById('send-btn');
-      const getTipBtn = document.getElementById('get-tip-btn');
-      const dailyTip = document.getElementById('daily-tip');
-
-      function addMessage(text, sender) {
-        const messageDiv = document.createElement('div');
-        messageDiv.classList.add('chat-message', sender);
-        const p = document.createElement('p');
-        p.textContent = text;
-        messageDiv.appendChild(p);
-        chatWindow.prepend(messageDiv);
-      }
-
-      function handleSendMessage() {
-        const message = userInput.value.trim();
-        if (message) {
-          addMessage(message, 'user');
-          userInput.value = '';
-
-          // Simulasi respons AI
-          setTimeout(() => {
-            let botResponse = "Mohon maaf, saat ini fitur konsultasi AI sedang dalam pengembangan. Untuk konsultasi medis, silakan hubungi admin kami melalui WhatsApp di 0852 2312 8163. Terima kasih.";
-            if (message.toLowerCase().includes('sakit tenggorokan') || message.toLowerCase().includes('demam')) {
-              botResponse = "Berdasarkan gejala sakit tenggorokan dan demam ringan, kemungkinan Anda mengalami infeksi virus atau bakteri. Istirahat yang cukup dan perbanyak minum air putih sangat disarankan. Jika gejala tidak membaik dalam 3 hari, atau demam semakin tinggi, segera periksakan diri ke dokter di klinik kami untuk diagnosis dan pengobatan yang tepat.";
-            } else if (message.toLowerCase().includes('ibu hamil')) {
-              botResponse = "Untuk ibu hamil, pastikan asupan nutrisi seimbang, termasuk asam folat dan zat besi. Rutin melakukan pemeriksaan kehamilan (ANC) sangat penting untuk memantau kesehatan ibu dan janin. Kami menyediakan layanan KIA untuk pemeriksaan rutin. Silakan daftar melalui WhatsApp untuk jadwal kunjungan.";
-            } else if (message.toLowerCase().includes('layanan')) {
-                botResponse = "Klinik Girimukti Medical Center menyediakan layanan Poli Umum, KIA, Persalinan 24 Jam, UGD, Laboratorium, dan Apotek. Anda bisa mendapatkan informasi lebih lengkap di bagian 'Layanan Kami' di halaman ini.";
-            }
-
-            addMessage(botResponse, 'bot');
-          }, 1000);
-        }
-      }
-
-      userInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-          handleSendMessage();
-        }
-      });
-      sendBtn.addEventListener('click', handleSendMessage);
-
-      // JavaScript untuk Daily Tip
-      const healthTips = [
-        "Minum setidaknya 8 gelas air per hari untuk menjaga tubuh tetap terhidrasi.",
-        "Biasakan mencuci tangan dengan sabun sebelum makan dan setelah beraktivitas.",
-        "Tidur cukup 7-8 jam setiap malam untuk memulihkan energi tubuh.",
-        "Konsumsi buah dan sayuran berwarna-warni untuk memenuhi kebutuhan vitamin dan mineral.",
-        "Lakukan aktivitas fisik ringan, seperti berjalan kaki, setidaknya 30 menit setiap hari."
-      ];
-
-      getTipBtn.addEventListener('click', () => {
-        const randomIndex = Math.floor(Math.random() * healthTips.length);
-        dailyTip.innerHTML = `<p class="font-medium text-gray-700">${healthTips[randomIndex]}</p>`;
-      });
-
-      // JavaScript untuk Audio
-      let currentAudio = null;
-      const listenButtons = document.querySelectorAll('.listen-btn');
-
-      listenButtons.forEach(button => {
-        button.addEventListener('click', () => {
-          const audioUrl = button.dataset.audioUrl;
-
-          // Hentikan audio yang sedang diputar
-          if (currentAudio) {
-            currentAudio.pause();
-            currentAudio.currentTime = 0;
-            const playingButton = document.querySelector('.listen-btn.playing');
-            if (playingButton) {
-              playingButton.innerHTML = `<i class="fa-solid fa-circle-play mr-2"></i> Dengarkan`;
-              playingButton.classList.remove('playing');
-            }
-          }
-
-          if (button.classList.contains('playing')) {
-            // Jika audio sudah dimainkan, hentikan
-            button.innerHTML = `<i class="fa-solid fa-circle-play mr-2"></i> Dengarkan`;
-            button.classList.remove('playing');
-            currentAudio = null;
-          } else {
-            // Jika audio belum dimainkan, mulai putar
-            const audio = new Audio(audioUrl);
-            audio.play();
-            button.innerHTML = `<i class="fa-solid fa-circle-stop mr-2"></i> Hentikan`;
-            button.classList.add('playing');
-            currentAudio = audio;
-
-            audio.onended = () => {
-              button.innerHTML = `<i class="fa-solid fa-circle-play mr-2"></i> Dengarkan`;
-              button.classList.remove('playing');
-              currentAudio = null;
-            };
-          }
-        });
-      });
-    </script>
+    
   </body>
 </html>
