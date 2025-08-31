@@ -35,7 +35,21 @@
           color: var(--text-dark);
           background-color: var(--bg-light);
         }
+        
+        /* Tambahan untuk memperbaiki logo */
+        .header-logo-container {
+            width: 3.5rem; /* 56px */
+            height: 3.5rem; /* 56px */
+            flex-shrink: 0;
+            position: relative;
+        }
 
+        #logo-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
         .btn {
           @apply inline-flex items-center justify-center rounded-full font-semibold px-8 py-3 transition-transform duration-300 ease-in-out hover:scale-105;
         }
@@ -57,9 +71,10 @@
         .section-subtitle {
           @apply text-lg text-center text-gray-500 mb-10;
         }
+        
         /* Perbaikan untuk chat AI */
         #chat-window {
-          @apply flex flex-col-reverse; /* Perbaikan: Menggunakan flex untuk tampilan chat */
+          @apply flex flex-col-reverse;
         }
         .chat-message.user p {
             background-color: var(--primary-color);
@@ -77,8 +92,8 @@
     <header class="sticky top-0 z-40 bg-white/95 backdrop-blur shadow-md">
         <div class="container mx-auto px-6 py-4 flex items-center justify-between">
             <a href="#" class="flex items-center gap-3">
-                <div class="relative w-14 h-14 flex-shrink-0">
-                    <img id="logo-image" src="logogmc.png" alt="Logo Klinik GMC" class="w-full h-full rounded-full object-contain p-1" loading="lazy" onerror="this.src='logogmc.png'" />
+                <div class="header-logo-container">
+                    <img id="logo-image" src="logogmc.png" alt="Logo Klinik GMC" class="rounded-full object-contain p-1" loading="lazy" onerror="this.src='logogmc.png'" />
                 </div>
                 <div class="flex flex-col leading-tight">
                     <small class="text-xs text-gray-500 font-medium tracking-wide">Yayasan Insan Medika</small>
@@ -381,7 +396,7 @@
                     <h3 class="text-3xl font-bold text-primary-color mb-4">Lokasi Kami</h3>
                     <div class="card h-96 overflow-hidden">
                          <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.5587786962314!2d107.82851497479496!3d-7.291771192711094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6628b746c21e61%3A0x6b847895e69e4695!2sKlinik%20Girimukti%20Medical%20Center!5e0!3m2!1sen!2sid!4v1716300435132!5m2!1sen!2sid" 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.558362624538!2d107.50858107503837!3d-7.29176379274213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68c92b2d0b5035%3A0xe543501a4034b073!2sKlinik%20Girimukti%20Medical%20Center!5e0!3m2!1sen!2sid!4v1725091724458!5m2!1sen!2sid" 
                             width="100%" 
                             height="100%" 
                             style="border:0;" 
