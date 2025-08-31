@@ -424,7 +424,8 @@
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           <div class="card service">
             <div class="icon-lg-card">
-              <i class="fa-solid fa-stethoscope"></i> </div>
+              <i class="fa-solid fa-stethoscope"></i>
+            </div>
             <h3 class="font-bold text-xl mb-2">Poli Umum</h3>
             <p class="text-[var(--color-text-light)] mb-4">
               Konsultasi keluhan kesehatan, pemeriksaan fisik, dan pengobatan dasar.
@@ -438,7 +439,8 @@
           </div>
           <div class="card service">
             <div class="icon-lg-card">
-              <i class="fa-solid fa-baby-carriage"></i> </div>
+              <i class="fa-solid fa-baby-carriage"></i>
+            </div>
             <h3 class="font-bold text-xl mb-2">Kesehatan Ibu & Anak (KIA)</h3>
             <p class="text-[var(--color-text-light)] mb-4">
               Pemeriksaan kehamilan (ANC) dan edukasi kesehatan ibu & bayi. Jam pelayanan 07.00 – 17.00 WIB.
@@ -452,7 +454,8 @@
           </div>
           <div class="card service">
             <div class="icon-lg-card">
-              <i class="fa-solid fa-hand-holding-heart"></i> </div>
+              <i class="fa-solid fa-hand-holding-heart"></i>
+            </div>
             <h3 class="font-bold text-xl mb-2">Persalinan 24 Jam</h3>
             <p class="text-[var(--color-text-light)] mb-4">
               Layanan persalinan normal dan perawatan pasca melahirkan dengan bidan berpengalaman.
@@ -466,7 +469,8 @@
           </div>
           <div class="card service">
             <div class="icon-lg-card">
-              <i class="fa-solid fa-hospital-alt"></i> </div>
+              <i class="fa-solid fa-hospital-alt"></i>
+            </div>
             <h3 class="font-bold text-xl mb-2">UGD & Rawat Inap 24 Jam</h3>
             <p class="text-[var(--color-text-light)] mb-4">
               Penanganan kasus gawat darurat medis, observasi, dan perawatan penuh waktu.
@@ -480,7 +484,8 @@
           </div>
           <div class="card service">
             <div class="icon-lg-card">
-              <i class="fa-solid fa-microscope"></i> </div>
+              <i class="fa-solid fa-microscope"></i>
+            </div>
             <h3 class="font-bold text-xl mb-2">Laboratorium</h3>
             <p class="text-[var(--color-text-light)] mb-4">
               Pemeriksaan penunjang seperti hematologi, kimia klinik, dan tes urin.
@@ -494,7 +499,8 @@
           </div>
           <div class="card service">
             <div class="icon-lg-card">
-              <i class="fa-solid fa-prescription-bottle-alt"></i> </div>
+              <i class="fa-solid fa-prescription-bottle-alt"></i>
+            </div>
             <h3 class="font-bold text-xl mb-2">Apotek</h3>
             <p class="text-[var(--color-text-light)] mb-4">
               Menyediakan obat-obatan yang aman, terjangkau, dan sesuai dengan resep dokter.
@@ -707,102 +713,6 @@
           mobileNav.classList.toggle('hidden');
         });
       }
-
-      // Fungsionalitas untuk memutar audio
-      const listenButtons = document.querySelectorAll('.listen-btn');
-      const audio = new Audio();
-
-      listenButtons.forEach((button) => {
-        button.addEventListener('click', () => {
-          const audioUrl = button.getAttribute('data-audio-url');
-          if (audioUrl) {
-            if (!audio.paused) {
-              audio.pause();
-              audio.currentTime = 0;
-            }
-
-            audio.src = audioUrl;
-            audio.play();
-          }
-        });
-      });
-
-      // Perubahan: Implementasi fungsionalitas AI
-      const chatWindow = document.getElementById('chat-window');
-      const userInput = document.getElementById('user-input');
-      const sendBtn = document.getElementById('send-btn');
-      const dailyTipElement = document.getElementById('daily-tip');
-      const getTipBtn = document.getElementById('get-tip-btn');
-
-      // Contoh basis data sederhana untuk demo
-      const knowledgeBase = {
-        'sakit tenggorokan': 'Sakit tenggorokan bisa disebabkan oleh infeksi virus. Pastikan Anda minum air hangat, istirahat cukup, dan hindari makanan pedas. Jika demam berlanjut, kami sarankan Anda datang untuk pemeriksaan di Poli Umum.',
-        'demam ringan': 'Demam ringan bisa diatasi dengan istirahat dan banyak minum air putih. Jika demam tidak turun setelah 2-3 hari atau disertai gejala lain, segera periksakan diri ke dokter.',
-        'tips menjaga kesehatan ibu hamil': 'Penting bagi ibu hamil untuk mengonsumsi makanan bergizi seimbang, rutin berolahraga ringan seperti jalan kaki, dan istirahat yang cukup. Jangan lupa periksa kandungan secara rutin di layanan KIA kami.',
-        'pusing': 'Pusing dapat disebabkan oleh kurang tidur, dehidrasi, atau tekanan darah rendah. Cobalah untuk beristirahat dan minum air yang cukup. Jika pusing berlanjut, konsultasikan ke dokter untuk diagnosis lebih lanjut.',
-        'layanan klinik': 'Kami memiliki berbagai layanan kesehatan seperti Poli Umum, KIA, Persalinan 24 Jam, UGD, Laboratorium, dan Apotek.',
-        'bpjs': 'Ya, Klinik Girimukti Medical Center sudah bekerja sama dengan BPJS Kesehatan. Anda bisa menggunakan kartu JKN-KIS untuk mendapatkan layanan kesehatan sesuai prosedur yang berlaku.',
-        'infeksi saluran kemih': 'Infeksi Saluran Kemih (ISK) seringkali disebabkan oleh bakteri. Gejalanya bisa berupa nyeri saat buang air kecil. Pastikan Anda minum banyak air dan tidak menahan buang air kecil. Untuk pengobatan, Anda perlu datang ke klinik untuk mendapatkan resep antibiotik dari dokter.',
-        'masuk angin': 'Masuk angin biasanya disebabkan oleh paparan angin dingin yang lama. Anda bisa mencoba minum teh jahe hangat, kerokan, atau mandi air hangat. Jika kondisi tidak membaik, periksa ke Poli Umum kami.',
-        'imunisasi anak': 'Kami menyediakan layanan imunisasi anak di poli KIA. Jadwal imunisasi disesuaikan dengan program pemerintah. Silakan datang atau hubungi kami untuk informasi lebih lanjut mengenai jadwalnya.',
-      };
-
-      const dailyTips = [
-        'Minumlah air putih setidaknya 8 gelas sehari untuk menjaga hidrasi tubuh.',
-        'Luangkan waktu 30 menit setiap hari untuk berolahraga ringan, seperti jalan kaki atau bersepeda.',
-        'Konsumsi buah dan sayuran berwarna-warni untuk mendapatkan vitamin dan mineral yang lengkap.',
-        'Tidur cukup, 7-8 jam per malam, sangat penting untuk regenerasi sel tubuh dan menjaga kekebalan.',
-        'Cuci tangan Anda secara rutin dengan sabun untuk mencegah penyebaran kuman dan penyakit.',
-        'Hindari stres berlebihan dengan melakukan hobi atau meditasi untuk menjaga kesehatan mental.',
-        'Batasi konsumsi gula, garam, dan lemak jenuh untuk menjaga kesehatan jantung.',
-        'Jaga postur tubuh Anda saat duduk atau berdiri untuk menghindari nyeri punggung.',
-      ];
-
-      function getAiResponse(userMessage) {
-        userMessage = userMessage.toLowerCase().trim();
-        for (const key in knowledgeBase) {
-          if (userMessage.includes(key)) {
-            return knowledgeBase[key];
-          }
-        }
-        return "Maaf, saya belum memiliki informasi spesifik tentang keluhan Anda. Saran terbaik adalah berkonsultasi langsung dengan dokter kami untuk mendapatkan diagnosis yang akurat. Apakah ada pertanyaan lain?";
-      }
-
-      function appendMessage(sender, message) {
-        const messageDiv = document.createElement('div');
-        messageDiv.classList.add('chat-message', sender);
-        const p = document.createElement('p');
-        p.classList.add('text-sm');
-        p.textContent = message;
-        messageDiv.appendChild(p);
-        chatWindow.prepend(messageDiv);
-        chatWindow.scrollTop = chatWindow.scrollHeight;
-      }
-
-      sendBtn.addEventListener('click', () => {
-        const userMessage = userInput.value;
-        if (userMessage.trim() === '') return;
-
-        appendMessage('user', userMessage);
-        userInput.value = '';
-
-        setTimeout(() => {
-          const botResponse = getAiResponse(userMessage);
-          appendMessage('bot', botResponse);
-        }, 500);
-      });
-
-      userInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-          sendBtn.click();
-        }
-      });
-
-      getTipBtn.addEventListener('click', () => {
-        const randomTip = dailyTips[Math.floor(Math.random() * dailyTips.length)];
-        dailyTipElement.innerHTML = `<p class="font-semibold text-gray-800">${randomTip}</p>`;
-      });
-
     </script>
   </body>
 </html>
