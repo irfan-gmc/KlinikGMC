@@ -8,7 +8,7 @@
       name="description"
       content="Klinik Girimukti Medical Center – Layanan kesehatan ramah, cepat, profesional. Sudah bekerjasama dengan BPJS Kesehatan."
     />
-    <meta name="theme-color" content="#15803d" />
+    <meta name="theme-color" content="#34d399" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -29,12 +29,12 @@
     <style type="text/tailwindcss">
       @layer base {
         :root {
-          --color-primary: #0f172a; /* Warna utama, biru keunguan tua */
-          --color-secondary: #0c4a6e; /* Warna sekunder, biru tua */
-          --color-accent: #0077b6; /* Warna aksen, biru cerah */
+          --color-primary-dark: #1f3f37; /* Hijau tua kebiruan */
+          --color-primary-light: #5cb85c; /* Hijau sedang */
+          --color-accent-lime: #a7f3d0; /* Hijau lime cerah */
           --color-text: #334155; /* Abu-abu tua untuk teks */
           --color-bg-light: #f8fafc; /* Latar belakang terang */
-          --color-bg-dark: #0f172a; /* Latar belakang gelap */
+          --color-bg-gray: #e2e8f0; /* Abu-abu untuk background section */
           --color-card: #ffffff; /* Latar belakang kartu */
         }
         html {
@@ -49,28 +49,31 @@
           @apply inline-flex items-center justify-center rounded-full font-semibold px-8 py-3 transition-all duration-300 ease-in-out;
         }
         .btn-primary {
-          @apply bg-blue-600 text-white border-2 border-blue-600 shadow-lg hover:bg-blue-700 hover:border-blue-700;
+          @apply bg-[var(--color-primary-light)] text-white border-2 border-[var(--color-primary-light)] shadow-lg hover:bg-green-600 hover:border-green-600;
         }
         .btn-outline {
-          @apply bg-transparent text-blue-600 border-2 border-blue-600 hover:bg-blue-600 hover:text-white;
+          @apply bg-transparent text-[var(--color-primary-light)] border-2 border-[var(--color-primary-light)] hover:bg-[var(--color-primary-light)] hover:text-white;
         }
         .card {
           @apply bg-white p-8 rounded-3xl shadow-xl transition-transform duration-300 hover:scale-[1.01];
         }
         .section-title {
-          @apply text-4xl font-bold text-center text-gray-800 mb-4;
+          @apply text-4xl font-bold text-center text-[var(--color-primary-dark)] mb-4;
         }
         .section-subtitle {
           @apply text-lg text-center text-gray-500 mb-12;
         }
-        .icon-lg {
-          @apply text-blue-600 w-8 h-8 flex-shrink-0;
+        .icon-sm-inline {
+          @apply text-[var(--color-primary-light)] w-5 h-5 inline-block mr-2 align-middle;
+        }
+        .icon-lg-card {
+            @apply text-[var(--color-primary-light)] w-12 h-12 flex items-center justify-center bg-[var(--color-accent-lime)]/30 rounded-xl mb-4 text-2xl;
         }
         .chat-message.user {
           @apply flex justify-end mb-2;
         }
         .chat-message.user p {
-          @apply bg-blue-500 text-white p-3 rounded-t-xl rounded-bl-xl max-w-xs;
+          @apply bg-[var(--color-primary-light)] text-white p-3 rounded-t-xl rounded-bl-xl max-w-xs;
         }
         .chat-message.bot {
           @apply flex justify-start mb-2;
@@ -81,7 +84,7 @@
       }
     </style>
   </head>
-  <body class="bg-gray-100">
+  <body class="bg-gray-50">
     <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm">
       <div class="container mx-auto px-4 py-3 flex items-center justify-between">
         <a href="#" class="flex items-center gap-3">
@@ -106,27 +109,27 @@
         <nav class="hidden md:flex items-center gap-6" aria-label="Primary">
           <a
             href="#layanan"
-            class="text-gray-600 hover:text-blue-700 font-medium transition-colors"
+            class="text-gray-600 hover:text-[var(--color-primary-light)] font-medium transition-colors"
             >Layanan</a
           >
           <a
             href="#bpjs"
-            class="text-gray-600 hover:text-blue-700 font-medium transition-colors"
+            class="text-gray-600 hover:text-[var(--color-primary-light)] font-medium transition-colors"
             >BPJS</a
           >
           <a
             href="#ai-feature"
-            class="text-gray-600 hover:text-blue-700 font-medium transition-colors"
+            class="text-gray-600 hover:text-[var(--color-primary-light)] font-medium transition-colors"
             >Konsultasi AI</a
           >
           <a
             href="#kontak"
-            class="text-gray-600 hover:text-blue-700 font-medium transition-colors"
+            class="text-gray-600 hover:text-[var(--color-primary-light)] font-medium transition-colors"
             >Kontak</a
           >
           <a
             href="#visi-misi"
-            class="text-gray-600 hover:text-blue-700 font-medium transition-colors"
+            class="text-gray-600 hover:text-[var(--color-primary-light)] font-medium transition-colors"
             >Visi & Misi</a
           >
         </nav>
@@ -162,19 +165,19 @@
       </div>
       <nav id="mobile-nav" class="md:hidden hidden border-t border-gray-100">
         <div class="px-4 py-3 flex flex-col gap-2 bg-white">
-          <a href="#layanan" class="py-2 text-gray-700 hover:text-blue-700"
+          <a href="#layanan" class="py-2 text-gray-700 hover:text-[var(--color-primary-light)]"
             >Layanan</a
           >
-          <a href="#bpjs" class="py-2 text-gray-700 hover:text-blue-700"
+          <a href="#bpjs" class="py-2 text-gray-700 hover:text-[var(--color-primary-light)]"
             >BPJS</a
           >
-          <a href="#ai-feature" class="py-2 text-gray-700 hover:text-blue-700"
+          <a href="#ai-feature" class="py-2 text-gray-700 hover:text-[var(--color-primary-light)]"
             >Konsultasi AI</a
           >
-          <a href="#kontak" class="py-2 text-gray-700 hover:text-blue-700"
+          <a href="#kontak" class="py-2 text-gray-700 hover:text-[var(--color-primary-light)]"
             >Kontak</a
           >
-          <a href="#visi-misi" class="py-2 text-gray-700 hover:text-blue-700"
+          <a href="#visi-misi" class="py-2 text-gray-700 hover:text-[var(--color-primary-light)]"
             >Visi & Misi</a
           >
           <a
@@ -188,71 +191,83 @@
       </nav>
     </header>
 
-    <section class="bg-blue-800 text-white py-24 rounded-b-[40px] md:rounded-b-[100px] relative overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-br from-blue-900 to-blue-700 opacity-90"></div>
-      <div class="container mx-auto px-4 relative z-10">
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <span
-              class="inline-flex items-center gap-2 bg-white/20 text-white px-4 py-1.5 rounded-full text-sm font-medium backdrop-blur-sm mb-4"
-            >
-              <i class="fa-solid fa-square-check w-4 h-4"></i>
-              Sudah bekerjasama dengan <strong class="ml-1">BPJS Kesehatan</strong>
-            </span>
-            <h1
-              class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mb-4"
-            >
-              Layanan Kesehatan Profesional untuk Keluarga Anda.
-            </h1>
-            <p class="text-lg opacity-90 max-w-xl mb-8">
-              Kami menyediakan layanan medis lengkap 24 jam dengan tim dokter, bidan, dan perawat yang berpengalaman, serta fasilitas yang modern dan nyaman.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4">
-              <a
-                href="https://wa.me/6285223128163"
-                target="_blank"
-                rel="noopener"
-                class="btn btn-primary bg-white text-blue-700 hover:bg-gray-100"
-                >WhatsApp Pendaftaran</a
-              >
-              <a href="#layanan" class="btn btn-outline border-white text-white hover:bg-white hover:text-blue-700">Lihat Layanan</a>
-            </div>
-          </div>
-          <div class="hidden lg:block">
-            <div class="card bg-white text-gray-800 p-8 shadow-2xl">
-              <h3 class="text-2xl font-bold text-blue-700 mb-4">
-                Informasi Klinik
-              </h3>
-              <ul class="space-y-4 text-gray-700">
-                <li class="flex items-start gap-3">
-                  <i class="fa-solid fa-certificate icon-lg text-blue-500 mt-0.5"></i>
-                  <div>
-                    <strong class="font-medium">Sertifikat Standar:</strong>
-                    <span class="text-gray-600">91203057521250001</span>
-                  </div>
-                </li>
-                <li class="flex items-start gap-3">
-                  <i class="fa-solid fa-address-card icon-lg text-blue-500 mt-0.5"></i>
-                  <div>
-                    <strong class="font-medium">NIB:</strong>
-                    <span class="text-gray-600">120305752125</span>
-                  </div>
-                </li>
-                <li class="flex items-start gap-3">
-                  <i class="fa-solid fa-location-dot icon-lg text-blue-500 mt-0.5"></i>
-                  <div>
-                    <strong class="font-medium">Alamat:</strong>
-                    <span class="text-gray-600"
-                      >Jl. Raya Cikadu, RT 001, RW 003, Desa Girimukti, Kec.
-                      Singajaya, Kab. Garut (44173)</span
-                    >
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
+    <section class="bg-[var(--color-primary-dark)] text-white py-24 rounded-b-[40px] md:rounded-b-[100px] relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-[#1b362f] to-[#34d399] opacity-90"></div>
+        <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+            <svg class="absolute top-0 left-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <defs>
+                    <pattern id="dot-pattern" width="4" height="4" patternUnits="userSpaceOnUse">
+                        <circle cx="2" cy="2" r="1" fill="white" />
+                    </pattern>
+                </defs>
+                <rect width="100" height="100" fill="url(#dot-pattern)" />
+            </svg>
+            <div class="absolute w-60 h-60 bg-[#a7f3d0] rounded-full -top-20 -right-20 transform rotate-45"></div>
+            <div class="absolute w-40 h-40 bg-[#a7f3d0] rounded-full -bottom-10 -left-10 opacity-50 transform -rotate-30"></div>
         </div>
-      </div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span
+                    class="inline-flex items-center gap-2 bg-white/20 text-white px-4 py-1.5 rounded-full text-sm font-medium backdrop-blur-sm mb-4"
+                    >
+                    <i class="fa-solid fa-square-check w-4 h-4"></i>
+                    Sudah bekerjasama dengan <strong class="ml-1">BPJS Kesehatan</strong>
+                    </span>
+                    <h1
+                    class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mb-4"
+                    >
+                    Layanan Kesehatan Profesional untuk Keluarga Anda.
+                    </h1>
+                    <p class="text-lg opacity-90 max-w-xl mb-8">
+                    Kami menyediakan layanan medis lengkap 24 jam dengan tim dokter, bidan, dan perawat yang berpengalaman, serta fasilitas yang modern dan nyaman.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                    <a
+                        href="https://wa.me/6285223128163"
+                        target="_blank"
+                        rel="noopener"
+                        class="btn btn-primary bg-white text-[var(--color-primary-dark)] hover:bg-gray-100"
+                        >WhatsApp Pendaftaran</a
+                    >
+                    <a href="#layanan" class="btn btn-outline border-white text-white hover:bg-white hover:text-[var(--color-primary-dark)]">Lihat Layanan</a>
+                    </div>
+                </div>
+                <div class="hidden lg:block">
+                    <div class="card bg-white text-gray-800 p-8 shadow-2xl">
+                    <h3 class="text-2xl font-bold text-[var(--color-primary-dark)] mb-4">
+                        Informasi Klinik
+                    </h3>
+                    <ul class="space-y-4 text-gray-700">
+                        <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-certificate icon-sm-inline"></i>
+                        <div>
+                            <strong class="font-medium">Sertifikat Standar:</strong>
+                            <span class="text-gray-600">91203057521250001</span>
+                        </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-address-card icon-sm-inline"></i>
+                        <div>
+                            <strong class="font-medium">NIB:</strong>
+                            <span class="text-gray-600">120305752125</span>
+                        </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-location-dot icon-sm-inline"></i>
+                        <div>
+                            <strong class="font-medium">Alamat:</strong>
+                            <span class="text-gray-600"
+                            >Jl. Raya Cikadu, RT 001, RW 003, Desa Girimukti, Kec.
+                            Singajaya, Kab. Garut (44173)</span
+                            >
+                        </div>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="visi-misi" class="bg-white py-24">
@@ -263,13 +278,17 @@
         </p>
         <div class="grid md:grid-cols-3 gap-8">
           <div class="card p-8 border border-gray-200">
-            <h3 class="font-bold text-2xl text-blue-700 mb-2">Visi</h3>
+            <h3 class="font-bold text-2xl text-[var(--color-primary-dark)] mb-2">
+              <i class="fa-solid fa-eye icon-sm-inline"></i> Visi
+            </h3>
             <p class="text-gray-600 text-lg">
               “Menjadi KLINIK Pilihan dan Kepercayaan Masyarakat”.
             </p>
           </div>
           <div class="card p-8 border border-gray-200">
-            <h3 class="font-bold text-2xl text-blue-700 mb-2">Misi</h3>
+            <h3 class="font-bold text-2xl text-[var(--color-primary-dark)] mb-2">
+              <i class="fa-solid fa-bullseye icon-sm-inline"></i> Misi
+            </h3>
             <ul class="list-disc list-inside text-gray-600 space-y-2 text-lg">
               <li>Menyediakan SDM yang santun dan berbudi.</li>
               <li>Mengembangkan fasilitas yang dapat mewujudkan kondisi nyaman dan aman.</li>
@@ -277,7 +296,9 @@
             </ul>
           </div>
           <div class="card p-8 border border-gray-200">
-            <h3 class="font-bold text-2xl text-blue-700 mb-2">Tujuan</h3>
+            <h3 class="font-bold text-2xl text-[var(--color-primary-dark)] mb-2">
+              <i class="fa-solid fa-flag-checkered icon-sm-inline"></i> Tujuan
+            </h3>
             <p class="text-gray-600 text-lg">
               Memberikan pelayanan kesehatan yang berorientasi pada pelayanan dan kepuasan pasien.
             </p>
@@ -286,12 +307,12 @@
       </div>
     </section>
 
-    <section class="bg-gray-100 py-16">
+    <section class="bg-[var(--color-bg-gray)] py-16">
       <div class="container mx-auto px-4">
         <div class="grid md:grid-cols-3 gap-6">
           <div class="card p-6 border border-gray-100">
-            <h3 class="flex items-center text-lg font-bold text-blue-700 mb-2">
-              <i class="fa-solid fa-clock icon-lg mr-2 text-blue-500"></i>
+            <h3 class="flex items-center text-lg font-bold text-[var(--color-primary-dark)] mb-2">
+              <i class="fa-solid fa-clock icon-sm-inline"></i>
               Jam Operasional
             </h3>
             <p class="text-gray-600">
@@ -301,8 +322,8 @@
             </p>
           </div>
           <div class="card p-6 border border-gray-100">
-            <h3 class="flex items-center text-lg font-bold text-blue-700 mb-2">
-              <i class="fa-solid fa-user-doctor icon-lg mr-2 text-blue-500"></i>
+            <h3 class="flex items-center text-lg font-bold text-[var(--color-primary-dark)] mb-2">
+              <i class="fa-solid fa-user-doctor icon-sm-inline"></i>
               Tenaga Profesional
             </h3>
             <p class="text-gray-600">
@@ -310,8 +331,8 @@
             </p>
           </div>
           <div class="card p-6 border border-gray-100">
-            <h3 class="flex items-center text-lg font-bold text-blue-700 mb-2">
-              <i class="fa-solid fa-hospital-user icon-lg mr-2 text-blue-500"></i>
+            <h3 class="flex items-center text-lg font-bold text-[var(--color-primary-dark)] mb-2">
+              <i class="fa-solid fa-hospital-user icon-sm-inline"></i>
               Fasilitas Terbaik
             </h3>
             <p class="text-gray-600">
@@ -330,9 +351,7 @@
         </p>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           <div class="card service">
-            <div
-              class="w-12 h-12 flex items-center justify-center bg-blue-100 text-blue-700 rounded-xl mb-4 text-2xl"
-            >
+            <div class="icon-lg-card">
               <i class="fa-solid fa-user-md"></i>
             </div>
             <h3 class="font-bold text-xl mb-2">Poli Umum</h3>
@@ -340,16 +359,14 @@
               Konsultasi keluhan kesehatan, pemeriksaan fisik, dan pengobatan dasar.
             </p>
             <button
-              class="btn btn-primary !bg-blue-700 !text-white !border-blue-700 px-6 py-2 text-sm !rounded-full listen-btn"
+              class="btn btn-primary !bg-[var(--color-primary-light)] !text-white !border-[var(--color-primary-light)] px-6 py-2 text-sm !rounded-full listen-btn"
               data-audio-url="URL_AUDIO_ANDA_UNTUK_PEMERIKSAAN_UMUM.mp3"
             >
               <i class="fa-solid fa-circle-play mr-2"></i> Dengarkan
             </button>
           </div>
           <div class="card service">
-            <div
-              class="w-12 h-12 flex items-center justify-center bg-blue-100 text-blue-700 rounded-xl mb-4 text-2xl"
-            >
+            <div class="icon-lg-card">
               <i class="fa-solid fa-person-breastfeeding"></i>
             </div>
             <h3 class="font-bold text-xl mb-2">Kesehatan Ibu & Anak (KIA)</h3>
@@ -357,16 +374,14 @@
               Pemeriksaan kehamilan (ANC) dan edukasi kesehatan ibu & bayi. Jam pelayanan 07.00 – 17.00 WIB.
             </p>
             <button
-              class="btn btn-primary !bg-blue-700 !text-white !border-blue-700 px-6 py-2 text-sm !rounded-full listen-btn"
+              class="btn btn-primary !bg-[var(--color-primary-light)] !text-white !border-[var(--color-primary-light)] px-6 py-2 text-sm !rounded-full listen-btn"
               data-audio-url="URL_AUDIO_ANDA_UNTUK_KIA.mp3"
             >
               <i class="fa-solid fa-circle-play mr-2"></i> Dengarkan
             </button>
           </div>
           <div class="card service">
-            <div
-              class="w-12 h-12 flex items-center justify-center bg-blue-100 text-blue-700 rounded-xl mb-4 text-2xl"
-            >
+            <div class="icon-lg-card">
               <i class="fa-solid fa-baby"></i>
             </div>
             <h3 class="font-bold text-xl mb-2">Persalinan 24 Jam</h3>
@@ -374,16 +389,14 @@
               Layanan persalinan normal dan perawatan pasca melahirkan dengan bidan berpengalaman.
             </p>
             <button
-              class="btn btn-primary !bg-blue-700 !text-white !border-blue-700 px-6 py-2 text-sm !rounded-full listen-btn"
+              class="btn btn-primary !bg-[var(--color-primary-light)] !text-white !border-[var(--color-primary-light)] px-6 py-2 text-sm !rounded-full listen-btn"
               data-audio-url="URL_AUDIO_ANDA_UNTUK_PERSALINAN.mpil"
             >
               <i class="fa-solid fa-circle-play mr-2"></i> Dengarkan
             </button>
           </div>
           <div class="card service">
-            <div
-              class="w-12 h-12 flex items-center justify-center bg-blue-100 text-blue-700 rounded-xl mb-4 text-2xl"
-            >
+            <div class="icon-lg-card">
               <i class="fa-solid fa-ambulance"></i>
             </div>
             <h3 class="font-bold text-xl mb-2">UGD & Rawat Inap 24 Jam</h3>
@@ -391,16 +404,14 @@
               Penanganan kasus gawat darurat medis, observasi, dan perawatan penuh waktu.
             </p>
             <button
-              class="btn btn-primary !bg-blue-700 !text-white !border-blue-700 px-6 py-2 text-sm !rounded-full listen-btn"
+              class="btn btn-primary !bg-[var(--color-primary-light)] !text-white !border-[var(--color-primary-light)] px-6 py-2 text-sm !rounded-full listen-btn"
               data-audio-url="URL_AUDIO_ANDA_UNTUK_UGD.mp3"
             >
               <i class="fa-solid fa-circle-play mr-2"></i> Dengarkan
             </button>
           </div>
           <div class="card service">
-            <div
-              class="w-12 h-12 flex items-center justify-center bg-blue-100 text-blue-700 rounded-xl mb-4 text-2xl"
-            >
+            <div class="icon-lg-card">
               <i class="fa-solid fa-flask"></i>
             </div>
             <h3 class="font-bold text-xl mb-2">Laboratorium</h3>
@@ -408,16 +419,14 @@
               Pemeriksaan penunjang seperti hematologi, kimia klinik, dan tes urin.
             </p>
             <button
-              class="btn btn-primary !bg-blue-700 !text-white !border-blue-700 px-6 py-2 text-sm !rounded-full listen-btn"
+              class="btn btn-primary !bg-[var(--color-primary-light)] !text-white !border-[var(--color-primary-light)] px-6 py-2 text-sm !rounded-full listen-btn"
               data-audio-url="URL_AUDIO_ANDA_UNTUK_LABORATORIUM.mp3"
             >
               <i class="fa-solid fa-circle-play mr-2"></i> Dengarkan
             </button>
           </div>
           <div class="card service">
-            <div
-              class="w-12 h-12 flex items-center justify-center bg-blue-100 text-blue-700 rounded-xl mb-4 text-2xl"
-            >
+            <div class="icon-lg-card">
               <i class="fa-solid fa-pills"></i>
             </div>
             <h3 class="font-bold text-xl mb-2">Apotek</h3>
@@ -425,7 +434,7 @@
               Menyediakan obat-obatan yang aman, terjangkau, dan sesuai dengan resep dokter.
             </p>
             <button
-              class="btn btn-primary !bg-blue-700 !text-white !border-blue-700 px-6 py-2 text-sm !rounded-full listen-btn"
+              class="btn btn-primary !bg-[var(--color-primary-light)] !text-white !border-[var(--color-primary-light)] px-6 py-2 text-sm !rounded-full listen-btn"
               data-audio-url="URL_AUDIO_ANDA_UNTUK_APOTEK.mp3"
             >
               <i class="fa-solid fa-circle-play mr-2"></i> Dengarkan
@@ -435,7 +444,7 @@
       </div>
     </section>
 
-    <section id="ai-feature" class="py-24 bg-gray-100">
+    <section id="ai-feature" class="py-24 bg-[var(--color-bg-gray)]">
       <div class="container mx-auto px-4">
         <h2 class="section-title">Layanan Mandiri Berbasis AI</h2>
         <p class="section-subtitle">
@@ -443,8 +452,8 @@
         </p>
         <div class="grid md:grid-cols-2 gap-8">
           <div class="card p-8">
-            <h3 class="font-bold text-2xl text-blue-700 mb-2">
-              Konsultasi Gejala & Saran Mandiri ✨
+            <h3 class="font-bold text-2xl text-[var(--color-primary-dark)] mb-2">
+              <i class="fa-solid fa-robot icon-sm-inline"></i> Konsultasi Gejala & Saran Mandiri ✨
             </h3>
             <p class="text-sm text-red-500 font-medium mb-4">
               **DISCLAIMER:** Informasi ini hanyalah saran awal dan bukan pengganti diagnosis medis profesional. Hubungi dokter untuk pemeriksaan lebih lanjut.
@@ -464,11 +473,11 @@
                 id="user-input"
                 type="text"
                 placeholder="Misalnya: 'Sakit tenggorokan, demam ringan' atau 'Tips menjaga kesehatan ibu hamil'"
-                class="flex-grow p-3 rounded-xl border border-gray-300 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
+                class="flex-grow p-3 rounded-xl border border-gray-300 focus:ring-[var(--color-primary-light)] focus:border-[var(--color-primary-light)] outline-none transition-colors"
               />
               <button
                 id="send-btn"
-                class="bg-blue-700 text-white p-3 rounded-xl hover:bg-blue-800 transition-colors"
+                class="bg-[var(--color-primary-light)] text-white p-3 rounded-xl hover:bg-green-600 transition-colors"
               >
                 <i class="fa-solid fa-paper-plane text-xl"></i>
               </button>
@@ -476,8 +485,8 @@
           </div>
           <div class="card p-8 flex flex-col justify-between">
             <div>
-              <h3 class="font-bold text-2xl text-blue-700 mb-2">
-                Tips Sehat Harian ☀️
+              <h3 class="font-bold text-2xl text-[var(--color-primary-dark)] mb-2">
+                <i class="fa-solid fa-lightbulb icon-sm-inline"></i> Tips Sehat Harian ☀️
               </h3>
               <p class="text-sm text-gray-500 mb-4">
                 Dapatkan tips kesehatan sederhana yang mudah diterapkan sehari-hari.
@@ -509,8 +518,8 @@
           />
         </div>
         <div class="flex-grow text-center md:text-left">
-          <h3 class="text-2xl font-bold text-blue-700 mb-1">
-            Kerja Sama BPJS Kesehatan
+          <h3 class="text-2xl font-bold text-[var(--color-primary-dark)] mb-1">
+            <i class="fa-solid fa-handshake icon-sm-inline"></i> Kerja Sama BPJS Kesehatan
           </h3>
           <p class="text-gray-600">
             Peserta JKN-KIS dapat berobat di Klinik Girimukti Medical Center sesuai ketentuan BPJS Kesehatan. Pendaftaran lebih mudah melalui **Mobile JKN** atau langsung di klinik.
@@ -555,37 +564,39 @@
       <div class="container mx-auto px-4">
         <div class="grid lg:grid-cols-2 gap-8">
           <div>
-            <h2 class="text-3xl font-bold text-blue-700 mb-4">Hubungi Kami</h2>
+            <h2 class="text-3xl font-bold text-[var(--color-primary-dark)] mb-4">
+              <i class="fa-solid fa-headset icon-sm-inline"></i> Hubungi Kami
+            </h2>
             <p class="text-lg text-gray-600 mb-6">
               Untuk pendaftaran, informasi layanan, atau pertanyaan lainnya, silakan hubungi kami.
             </p>
             <div class="card p-6">
-              <h3 class="text-xl font-bold text-blue-700 mb-4">
+              <h3 class="text-xl font-bold text-[var(--color-primary-dark)] mb-4">
                 Detail Kontak
               </h3>
               <ul class="space-y-4 text-gray-700">
                 <li class="flex items-start gap-3">
-                  <i class="fa-solid fa-location-dot icon-lg text-blue-500"></i>
+                  <i class="fa-solid fa-location-dot icon-sm-inline !w-6 !h-6 !mt-1"></i>
                   <div class="text-gray-600">
                     <strong class="font-medium block">Alamat:</strong> Jl. Raya Cikadu, RT 001, RW 003, Desa Girimukti, Kec. Singajaya, Kab. Garut (44173)
                   </div>
                 </li>
                 <li class="flex items-center gap-3">
-                  <i class="fa-solid fa-phone icon-lg text-blue-500"></i>
+                  <i class="fa-solid fa-phone icon-sm-inline !w-6 !h-6"></i>
                   <div class="text-gray-600">
                     <strong class="font-medium block">Telepon/WA:</strong>
-                    <a href="tel:085223128163" class="text-blue-600 hover:underline"
+                    <a href="tel:085223128163" class="text-[var(--color-primary-light)] hover:underline"
                       >0852 2312 8163</a
                     >
                   </div>
                 </li>
                 <li class="flex items-center gap-3">
-                  <i class="fa-solid fa-envelope icon-lg text-blue-500"></i>
+                  <i class="fa-solid fa-envelope icon-sm-inline !w-6 !h-6"></i>
                   <div class="text-gray-600">
                     <strong class="font-medium block">Email:</strong>
                     <a
                       href="mailto:klinik.gmc.01@gmail.com"
-                      class="text-blue-600 hover:underline"
+                      class="text-[var(--color-primary-light)] hover:underline"
                       >klinik.gmc.01@gmail.com</a
                     >
                   </div>
@@ -594,10 +605,12 @@
             </div>
           </div>
           <div>
-            <h3 class="text-xl font-bold text-blue-700 mb-4">Lokasi Kami</h3>
+            <h3 class="text-xl font-bold text-[var(--color-primary-dark)] mb-4">
+              <i class="fa-solid fa-map-location-dot icon-sm-inline"></i> Lokasi Kami
+            </h3>
             <div class="card h-80 overflow-hidden p-0 border border-gray-200">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.568395562092!2d107.8245781147748!3d-7.251978294747761!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6840d2b7e1c121%3A0x7d8a6b10d7a6e12e!2sKlinik%20Girimukti%20Medical%20Center!5e0!3m2!1sen!2sid!4v1679051050014!5m2!1sen!2sid"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.94052309712!2d107.97195487500584!3d-7.243557992754897!2m3!1f0!2m3!1f0!2m3!1f0!1m0!1m0!2m2!1o0!2sKlinik%20Girimukti%20Medical%20Center!5e0!3m2!1sid!2sid!4v1701389270000!5m2!1sid!2sid"
                 width="100%"
                 height="100%"
                 style="border: 0"
@@ -611,7 +624,7 @@
       </div>
     </section>
 
-    <footer class="bg-blue-800 text-blue-200 py-6 text-center">
+    <footer class="bg-[var(--color-primary-dark)] text-green-200 py-6 text-center">
       <div class="container mx-auto px-4">
         <small
           >© 2025 Klinik Girimukti Medical Center — Yayasan Insan Medika
