@@ -57,11 +57,11 @@
           @apply bg-transparent text-[var(--color-primary-dark)] border-2 border-[var(--color-primary-dark)] hover:bg-[var(--color-primary-dark)] hover:text-white;
         }
         .card {
-          @apply bg-white p-8 rounded-3xl shadow-xl transition-transform duration-300 hover:scale-[1.01];
+          @apply bg-white p-8 rounded-3xl shadow-xl transition-all duration-300 ease-in-out;
         }
-        /* Adjusted card shadow for soft green glow - Fixed for all sides */
-        .card-green-glow:hover {
+        .card:hover {
           box-shadow: 0 0 20px rgba(52, 211, 153, 0.6); /* Even glow on all sides */
+          transform: translateY(-3px); /* Slight lift effect on hover */
         }
         .section-title {
           @apply text-4xl font-bold text-center text-gray-800 mb-4;
@@ -72,11 +72,10 @@
         .icon-sm-inline {
           @apply text-[var(--color-primary-dark)] w-5 h-5 inline-block mr-2 align-middle;
         }
-        /* Adjusted icon-lg-card for custom background */
         .icon-lg-card {
-          @apply w-12 h-12 flex items-center justify-center rounded-lg mb-4 text-2xl; /* Changed to rounded-lg */
-          background-color: var(--color-accent-soft); /* Soft green background */
-          color: var(--color-primary-dark); /* Dark green icon color */
+          @apply w-12 h-12 flex items-center justify-center rounded-lg mb-4 text-2xl;
+          background-color: var(--color-accent-soft);
+          color: var(--color-primary-dark);
         }
         .chat-message.user {
           @apply flex justify-end mb-2;
@@ -90,7 +89,6 @@
         .chat-message.bot p {
           @apply bg-gray-200 text-gray-800 p-3 rounded-t-xl rounded-br-xl max-w-xs;
         }
-        /* Custom styles for Hero Card background */
         .hero-card-bg {
           background-image: linear-gradient(
             45deg,
@@ -98,9 +96,55 @@
             var(--color-primary-light)
           );
         }
-        /* Header background for soft green */
         .header-bg-soft-green {
-          background-color: var(--color-primary-light); /* Using the light green */
+          background-color: var(--color-primary-light);
+        }
+
+        /* New styles for consistent shadow and hover effects */
+        .shadow-on-hover {
+            @apply shadow-md transition-all duration-300 ease-in-out;
+        }
+        .shadow-on-hover:hover {
+            box-shadow: 0 0 15px rgba(52, 211, 153, 0.5); /* Lighter glow for smaller elements */
+            transform: translateY(-2px);
+        }
+
+        /* Specific adjustments for input and button */
+        #user-input {
+            @apply shadow-on-hover focus:ring-2 focus:ring-[var(--color-primary-light)] focus:border-transparent;
+        }
+        #send-btn {
+            @apply shadow-on-hover;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Initial subtle shadow for button */
+        }
+        #send-btn:hover {
+             box-shadow: 0 0 15px rgba(52, 211, 153, 0.5); /* Glow for send button */
+        }
+
+        #get-tip-btn {
+            @apply shadow-on-hover;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Initial subtle shadow for button */
+        }
+        #get-tip-btn:hover {
+            box-shadow: 0 0 15px rgba(52, 211, 153, 0.5); /* Glow for get tip button */
+        }
+
+        /* Video element shadow */
+        video {
+            @apply shadow-xl transition-all duration-300 ease-in-out;
+        }
+        video:hover {
+            box-shadow: 0 0 20px rgba(52, 211, 153, 0.6);
+            transform: translateY(-3px);
+        }
+
+        /* Map iframe shadow */
+        iframe {
+            @apply shadow-xl transition-all duration-300 ease-in-out;
+        }
+        iframe:hover {
+            box-shadow: 0 0 20px rgba(52, 211, 153, 0.6);
+            transform: translateY(-3px);
         }
       }
     </style>
@@ -220,7 +264,7 @@
             </h1>
             <p class="text-lg text-gray-600 max-w-xl mb-8">
               Layanan kesehatan terpercaya dengan teknologi modern dan tim
-              medis berpengalaman.
+              medis berpengalaman di Bandung, Jawa Barat.
             </p>
             <div class="flex flex-col sm:flex-row gap-4">
               <a
@@ -305,14 +349,14 @@
           Nilai-nilai yang kami pegang teguh dalam melayani Anda.
         </p>
         <div class="grid md:grid-cols-3 gap-8">
-          <div class="card card-green-glow p-8 border border-gray-100 flex flex-col items-center justify-center text-center"> <h3 class="font-bold text-2xl text-[var(--color-text-dark)] mb-4">
+          <div class="card p-8 border border-gray-100 flex flex-col items-center justify-center text-center"> <h3 class="font-bold text-2xl text-[var(--color-text-dark)] mb-4">
               <i class="fa-solid fa-eye icon-sm-inline"></i> Visi
             </h3>
             <p class="text-[var(--color-text-light)] text-lg">
               “Menjadi KLINIK Pilihan dan Kepercayaan Masyarakat”.
             </p>
           </div>
-          <div class="card card-green-glow p-8 border border-gray-100 flex flex-col items-center text-center">
+          <div class="card p-8 border border-gray-100 flex flex-col items-center text-center">
             <h3 class="font-bold text-2xl text-[var(--color-text-dark)] mb-4">
               <i class="fa-solid fa-bullseye icon-sm-inline"></i> Misi
             </h3>
@@ -321,7 +365,7 @@
               <li class="flex items-start"><i class="fa-solid fa-circle-check text-[var(--color-primary-dark)] mr-2 mt-1 flex-shrink-0"></i> Memberikan pelayanan bermutu berlandaskan Etika Profesionalisme.</li>
             </ul>
           </div>
-          <div class="card card-green-glow p-8 border border-gray-100 flex flex-col items-center justify-center text-center"> <h3 class="font-bold text-2xl text-[var(--color-text-dark)] mb-4">
+          <div class="card p-8 border border-gray-100 flex flex-col items-center justify-center text-center"> <h3 class="font-bold text-2xl text-[var(--color-text-dark)] mb-4">
               <i class="fa-solid fa-flag-checkered icon-sm-inline"></i> Tujuan
             </h3>
             <p class="text-[var(--color-text-light)] text-lg">
@@ -479,7 +523,7 @@
             </p>
             <div
               id="chat-window"
-              class="border border-gray-200 rounded-xl p-4 h-64 overflow-y-auto mb-4 bg-gray-50 flex flex-col-reverse"
+              class="border border-gray-200 rounded-xl p-4 h-64 overflow-y-auto mb-4 bg-gray-50 flex flex-col-reverse shadow-on-hover"
             >
               <div class="chat-message bot">
                 <p class="text-sm text-gray-700">
@@ -492,7 +536,7 @@
                 id="user-input"
                 type="text"
                 placeholder="Misalnya: 'Sakit tenggorokan, demam ringan' atau 'Tips menjaga kesehatan ibu hamil'"
-                class="flex-grow p-3 rounded-xl border border-gray-300 focus:ring-[var(--color-primary-light)] focus:border-[var(--color-primary-light)] outline-none transition-colors"
+                class="flex-grow p-3 rounded-xl border border-gray-300 outline-none transition-colors"
               />
               <button
                 id="send-btn"
@@ -512,7 +556,7 @@
               </p>
               <div
                 id="daily-tip"
-                class="min-h-[220px] flex items-center justify-center p-4 text-center text-gray-500 bg-gray-50 rounded-xl border border-dashed border-gray-300"
+                class="min-h-[220px] flex items-center justify-center p-4 text-center text-gray-500 bg-gray-50 rounded-xl border border-dashed border-gray-300 shadow-on-hover"
               >
                 <p>Klik tombol di bawah untuk mendapatkan tips sehat hari ini! 🍀</p>
               </div>
@@ -707,7 +751,6 @@
         'Tidur cukup, 7-8 jam per malam, sangat penting untuk regenerasi sel tubuh dan menjaga kekebalan.',
         'Cuci tangan Anda secara rutin dengan sabun untuk mencegah penyebaran kuman dan penyakit.',
         'Hindari stres berlebihan dengan melakukan hobi atau meditasi untuk menjaga kesehatan mental.',
-        'Jangan lewatkan sarapan. Sarapan yang sehat memberikan energi untuk memulai aktivitas Anda seharian.',
         'Batasi konsumsi gula, garam, dan lemak jenuh untuk menjaga kesehatan jantung.',
         'Jaga postur tubuh Anda saat duduk atau berdiri untuk menghindari nyeri punggung.',
       ];
