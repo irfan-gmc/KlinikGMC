@@ -72,8 +72,11 @@
         .icon-sm-inline {
           @apply text-[var(--color-primary-dark)] w-5 h-5 inline-block mr-2 align-middle;
         }
+        /* Adjusted icon-lg-card for custom background */
         .icon-lg-card {
-          @apply w-12 h-12 flex items-center justify-center bg-[var(--color-accent-soft)] text-[var(--color-primary-dark)] rounded-xl mb-4 text-2xl;
+          @apply w-12 h-12 flex items-center justify-center rounded-lg mb-4 text-2xl; /* Changed to rounded-lg */
+          background-color: var(--color-accent-soft); /* Soft green background */
+          color: var(--color-primary-dark); /* Dark green icon color */
         }
         .chat-message.user {
           @apply flex justify-end mb-2;
@@ -98,8 +101,6 @@
         /* Header background for soft green */
         .header-bg-soft-green {
           background-color: var(--color-primary-light); /* Using the light green */
-          /* Or you can use a lighter variant if needed */
-          /* background-color: #81e6d9; */
         }
       }
     </style>
@@ -112,17 +113,15 @@
             <img
               src="logogmc.png"
               alt="Logo Klinik GMC"
-              class="w-12 h-12 rounded-full object-contain p-1 bg-white"
-              loading="lazy"
+              class="w-12 h-12 rounded-md object-contain p-1 bg-white" loading="lazy"
               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
             />
           </div>
           <div class="flex flex-col leading-tight">
-            <small class="text-xs text-white/90 font-medium"
-              >Yayasan Insan Medika Cendikia</small
-            >
-            <strong class="text-base text-white"
-              >Klinik Girimukti Medical Center</strong
+            <strong class="text-xs text-white/90 font-bold"
+              >Klinik Pratama</strong
+            > <strong class="text-base text-white"
+              >Girimukti Medical Center</strong
             >
           </div>
         </a>
@@ -247,12 +246,10 @@
                             <img
                               src="logogmc.png"
                               alt="Logo Klinik GMC"
-                              class="w-10 h-10 rounded-full object-contain p-1 bg-white"
-                              loading="lazy"
+                              class="w-10 h-10 rounded-md object-contain p-1 bg-white" loading="lazy"
                             />
                             <div class="flex flex-col leading-tight text-left">
-                                <strong class="text-xs text-white/80 font-medium">Klinik Pratama</strong>
-                                <strong class="text-base text-white">Girimukti Medical Center</strong>
+                                <strong class="text-xs text-white/80 font-bold">Klinik Pratama</strong> <strong class="text-base text-white">Girimukti Medical Center</strong>
                             </div>
                             <img
                               src="logobpjsputih.png"
@@ -312,8 +309,7 @@
           Nilai-nilai yang kami pegang teguh dalam melayani Anda.
         </p>
         <div class="grid md:grid-cols-3 gap-8">
-          <div class="card card-green-glow p-8 border border-gray-100 flex flex-col items-center text-center">
-            <h3 class="font-bold text-2xl text-[var(--color-text-dark)] mb-4">
+          <div class="card card-green-glow p-8 border border-gray-100 flex flex-col items-center justify-center text-center"> <h3 class="font-bold text-2xl text-[var(--color-text-dark)] mb-4">
               <i class="fa-solid fa-eye icon-sm-inline"></i> Visi
             </h3>
             <p class="text-[var(--color-text-light)] text-lg">
@@ -324,14 +320,12 @@
             <h3 class="font-bold text-2xl text-[var(--color-text-dark)] mb-4">
               <i class="fa-solid fa-bullseye icon-sm-inline"></i> Misi
             </h3>
-            <ul class="list-none text-[var(--color-text-light)] space-y-2 text-lg text-left">
-              <li class="flex items-start"><i class="fa-solid fa-circle-check text-[var(--color-primary-dark)] mr-2 mt-1 flex-shrink-0"></i> Menyediakan SDM yang santun dan berbudi.</li>
+            <ul class="list-none text-[var(--color-text-light)] space-y-2 text-lg text-left max-w-xs mx-auto"> <li class="flex items-start"><i class="fa-solid fa-circle-check text-[var(--color-primary-dark)] mr-2 mt-1 flex-shrink-0"></i> Menyediakan SDM yang santun dan berbudi.</li>
               <li class="flex items-start"><i class="fa-solid fa-circle-check text-[var(--color-primary-dark)] mr-2 mt-1 flex-shrink-0"></i> Mengembangkan fasilitas yang dapat mewujudkan kondisi nyaman dan aman.</li>
               <li class="flex items-start"><i class="fa-solid fa-circle-check text-[var(--color-primary-dark)] mr-2 mt-1 flex-shrink-0"></i> Memberikan pelayanan bermutu berlandaskan Etika Profesionalisme.</li>
             </ul>
           </div>
-          <div class="card card-green-glow p-8 border border-gray-100 flex flex-col items-center text-center">
-            <h3 class="font-bold text-2xl text-[var(--color-text-dark)] mb-4">
+          <div class="card card-green-glow p-8 border border-gray-100 flex flex-col items-center justify-center text-center"> <h3 class="font-bold text-2xl text-[var(--color-text-dark)] mb-4">
               <i class="fa-solid fa-flag-checkered icon-sm-inline"></i> Tujuan
             </h3>
             <p class="text-[var(--color-text-light)] text-lg">
@@ -387,8 +381,7 @@
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           <div class="card service">
             <div class="icon-lg-card">
-              <i class="fa-solid fa-user-doctor"></i>
-            </div>
+              <i class="fa-solid fa-stethoscope"></i> </div>
             <h3 class="font-bold text-xl mb-2">Poli Umum</h3>
             <p class="text-[var(--color-text-light)] mb-4">
               Konsultasi keluhan kesehatan, pemeriksaan fisik, dan pengobatan dasar.
@@ -402,8 +395,7 @@
           </div>
           <div class="card service">
             <div class="icon-lg-card">
-              <i class="fa-solid fa-person-breastfeeding"></i>
-            </div>
+              <i class="fa-solid fa-baby-carriage"></i> </div>
             <h3 class="font-bold text-xl mb-2">Kesehatan Ibu & Anak (KIA)</h3>
             <p class="text-[var(--color-text-light)] mb-4">
               Pemeriksaan kehamilan (ANC) dan edukasi kesehatan ibu & bayi. Jam pelayanan 07.00 – 17.00 WIB.
@@ -417,8 +409,7 @@
           </div>
           <div class="card service">
             <div class="icon-lg-card">
-              <i class="fa-solid fa-baby"></i>
-            </div>
+              <i class="fa-solid fa-hand-holding-heart"></i> </div>
             <h3 class="font-bold text-xl mb-2">Persalinan 24 Jam</h3>
             <p class="text-[var(--color-text-light)] mb-4">
               Layanan persalinan normal dan perawatan pasca melahirkan dengan bidan berpengalaman.
@@ -432,8 +423,7 @@
           </div>
           <div class="card service">
             <div class="icon-lg-card">
-              <i class="fa-solid fa-ambulance"></i>
-            </div>
+              <i class="fa-solid fa-hospital-alt"></i> </div>
             <h3 class="font-bold text-xl mb-2">UGD & Rawat Inap 24 Jam</h3>
             <p class="text-[var(--color-text-light)] mb-4">
               Penanganan kasus gawat darurat medis, observasi, dan perawatan penuh waktu.
@@ -447,8 +437,7 @@
           </div>
           <div class="card service">
             <div class="icon-lg-card">
-              <i class="fa-solid fa-flask"></i>
-            </div>
+              <i class="fa-solid fa-microscope"></i> </div>
             <h3 class="font-bold text-xl mb-2">Laboratorium</h3>
             <p class="text-[var(--color-text-light)] mb-4">
               Pemeriksaan penunjang seperti hematologi, kimia klinik, dan tes urin.
@@ -462,8 +451,7 @@
           </div>
           <div class="card service">
             <div class="icon-lg-card">
-              <i class="fa-solid fa-pills"></i>
-            </div>
+              <i class="fa-solid fa-prescription-bottle-alt"></i> </div>
             <h3 class="font-bold text-xl mb-2">Apotek</h3>
             <p class="text-[var(--color-text-light)] mb-4">
               Menyediakan obat-obatan yang aman, terjangkau, dan sesuai dengan resep dokter.
@@ -557,7 +545,7 @@
             <i class="fa-solid fa-handshake icon-sm-inline"></i> Kerja Sama BPJS Kesehatan
           </h3>
           <p class="text-[var(--color-text-light)]">
-            Peserta JKN-KIS dapat berobat di Klinik Girimukti Medical Center sesuai ketentuan BPJS Kesehatan. Pendaftaran lebih mudah melalui **Mobile JKN** atau langsung di klinik.
+            Peserta JKN-KIS dapat berobat di Klinik Girimukti Medical Center sesuai ketentuan BPJS Kesehatan. Pendaftaran lebih mudah melalui <strong class="font-bold">Mobile JKN</strong> atau langsung di klinik.
           </p>
         </div>
         <a
