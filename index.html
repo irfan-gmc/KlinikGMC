@@ -59,10 +59,9 @@
         .card {
           @apply bg-white p-8 rounded-3xl shadow-xl transition-transform duration-300 hover:scale-[1.01];
         }
-        /* Adjusted card shadow for soft green glow */
+        /* Adjusted card shadow for soft green glow - Fixed for all sides */
         .card-green-glow:hover {
-          box-shadow: 0 10px 15px -3px rgba(52, 211, 153, 0.3),
-                      0 4px 6px -2px rgba(52, 211, 153, 0.15);
+          box-shadow: 0 0 20px rgba(52, 211, 153, 0.6); /* Even glow on all sides */
         }
         .section-title {
           @apply text-4xl font-bold text-center text-gray-800 mb-4;
@@ -251,7 +250,7 @@
                               class="w-10 h-10 rounded-full object-contain p-1 bg-white"
                               loading="lazy"
                             />
-                            <div class="flex flex-col leading-tight">
+                            <div class="flex flex-col leading-tight text-left">
                                 <strong class="text-xs text-white/80 font-medium">Klinik Pratama</strong>
                                 <strong class="text-base text-white">Girimukti Medical Center</strong>
                             </div>
@@ -262,7 +261,8 @@
                               loading="lazy"
                             />
                         </div>
-                        <i class="fa-solid fa-plus text-white text-2xl"></i>
+                    </div>
+                    
                     <div class="relative rounded-xl overflow-hidden shadow-inner w-full aspect-video mb-6">
                         <video
                           class="w-full h-full object-cover"
@@ -277,7 +277,7 @@
                     <div class="space-y-3 text-sm mb-6">
                         <div class="flex items-start">
                             <i class="fa-solid fa-location-dot text-white/80 w-5 h-5 mr-3 flex-shrink-0 mt-1"></i>
-                            <p>KLINIK GIRIMUKTI MEDICAL CENTER<br>Jl. Raya Cikadu, RT 001, RW 003, Desa Girimukti, Kec. Singajaya, Kab. Garut (44173)</p>
+                            <p>Jl. Raya Cikadu, RT 001, RW 003, Desa Girimukti, Kec. Singajaya, Kab. Garut (44173)</p>
                         </div>
                         <div class="flex items-center">
                             <i class="fa-solid fa-phone text-white/80 w-5 h-5 mr-3 flex-shrink-0"></i>
@@ -294,14 +294,10 @@
                         <a href="https://www.instagram.com/" target="_blank" class="text-white/80 hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
                         <a href="https://wa.me/6285223128163" target="_blank" class="text-white/80 hover:text-white transition-colors"><i class="fab fa-whatsapp"></i></a>
                     </div>
-
-                    <div class="text-center text-sm text-white/90">
-                        Jl. Raya Cikadu, RT 001, RW 003, Desa Girimukti, Kec. Singajaya, Kab. Garut (44173)
-                    </div>
                 </div>
             </div>
             <a href="https://wa.me/6285223128163" target="_blank"
-               class="absolute -bottom-6 right-8 bg-white text-[var(--color-primary-dark)] px-6 py-2 rounded-full shadow-lg flex items-center gap-2 font-semibold hover:bg-gray-100 transition-colors">
+                class="absolute -bottom-6 right-8 bg-white text-[var(--color-primary-dark)] px-6 py-2 rounded-full shadow-lg flex items-center gap-2 font-semibold hover:bg-gray-100 transition-colors">
                 <i class="fa-solid fa-comment-dots"></i> Konsultasi
             </a>
           </div>
@@ -316,26 +312,26 @@
           Nilai-nilai yang kami pegang teguh dalam melayani Anda.
         </p>
         <div class="grid md:grid-cols-3 gap-8">
-          <div class="card card-green-glow p-8 border border-gray-100 text-center">
-            <h3 class="font-bold text-2xl text-[var(--color-text-dark)] mb-2">
+          <div class="card card-green-glow p-8 border border-gray-100 flex flex-col items-center text-center">
+            <h3 class="font-bold text-2xl text-[var(--color-text-dark)] mb-4">
               <i class="fa-solid fa-eye icon-sm-inline"></i> Visi
             </h3>
             <p class="text-[var(--color-text-light)] text-lg">
               “Menjadi KLINIK Pilihan dan Kepercayaan Masyarakat”.
             </p>
           </div>
-          <div class="card card-green-glow p-8 border border-gray-100 text-center">
-            <h3 class="font-bold text-2xl text-[var(--color-text-dark)] mb-2">
+          <div class="card card-green-glow p-8 border border-gray-100 flex flex-col items-center text-center">
+            <h3 class="font-bold text-2xl text-[var(--color-text-dark)] mb-4">
               <i class="fa-solid fa-bullseye icon-sm-inline"></i> Misi
             </h3>
-            <ul class="list-none text-[var(--color-text-light)] space-y-2 text-lg text-left inline-block">
-              <li><i class="fa-solid fa-circle-check text-[var(--color-primary-dark)] mr-2"></i> Menyediakan SDM yang santun dan berbudi.</li>
-              <li><i class="fa-solid fa-circle-check text-[var(--color-primary-dark)] mr-2"></i> Mengembangkan fasilitas yang dapat mewujudkan kondisi nyaman dan aman.</li>
-              <li><i class="fa-solid fa-circle-check text-[var(--color-primary-dark)] mr-2"></i> Memberikan pelayanan bermutu berlandaskan Etika Profesionalisme.</li>
+            <ul class="list-none text-[var(--color-text-light)] space-y-2 text-lg text-left">
+              <li class="flex items-start"><i class="fa-solid fa-circle-check text-[var(--color-primary-dark)] mr-2 mt-1 flex-shrink-0"></i> Menyediakan SDM yang santun dan berbudi.</li>
+              <li class="flex items-start"><i class="fa-solid fa-circle-check text-[var(--color-primary-dark)] mr-2 mt-1 flex-shrink-0"></i> Mengembangkan fasilitas yang dapat mewujudkan kondisi nyaman dan aman.</li>
+              <li class="flex items-start"><i class="fa-solid fa-circle-check text-[var(--color-primary-dark)] mr-2 mt-1 flex-shrink-0"></i> Memberikan pelayanan bermutu berlandaskan Etika Profesionalisme.</li>
             </ul>
           </div>
-          <div class="card card-green-glow p-8 border border-gray-100 text-center">
-            <h3 class="font-bold text-2xl text-[var(--color-text-dark)] mb-2">
+          <div class="card card-green-glow p-8 border border-gray-100 flex flex-col items-center text-center">
+            <h3 class="font-bold text-2xl text-[var(--color-text-dark)] mb-4">
               <i class="fa-solid fa-flag-checkered icon-sm-inline"></i> Tujuan
             </h3>
             <p class="text-[var(--color-text-light)] text-lg">
@@ -391,7 +387,7 @@
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           <div class="card service">
             <div class="icon-lg-card">
-              <i class="fa-solid fa-user-md"></i>
+              <i class="fa-solid fa-user-doctor"></i>
             </div>
             <h3 class="font-bold text-xl mb-2">Poli Umum</h3>
             <p class="text-[var(--color-text-light)] mb-4">
@@ -649,7 +645,7 @@
             </h3>
             <div class="card h-80 overflow-hidden p-0 border border-gray-200">
               <iframe
-                src="http://googleusercontent.com/maps.google.com/6"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15830.430030514125!2d107.88729579999999!3d-7.42220975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e624c9c2d1b0d2d%3A0x7a8c3d9e0b1f0b1a!2sKlinik%20Pratama%20Girimukti%20Medical%20Center%20(GMC)!5e0!3m2!1sen!2sid!4v1717650645068!5m2!1sen!2sid"
                 width="100%"
                 height="100%"
                 style="border: 0"
@@ -710,49 +706,60 @@
       // Contoh basis data sederhana untuk demo
       const knowledgeBase = {
         'sakit tenggorokan': 'Sakit tenggorokan bisa disebabkan oleh infeksi virus. Pastikan Anda minum air hangat, istirahat cukup, dan hindari makanan pedas. Jika demam berlanjut, kami sarankan Anda datang untuk pemeriksaan di Poli Umum.',
-        'demam ringan': 'Demam ringan umumnya bisa diatasi dengan istirahat dan hidrasi yang cukup. Hindari aktivitas berat. Namun, jika demam terus naik atau disertai gejala lain yang parah, segera kunjungi UGD kami.',
-        'tips kesehatan ibu hamil': 'Untuk ibu hamil, penting untuk menjaga asupan gizi seimbang dan rutin melakukan pemeriksaan kehamilan (ANC) di layanan KIA kami. Konsumsi vitamin prenatal sesuai anjuran dokter.',
-        'sakit kepala': 'Sakit kepala bisa disebabkan oleh dehidrasi, kurang tidur, atau stres. Coba minum segelas air dan istirahat sejenak. Jika sakitnya parah atau tidak hilang, sebaiknya periksakan diri ke Poli Umum.',
-        'batuk': 'Batuk bisa menjadi gejala banyak penyakit. Coba perbanyak minum air putih dan istirahat. Jika disertai dahak hijau atau demam, bisa jadi indikasi infeksi. Layanan Apotek kami menyediakan obat batuk yang sesuai resep dokter.',
-        'lainnya': 'Maaf, saya belum memiliki informasi spesifik tentang hal itu. Untuk pertanyaan medis yang lebih akurat, silakan berkonsultasi langsung dengan dokter kami di klinik.'
+        'demam ringan': 'Demam ringan bisa diatasi dengan istirahat dan banyak minum air putih. Jika demam tidak turun setelah 2-3 hari atau disertai gejala lain, segera periksakan diri ke dokter.',
+        'tips menjaga kesehatan ibu hamil': 'Penting bagi ibu hamil untuk mengonsumsi makanan bergizi seimbang, rutin berolahraga ringan seperti jalan kaki, dan istirahat yang cukup. Jangan lupa periksa kandungan secara rutin di layanan KIA kami.',
+        'pusing': 'Pusing dapat disebabkan oleh kurang tidur, dehidrasi, atau tekanan darah rendah. Cobalah untuk beristirahat dan minum air yang cukup. Jika pusing berlanjut, konsultasikan ke dokter untuk diagnosis lebih lanjut.',
+        'layanan klinik': 'Kami memiliki berbagai layanan kesehatan seperti Poli Umum, KIA, Persalinan 24 Jam, UGD, Laboratorium, dan Apotek.',
+        'bpjs': 'Ya, Klinik Girimukti Medical Center sudah bekerja sama dengan BPJS Kesehatan. Anda bisa menggunakan kartu JKN-KIS untuk mendapatkan layanan kesehatan sesuai prosedur yang berlaku.',
+        'infeksi saluran kemih': 'Infeksi Saluran Kemih (ISK) seringkali disebabkan oleh bakteri. Gejalanya bisa berupa nyeri saat buang air kecil. Pastikan Anda minum banyak air dan tidak menahan buang air kecil. Untuk pengobatan, Anda perlu datang ke klinik untuk mendapatkan resep antibiotik dari dokter.',
+        'masuk angin': 'Masuk angin biasanya disebabkan oleh paparan angin dingin yang lama. Anda bisa mencoba minum teh jahe hangat, kerokan, atau mandi air hangat. Jika kondisi tidak membaik, periksa ke Poli Umum kami.',
+        'imunisasi anak': 'Kami menyediakan layanan imunisasi anak di poli KIA. Jadwal imunisasi disesuaikan dengan program pemerintah. Silakan datang atau hubungi kami untuk informasi lebih lanjut mengenai jadwalnya.',
       };
 
       const dailyTips = [
-        "Jaga hidrasi dengan minum 8 gelas air setiap hari untuk menjaga fungsi organ tubuh dan kulit tetap sehat.",
-        "Rutin mencuci tangan dengan sabun dapat mencegah penyebaran virus dan bakteri penyebab penyakit.",
-        "Konsumsi buah dan sayuran segar setiap hari untuk asupan vitamin dan serat yang cukup bagi tubuh.",
-        "Olahraga ringan seperti jalan kaki selama 30 menit setiap hari bisa meningkatkan energi dan kualitas tidur.",
-        "Pastikan Anda mendapat istirahat yang cukup, minimal 7-8 jam per malam, untuk pemulihan tubuh yang optimal."
+        'Minumlah air putih setidaknya 8 gelas sehari untuk menjaga hidrasi tubuh.',
+        'Luangkan waktu 30 menit setiap hari untuk berolahraga ringan, seperti jalan kaki atau bersepeda.',
+        'Konsumsi buah dan sayuran berwarna-warni untuk mendapatkan vitamin dan mineral yang lengkap.',
+        'Tidur cukup, 7-8 jam per malam, sangat penting untuk regenerasi sel tubuh dan menjaga kekebalan.',
+        'Cuci tangan Anda secara rutin dengan sabun untuk mencegah penyebaran kuman dan penyakit.',
+        'Hindari stres berlebihan dengan melakukan hobi atau meditasi untuk menjaga kesehatan mental.',
+        'Jangan lewatkan sarapan. Sarapan yang sehat memberikan energi untuk memulai aktivitas Anda seharian.',
+        'Batasi konsumsi gula, garam, dan lemak jenuh untuk menjaga kesehatan jantung.',
+        'Jaga postur tubuh Anda saat duduk atau berdiri untuk menghindari nyeri punggung.',
       ];
 
-      function addMessage(sender, text) {
+      function getAiResponse(userMessage) {
+        userMessage = userMessage.toLowerCase().trim();
+        for (const key in knowledgeBase) {
+          if (userMessage.includes(key)) {
+            return knowledgeBase[key];
+          }
+        }
+        return "Maaf, saya belum memiliki informasi spesifik tentang keluhan Anda. Saran terbaik adalah berkonsultasi langsung dengan dokter kami untuk mendapatkan diagnosis yang akurat. Apakah ada pertanyaan lain?";
+      }
+
+      function appendMessage(sender, message) {
         const messageDiv = document.createElement('div');
         messageDiv.classList.add('chat-message', sender);
-        messageDiv.innerHTML = `<p class="text-sm">${text}</p>`;
+        const p = document.createElement('p');
+        p.classList.add('text-sm');
+        p.textContent = message;
+        messageDiv.appendChild(p);
         chatWindow.prepend(messageDiv);
-        // Autoscroll to bottom
         chatWindow.scrollTop = chatWindow.scrollHeight;
       }
 
       sendBtn.addEventListener('click', () => {
-        const query = userInput.value.trim().toLowerCase();
-        if (query) {
-          addMessage('user', query);
-          userInput.value = '';
+        const userMessage = userInput.value;
+        if (userMessage.trim() === '') return;
 
-          // Simple AI logic based on keywords
-          let botResponse = knowledgeBase['lainnya'];
-          for (const keyword in knowledgeBase) {
-            if (query.includes(keyword)) {
-              botResponse = knowledgeBase[keyword];
-              break;
-            }
-          }
+        appendMessage('user', userMessage);
+        userInput.value = '';
 
-          setTimeout(() => {
-            addMessage('bot', botResponse);
-          }, 1000);
-        }
+        setTimeout(() => {
+          const botResponse = getAiResponse(userMessage);
+          appendMessage('bot', botResponse);
+        }, 500);
       });
 
       userInput.addEventListener('keypress', (e) => {
@@ -763,7 +770,7 @@
 
       getTipBtn.addEventListener('click', () => {
         const randomTip = dailyTips[Math.floor(Math.random() * dailyTips.length)];
-        dailyTipElement.innerHTML = `<p class="font-semibold text-gray-700">${randomTip}</p>`;
+        dailyTipElement.innerHTML = `<p class="font-semibold text-gray-800">${randomTip}</p>`;
       });
 
     </script>
