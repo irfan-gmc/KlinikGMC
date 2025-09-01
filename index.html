@@ -27,15 +27,13 @@
     <style type="text/tailwindcss">
       @layer base {
         :root {
-          --color-primary-dark: #10b981; /* Hijau Emerald */
-          --color-primary-light: #34d399; /* Hijau Teal cerah */
-          --color-accent-soft: #d1fae5; /* Hijau sangat muda */
-          --color-text-dark: #1f2937; /* Abu-abu gelap untuk teks */
-          --color-text-light: #4b5563; /* Abu-abu medium */
-          --color-bg-light: #f9fafb; /* Latar belakang sangat terang */
-          --color-card-bg: #ffffff; /* Latar belakang kartu */
-          --color-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-            0 4px 6px -2px rgba(0, 0, 0, 0.05);
+          --color-primary-dark: #10b981;
+          --color-primary-light: #34d399;
+          --color-accent-soft: #d1fae5;
+          --color-text-dark: #1f2937;
+          --color-text-light: #4b5563;
+          --color-bg-light: #f9fafb;
+          --color-card-bg: #ffffff;
         }
         html {
           scroll-behavior: smooth;
@@ -97,8 +95,6 @@
         .header-bg-soft-green {
           background-color: var(--color-primary-light);
         }
-
-        /* Styles for all interactive elements to have a consistent shadow/glow effect */
         .interactive-shadow {
           @apply shadow-lg transition-all duration-300 ease-in-out;
         }
@@ -110,27 +106,21 @@
           box-shadow: 0 0 20px rgba(52, 211, 153, 0.6);
           outline: none;
         }
-
-        /* Applying the new class to specific elements */
         #user-input {
           @apply interactive-shadow;
           box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
           @apply focus:ring-2 focus:ring-[var(--color-primary-light)] focus:border-transparent;
         }
-
         #send-btn, #get-tip-btn {
           @apply interactive-shadow;
           box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
-
         #chat-window {
-          @apply card; /* Revert to using card class for full glow */
+          @apply card;
         }
         #daily-tip {
-          @apply card; /* Revert to using card class for full glow */
+          @apply card;
         }
-
-        /* Video element shadow and glow */
         video {
           @apply shadow-xl rounded-xl transition-all duration-300 ease-in-out;
         }
@@ -138,14 +128,16 @@
           box-shadow: 0 0 25px rgba(52, 211, 153, 0.7);
           transform: translateY(-5px);
         }
-
-        /* Testimonial card */
         .testimonial-card {
           @apply bg-white p-6 rounded-2xl shadow-lg flex flex-col items-center text-center;
         }
-
         .testimonial-avatar {
           @apply w-16 h-16 rounded-full mb-4;
+        }
+        .service-icon {
+            @apply w-12 h-12 flex items-center justify-center rounded-lg mb-4 text-2xl;
+            background-color: var(--color-accent-soft);
+            color: var(--color-primary-dark);
         }
       }
     </style>
@@ -158,43 +150,22 @@
             <img
               src="logogmc.png"
               alt="Logo Klinik GMC"
-              class="w-12 h-12 rounded-md object-contain p-1 bg-white" loading="lazy"
+              class="w-12 h-12 rounded-md object-contain p-1 bg-white"
+              loading="lazy"
               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
             />
           </div>
-          <div class="flex flex-col leading-tight items-center"> <strong class="text-xs text-white/90 font-bold"
-              >Yayasan Insan Medika Cendikia Garut</strong
-            > <strong class="text-base text-white"
-              >Girimukti Medical Center</strong
-            >
+          <div class="flex flex-col leading-tight items-center">
+            <strong class="text-xs text-white/90 font-bold">Yayasan Insan Medika Cendikia Garut</strong>
+            <strong class="text-base text-white">Girimukti Medical Center</strong>
           </div>
         </a>
         <nav class="hidden md:flex items-center gap-6" aria-label="Primary">
-          <a
-            href="#layanan"
-            class="text-white/90 hover:text-white font-medium transition-colors"
-            >Layanan</a
-          >
-          <a
-            href="#bpjs"
-            class="text-white/90 hover:text-white font-medium transition-colors"
-            >BPJS</a
-          >
-          <a
-            href="#ai-feature"
-            class="text-white/90 hover:text-white font-medium transition-colors"
-            >Konsultasi AI</a
-          >
-          <a
-            href="#kontak"
-            class="text-white/90 hover:text-white font-medium transition-colors"
-            >Kontak</a
-          >
-          <a
-            href="#visi-misi"
-            class="text-white/90 hover:text-white font-medium transition-colors"
-            >Visi & Misi</a
-          >
+          <a href="#layanan" class="text-white/90 hover:text-white font-medium transition-colors">Layanan</a>
+          <a href="#bpjs" class="text-white/90 hover:text-white font-medium transition-colors">BPJS</a>
+          <a href="#ai-feature" class="text-white/90 hover:text-white font-medium transition-colors">Konsultasi AI</a>
+          <a href="#kontak" class="text-white/90 hover:text-white font-medium transition-colors">Kontak</a>
+          <a href="#visi-misi" class="text-white/90 hover:text-white font-medium transition-colors">Visi & Misi</a>
         </nav>
         <div class="hidden md:block">
           <a
@@ -228,21 +199,11 @@
       </div>
       <nav id="mobile-nav" class="md:hidden hidden border-t border-white/20">
         <div class="px-4 py-3 flex flex-col gap-2 bg-[var(--color-primary-light)]">
-          <a href="#layanan" class="py-2 text-white hover:text-gray-100"
-            >Layanan</a
-          >
-          <a href="#bpjs" class="py-2 text-white hover:text-gray-100"
-            >BPJS</a
-          >
-          <a href="#ai-feature" class="py-2 text-white hover:text-gray-100"
-            >Konsultasi AI</a
-          >
-          <a href="#kontak" class="py-2 text-white hover:text-gray-100"
-            >Kontak</a
-          >
-          <a href="#visi-misi" class="py-2 text-white hover:text-gray-100"
-            >Visi & Misi</a
-          >
+          <a href="#layanan" class="py-2 text-white hover:text-gray-100">Layanan</a>
+          <a href="#bpjs" class="py-2 text-white hover:text-gray-100">BPJS</a>
+          <a href="#ai-feature" class="py-2 text-white hover:text-gray-100">Konsultasi AI</a>
+          <a href="#kontak" class="py-2 text-white hover:text-gray-100">Kontak</a>
+          <a href="#visi-misi" class="py-2 text-white hover:text-gray-100">Visi & Misi</a>
           <a
             href="https://wa.me/6285223128163"
             target="_blank"
@@ -279,63 +240,68 @@
           </div>
           <div class="relative w-full max-w-lg mx-auto lg:mx-0">
             <div class="relative hero-card-bg p-8 rounded-3xl shadow-2xl overflow-hidden">
-                <div class="absolute w-40 h-40 bg-white/10 rounded-full -top-10 -right-10 transform rotate-45"></div>
-                <div class="absolute w-32 h-32 bg-white/10 rounded-full -bottom-10 -left-10 opacity-70 transform -rotate-30"></div>
-                <div class="absolute w-20 h-20 bg-white/10 rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-50"></div>
+              <div class="absolute w-40 h-40 bg-white/10 rounded-full -top-10 -right-10 transform rotate-45"></div>
+              <div class="absolute w-32 h-32 bg-white/10 rounded-full -bottom-10 -left-10 opacity-70 transform -rotate-30"></div>
+              <div class="absolute w-20 h-20 bg-white/10 rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-50"></div>
 
-                <div class="relative z-10 text-white">
-                    <div class="flex flex-col items-center justify-center text-center mb-6">
-                        <div class="flex items-center justify-center gap-3 mb-2">
-                          <img
-                            src="logogmc.png"
-                            alt="Logo Klinik GMC"
-                            class="w-10 h-10 rounded-md object-contain p-1 bg-white" loading="lazy"
-                          />
-                          <div class="flex flex-col leading-tight items-center text-center"> <strong class="text-xs text-white/80 font-bold">Klinik Pratama</strong> <strong class="text-base text-white">Girimukti Medical Center</strong>
-                          </div>
-                          <img
-                            src="logobpjsputih.png"
-                            alt="Logo BPJS Kesehatan"
-                            class="w-10 h-10 object-contain p-1 bg-white rounded-md" loading="lazy" />
-                        </div>
+              <div class="relative z-10 text-white">
+                <div class="flex flex-col items-center justify-center text-center mb-6">
+                  <div class="flex items-center justify-center gap-3 mb-2">
+                    <img
+                      src="logogmc.png"
+                      alt="Logo Klinik GMC"
+                      class="w-10 h-10 rounded-md object-contain p-1 bg-white"
+                      loading="lazy"
+                    />
+                    <div class="flex flex-col leading-tight items-center text-center">
+                      <strong class="text-xs text-white/80 font-bold">Klinik Pratama</strong>
+                      <strong class="text-base text-white">Girimukti Medical Center</strong>
                     </div>
-                    
-                    <div class="relative rounded-xl overflow-hidden shadow-inner w-full aspect-video mb-6">
-                        <video
-                          class="w-full h-full object-cover"
-                          src="vidgmc.mp4"
-                          autoplay
-                          muted
-                          loop
-                          playsinline
-                        ></video>
-                    </div>
-
-                    <div class="space-y-3 text-sm mb-6">
-                        <div class="flex items-start">
-                            <i class="fa-solid fa-location-dot text-white/80 w-5 h-5 mr-3 flex-shrink-0 mt-1"></i>
-                            <p>Jl. Raya Cikadu, RT 001, RW 003, Desa Girimukti, Kec. Singajaya, Kab. Garut (44173)</p>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fa-solid fa-phone text-white/80 w-5 h-5 mr-3 flex-shrink-0"></i>
-                            <p>IOK/ Sertifikat Standar: 91203057521250001</p>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fa-solid fa-envelope text-white/80 w-5 h-5 mr-3 flex-shrink-0"></i>
-                            <p>Kode FASKES BPJS Kesehatan: 0121B009</p>
-                        </div>
-                    </div>
-
-                    <div class="flex justify-center gap-4 mb-6 text-xl">
-                        <a href="https://www.facebook.com/" target="_blank" class="text-white/80 hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/" target="_blank" class="text-white/80 hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/6285223128163" target="_blank" class="text-white/80 hover:text-white transition-colors"><i class="fab fa-whatsapp"></i></a>
-                    </div>
+                    <img
+                      src="logobpjsputih.png"
+                      alt="Logo BPJS Kesehatan"
+                      class="w-10 h-10 object-contain p-1 bg-white rounded-md"
+                      loading="lazy"
+                    />
+                  </div>
                 </div>
+                
+                <div class="relative rounded-xl overflow-hidden shadow-inner w-full aspect-video mb-6">
+                  <video
+                    class="w-full h-full object-cover"
+                    src="vidgmc.mp4"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                  ></video>
+                </div>
+
+                <div class="space-y-3 text-sm mb-6">
+                  <div class="flex items-start">
+                    <i class="fa-solid fa-location-dot text-white/80 w-5 h-5 mr-3 flex-shrink-0 mt-1"></i>
+                    <p>Jl. Raya Cikadu, RT 001, RW 003, Desa Girimukti, Kec. Singajaya, Kab. Garut (44173)</p>
+                  </div>
+                  <div class="flex items-center">
+                    <i class="fa-solid fa-phone text-white/80 w-5 h-5 mr-3 flex-shrink-0"></i>
+                    <p>IOK/ Sertifikat Standar: 91203057521250001</p>
+                  </div>
+                  <div class="flex items-center">
+                    <i class="fa-solid fa-envelope text-white/80 w-5 h-5 mr-3 flex-shrink-0"></i>
+                    <p>Kode FASKES BPJS Kesehatan: 0121B009</p>
+                  </div>
+                </div>
+
+                <div class="flex justify-center gap-4 mb-6 text-xl">
+                  <a href="https://www.facebook.com/" target="_blank" class="text-white/80 hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+                  <a href="https://www.instagram.com/" target="_blank" class="text-white/80 hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                  <a href="https://wa.me/6285223128163" target="_blank" class="text-white/80 hover:text-white transition-colors"><i class="fab fa-whatsapp"></i></a>
+                </div>
+              </div>
             </div>
             <a href="https://wa.me/6285223128163" target="_blank"
-                class="absolute -bottom-6 right-8 bg-white text-[var(--color-primary-dark)] px-6 py-2 rounded-full shadow-lg flex items-center gap-2 font-semibold hover:bg-gray-100 transition-colors">
-                <i class="fa-solid fa-comment-dots"></i> Konsultasi
+              class="absolute -bottom-6 right-8 bg-white text-[var(--color-primary-dark)] px-6 py-2 rounded-full shadow-lg flex items-center gap-2 font-semibold hover:bg-gray-100 transition-colors">
+              <i class="fa-solid fa-comment-dots"></i> Konsultasi
             </a>
           </div>
         </div>
@@ -349,7 +315,8 @@
           Nilai-nilai yang kami pegang teguh dalam melayani Anda.
         </p>
         <div class="grid md:grid-cols-3 gap-8">
-          <div class="card p-8 border border-gray-100 flex flex-col items-center justify-center text-center"> <h3 class="font-bold text-2xl text-[var(--color-text-dark)] mb-4">
+          <div class="card p-8 border border-gray-100 flex flex-col items-center justify-center text-center">
+            <h3 class="font-bold text-2xl text-[var(--color-text-dark)] mb-4">
               <i class="fa-solid fa-eye icon-sm-inline"></i> Visi
             </h3>
             <p class="text-[var(--color-text-light)] text-lg">
@@ -360,12 +327,14 @@
             <h3 class="font-bold text-2xl text-[var(--color-text-dark)] mb-4">
               <i class="fa-solid fa-bullseye icon-sm-inline"></i> Misi
             </h3>
-            <ul class="list-none text-[var(--color-text-light)] space-y-2 text-left max-w-xs mx-auto"> <li class="flex items-start text-lg"><i class="fa-solid fa-circle-check text-[var(--color-primary-dark)] mr-2 mt-1 flex-shrink-0"></i> Menyediakan SDM yang santun dan berbudi.</li>
+            <ul class="list-none text-[var(--color-text-light)] space-y-2 text-left max-w-xs mx-auto">
+              <li class="flex items-start text-lg"><i class="fa-solid fa-circle-check text-[var(--color-primary-dark)] mr-2 mt-1 flex-shrink-0"></i> Menyediakan SDM yang santun dan berbudi.</li>
               <li class="flex items-start text-lg"><i class="fa-solid fa-circle-check text-[var(--color-primary-dark)] mr-2 mt-1 flex-shrink-0"></i> Mengembangkan fasilitas yang dapat mewujudkan kondisi nyaman dan aman.</li>
               <li class="flex items-start text-lg"><i class="fa-solid fa-circle-check text-[var(--color-primary-dark)] mr-2 mt-1 flex-shrink-0"></i> Memberikan pelayanan bermutu berlandaskan Etika Profesionalisme.</li>
             </ul>
           </div>
-          <div class="card p-8 border border-gray-100 flex flex-col items-center justify-center text-center"> <h3 class="font-bold text-2xl text-[var(--color-text-dark)] mb-4">
+          <div class="card p-8 border border-gray-100 flex flex-col items-center justify-center text-center">
+            <h3 class="font-bold text-2xl text-[var(--color-text-dark)] mb-4">
               <i class="fa-solid fa-flag-checkered icon-sm-inline"></i> Tujuan
             </h3>
             <p class="text-[var(--color-text-light)] text-lg">
@@ -429,7 +398,7 @@
             </p>
             <button
               class="btn btn-primary !bg-[var(--color-primary-light)] !text-white !border-[var(--color-primary-light)] px-6 py-2 text-sm !rounded-full listen-btn"
-              data-audio-url="URL_AUDIO_ANDA_UNTUK_PEMERIKSAAN_UMUM.mp3"
+              data-audio-url="poli-umum.mp3"
             >
               <i class="fa-solid fa-circle-play mr-2"></i> Dengarkan
             </button>
@@ -444,7 +413,7 @@
             </p>
             <button
               class="btn btn-primary !bg-[var(--color-primary-light)] !text-white !border-[var(--color-primary-light)] px-6 py-2 text-sm !rounded-full listen-btn"
-              data-audio-url="URL_AUDIO_ANDA_UNTUK_KIA.mp3"
+              data-audio-url="kia.mp3"
             >
               <i class="fa-solid fa-circle-play mr-2"></i> Dengarkan
             </button>
@@ -459,7 +428,7 @@
             </p>
             <button
               class="btn btn-primary !bg-[var(--color-primary-light)] !text-white !border-[var(--color-primary-light)] px-6 py-2 text-sm !rounded-full listen-btn"
-              data-audio-url="URL_AUDIO_ANDA_UNTUK_PERSALINAN.mpil"
+              data-audio-url="persalinan.mp3"
             >
               <i class="fa-solid fa-circle-play mr-2"></i> Dengarkan
             </button>
@@ -474,7 +443,7 @@
             </p>
             <button
               class="btn btn-primary !bg-[var(--color-primary-light)] !text-white !border-[var(--color-primary-light)] px-6 py-2 text-sm !rounded-full listen-btn"
-              data-audio-url="URL_AUDIO_ANDA_UNTUK_UGD.mp3"
+              data-audio-url="ugd.mp3"
             >
               <i class="fa-solid fa-circle-play mr-2"></i> Dengarkan
             </button>
@@ -489,7 +458,7 @@
             </p>
             <button
               class="btn btn-primary !bg-[var(--color-primary-light)] !text-white !border-[var(--color-primary-light)] px-6 py-2 text-sm !rounded-full listen-btn"
-              data-audio-url="URL_AUDIO_ANDA_UNTUK_LABORATORIUM.mp3"
+              data-audio-url="laboratorium.mp3"
             >
               <i class="fa-solid fa-circle-play mr-2"></i> Dengarkan
             </button>
@@ -504,7 +473,7 @@
             </p>
             <button
               class="btn btn-primary !bg-[var(--color-primary-light)] !text-white !border-[var(--color-primary-light)] px-6 py-2 text-sm !rounded-full listen-btn"
-              data-audio-url="URL_AUDIO_ANDA_UNTUK_APOTEK.mp3"
+              data-audio-url="apotek.mp3"
             >
               <i class="fa-solid fa-circle-play mr-2"></i> Dengarkan
             </button>
@@ -654,20 +623,14 @@
                   <i class="fa-solid fa-phone icon-sm-inline !w-6 !h-6"></i>
                   <div class="text-[var(--color-text-light)]">
                     <strong class="font-medium block">Telepon/WA:</strong>
-                    <a href="tel:085223128163" class="text-[var(--color-primary-light)] hover:underline"
-                      >0852 2312 8163</a
-                    >
+                    <a href="tel:085223128163" class="text-[var(--color-primary-light)] hover:underline">0852 2312 8163</a>
                   </div>
                 </li>
                 <li class="flex items-center gap-3">
                   <i class="fa-solid fa-envelope icon-sm-inline !w-6 !h-6"></i>
                   <div class="text-[var(--color-text-light)]">
                     <strong class="font-medium block">Email:</strong>
-                    <a
-                      href="mailto:klinik.gmc.01@gmail.com"
-                      class="text-[var(--color-primary-light)] hover:underline"
-                      >klinik.gmc.01@gmail.com</a
-                    >
+                    <a href="mailto:klinik.gmc.01@gmail.com" class="text-[var(--color-primary-light)] hover:underline">klinik.gmc.01@gmail.com</a>
                   </div>
                 </li>
               </ul>
@@ -675,33 +638,33 @@
           </div>
           <div class="flex flex-col gap-8">
             <h3 class="text-xl font-bold text-[var(--color-text-dark)] mb-4 lg:mb-0">
-                <i class="fa-solid fa-star-half-stroke icon-sm-inline"></i> Apa Kata Pasien Kami?
+              <i class="fa-solid fa-star-half-stroke icon-sm-inline"></i> Apa Kata Pasien Kami?
             </h3>
             <div class="grid md:grid-cols-2 gap-4">
-                <div class="testimonial-card">
-                    <img src="https://via.placeholder.com/150/d1fae5/10b981?text=C" alt="Avatar Cecep" class="testimonial-avatar interactive-shadow">
-                    <div class="text-yellow-400 mb-2">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="text-sm italic text-gray-600 mb-3">"Pelayanan di sini cepat dan ramah. Dokter dan perawatnya sangat profesional. Recommended!"</p>
-                    <span class="font-semibold text-sm text-[var(--color-primary-dark)]">— Cecep, Pasien Poli Umum</span>
+              <div class="testimonial-card">
+                <img src="https://via.placeholder.com/150/d1fae5/10b981?text=C" alt="Avatar Cecep" class="testimonial-avatar interactive-shadow">
+                <div class="text-yellow-400 mb-2">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
                 </div>
-                <div class="testimonial-card">
-                    <img src="https://via.placeholder.com/150/d1fae5/10b981?text=U" alt="Avatar Ujang" class="testimonial-avatar interactive-shadow">
-                    <div class="text-yellow-400 mb-2">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="text-sm italic text-gray-600 mb-3">"Kliniknya bersih dan nyaman. Petugasnya informatif dan membantu. Terima kasih GMC!"</p>
-                    <span class="font-semibold text-sm text-[var(--color-primary-dark)]">— Ujang, Pasien KIA</span>
+                <p class="text-sm italic text-gray-600 mb-3">"Pelayanan di sini cepat dan ramah. Dokter dan perawatnya sangat profesional. Hatur nuhun..!"</p>
+                <span class="font-semibold text-sm text-[var(--color-primary-dark)]">— Cecep, Pasien Poli Umum</span>
+              </div>
+              <div class="testimonial-card">
+                <img src="https://via.placeholder.com/150/d1fae5/10b981?text=U" alt="Avatar Ujang" class="testimonial-avatar interactive-shadow">
+                <div class="text-yellow-400 mb-2">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
                 </div>
+                <p class="text-sm italic text-gray-600 mb-3">"Kliniknya bersih dan nyaman. Petugasnya informatif dan membantu. Terima kasih GMC!"</p>
+                <span class="font-semibold text-sm text-[var(--color-primary-dark)]">— Putri, Pasien KIA</span>
+              </div>
             </div>
           </div>
         </div>
@@ -715,9 +678,9 @@
             <h4 class="text-lg font-bold mb-4">Klinik GMC Garut</h4>
             <p class="text-sm text-white/90 mb-4">Layanan kesehatan terpercaya untuk keluarga di Garut dan sekitarnya.</p>
             <div class="flex gap-4 text-xl">
-                <a href="https://www.facebook.com/" target="_blank" class="hover:text-white/80 transition-colors"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/" target="_blank" class="hover:text-white/80 transition-colors"><i class="fab fa-instagram"></i></a>
-                <a href="https://wa.me/6285223128163" target="_blank" class="hover:text-white/80 transition-colors"><i class="fab fa-whatsapp"></i></a>
+              <a href="https://www.facebook.com/" target="_blank" class="hover:text-white/80 transition-colors"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/" target="_blank" class="hover:text-white/80 transition-colors"><i class="fab fa-instagram"></i></a>
+              <a href="https://wa.me/6285223128163" target="_blank" class="hover:text-white/80 transition-colors"><i class="fab fa-whatsapp"></i></a>
             </div>
           </div>
 
@@ -770,6 +733,136 @@
         © 2023 Klinik Girimukti Medical Center. All rights reserved | Developed by GMC IT.
       </div>
     </footer>
-    
+
+    <script>
+      // Menu Mobile
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileNav = document.getElementById('mobile-nav');
+
+      menuBtn.addEventListener('click', () => {
+        mobileNav.classList.toggle('hidden');
+      });
+
+      // Fitur AI
+      const chatWindow = document.getElementById('chat-window');
+      const userInput = document.getElementById('user-input');
+      const sendBtn = document.getElementById('send-btn');
+      const dailyTipContainer = document.getElementById('daily-tip');
+      const getTipBtn = document.getElementById('get-tip-btn');
+      
+      const audioPlayer = new Audio();
+      let currentAudioUrl = null;
+
+      function createMessage(text, sender) {
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('chat-message', sender);
+        const p = document.createElement('p');
+        p.textContent = text;
+        messageDiv.appendChild(p);
+        chatWindow.prepend(messageDiv);
+        // Autoscroll to bottom is not needed with flex-col-reverse
+      }
+
+      function handleUserInput() {
+        const userText = userInput.value.trim();
+        if (userText === '') return;
+
+        createMessage(userText, 'user');
+        userInput.value = '';
+
+        // Simulate AI response
+        setTimeout(() => {
+          let botResponse = '';
+          const lowerCaseText = userText.toLowerCase();
+
+          if (lowerCaseText.includes('demam') || lowerCaseText.includes('sakit') || lowerCaseText.includes('flu')) {
+            botResponse = "Untuk gejala demam, sakit tenggorokan, atau flu, disarankan untuk istirahat yang cukup, minum banyak cairan, dan mengonsumsi obat penurun demam. Namun, jika gejala berlanjut, segera periksa ke Poli Umum Klinik kami.";
+          } else if (lowerCaseText.includes('ibu hamil') || lowerCaseText.includes('kehamilan')) {
+            botResponse = "Tips untuk ibu hamil: Pastikan asupan nutrisi seimbang, rutin periksa kehamilan (ANC), dan cukup istirahat. Layanan Kesehatan Ibu & Anak (KIA) kami siap membantu Anda dengan bidan profesional.";
+          } else if (lowerCaseText.includes('layanan')) {
+            botResponse = "Kami melayani Poli Umum, Kesehatan Ibu & Anak, Persalinan 24 Jam, UGD & Rawat Inap, Laboratorium, dan Apotek.";
+          } else if (lowerCaseText.includes('bpjs')) {
+            botResponse = "Klinik kami bekerjasama dengan BPJS Kesehatan. Anda bisa mendaftar antrean melalui aplikasi Mobile JKN atau langsung di klinik. Kami siap membantu prosesnya.";
+          } else {
+            botResponse = "Terima kasih atas pertanyaannya. Informasi ini bersifat umum. Untuk diagnosis yang lebih akurat, silakan datang ke klinik kami dan konsultasi langsung dengan dokter.";
+          }
+          createMessage(botResponse, 'bot');
+        }, 1000);
+      }
+
+      sendBtn.addEventListener('click', handleUserInput);
+      userInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+          handleUserInput();
+        }
+      });
+      
+      // Fitur Tips Harian
+      const dailyTips = [
+        "Minum setidaknya 8 gelas air per hari untuk menjaga tubuh tetap terhidrasi dan organ berfungsi optimal.",
+        "Luangkan waktu 30 menit setiap hari untuk berolahraga ringan seperti jalan kaki atau yoga.",
+        "Pastikan tidur 7-8 jam setiap malam untuk memulihkan energi dan menjaga kesehatan mental.",
+        "Konsumsi buah dan sayur berwarna-warni setiap hari untuk mendapatkan vitamin dan mineral yang lengkap.",
+        "Kurangi konsumsi gula dan garam berlebih untuk mencegah penyakit kronis seperti diabetes dan hipertensi.",
+        "Mencuci tangan dengan sabun secara rutin adalah langkah sederhana namun sangat efektif mencegah penyebaran penyakit.",
+        "Jaga kesehatan mental Anda. Lakukan hobi yang disukai atau meditasi untuk mengurangi stres."
+      ];
+
+      getTipBtn.addEventListener('click', () => {
+        const randomIndex = Math.floor(Math.random() * dailyTips.length);
+        const randomTip = dailyTips[randomIndex];
+        dailyTipContainer.innerHTML = `<p class="font-semibold text-lg text-gray-800">${randomTip}</p>`;
+      });
+
+      // Fitur Dengarkan Audio
+      document.querySelectorAll('.listen-btn').forEach(button => {
+        const icon = button.querySelector('i');
+        const originalText = button.innerHTML;
+        let isPlaying = false;
+        
+        button.addEventListener('click', () => {
+          const audioUrl = button.getAttribute('data-audio-url');
+
+          if (isPlaying && currentAudioUrl === audioUrl) {
+            audioPlayer.pause();
+            isPlaying = false;
+            icon.classList.remove('fa-circle-stop');
+            icon.classList.add('fa-circle-play');
+            button.innerHTML = originalText; // Mengembalikan teks asli
+            return;
+          }
+
+          // Stop any currently playing audio
+          if (audioPlayer.paused === false) {
+            audioPlayer.pause();
+            document.querySelectorAll('.listen-btn').forEach(btn => {
+              const prevIcon = btn.querySelector('i');
+              prevIcon.classList.remove('fa-circle-stop');
+              prevIcon.classList.add('fa-circle-play');
+              btn.innerHTML = btn.getAttribute('data-original-text');
+            });
+          }
+
+          // Play new audio
+          audioPlayer.src = audioUrl;
+          audioPlayer.play();
+          currentAudioUrl = audioUrl;
+          isPlaying = true;
+          
+          // Update button state
+          icon.classList.remove('fa-circle-play');
+          icon.classList.add('fa-circle-stop');
+          button.setAttribute('data-original-text', originalText);
+          button.innerHTML = `<i class="fa-solid fa-circle-stop mr-2"></i> Stop`;
+          
+          audioPlayer.onended = () => {
+            isPlaying = false;
+            icon.classList.remove('fa-circle-stop');
+            icon.classList.add('fa-circle-play');
+            button.innerHTML = originalText;
+          };
+        });
+      });
+    </script>
   </body>
 </html>
