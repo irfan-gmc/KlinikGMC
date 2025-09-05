@@ -13,7 +13,10 @@
     <meta property="og:title" content="Klinik Girimukti Medical Center" />
     <meta property="og:description" content="Layanan kesehatan ramah, cepat, dan profesional di Garut. Sudah bekerja sama dengan BPJS Kesehatan." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.klinikgmc.com" /> <meta property="og:image" content="https://www.klinikgmc.com/logogmc.png" /> <link rel="icon" type="image/png" href="logogmc.png" />
+    <meta property="og:url" content="https://www.klinikgmc.com" />
+    <meta property="og:image" content="https://www.klinikgmc.com/logogmc.png" />
+    
+    <link rel="icon" type="image/png" href="logogmc.png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,7 +25,8 @@
     
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.3/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ98VAnw/M/uNP5bTq5pB3I7mQ3vR5tA4T7jR12a2A/8W7VvNl/p8Fj5+B6vW0g==" crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'" />
-    <script src="https://cdn.tailwindcss.com"></script> <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body class="bg-gray-50">
     <header class="sticky top-0 z-40 header-bg-soft-green backdrop-blur-md shadow-md">
@@ -73,8 +77,8 @@
                         Layanan kesehatan terpercaya dengan kenyamanan pasien dan tenaga medis berpengalaman di Garut, Jawa Barat.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="https://wa.me/6285223128163" target="_blank" rel="noopener" class="btn btn-primary">Tanya Admin Klinik</a>
-                        <a href="#layanan" class="btn btn-outline">Lihat Layanan</a>
+                        <a href="https://wa.me/6285223128163" target="_blank" rel="noopener" class="btn btn-primary" aria-label="Tanya Admin Klinik via WhatsApp">Tanya Admin Klinik</a>
+                        <a href="#layanan" class="btn btn-outline" aria-label="Lihat Semua Layanan">Lihat Layanan</a>
                     </div>
                 </div>
                 <div class="relative w-full max-w-lg mx-auto lg:mx-0">
@@ -96,7 +100,7 @@
                             </div>
                             
                             <div class="relative rounded-xl overflow-hidden shadow-inner w-full aspect-video mb-6">
-                                <video class="w-full h-full object-cover" src="vidgmc.mp4" autoplay muted loop playsinline></video>
+                                <video class="w-full h-full object-cover" src="vidgmc.mp4" autoplay muted loop playsinline poster="poster_gmc.jpg"></video>
                             </div>
 
                             <div class="space-y-3 text-sm mb-6">
@@ -115,13 +119,13 @@
                             </div>
 
                             <div class="flex justify-center gap-4 mb-6 text-xl">
-                                <a href="https://www.facebook.com/" target="_blank" class="text-white/80 hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
-                                <a href="https://www.instagram.com/" target="_blank" class="text-white/80 hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
-                                <a href="https://wa.me/6285223128163" target="_blank" class="text-white/80 hover:text-white transition-colors"><i class="fab fa-whatsapp"></i></a>
+                                <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="text-white/80 hover:text-white transition-colors" aria-label="Kunjungi Facebook"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="text-white/80 hover:text-white transition-colors" aria-label="Kunjungi Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="https://wa.me/6285223128163" target="_blank" rel="noopener" class="text-white/80 hover:text-white transition-colors" aria-label="Hubungi WhatsApp"><i class="fab fa-whatsapp"></i></a>
                             </div>
                         </div>
                     </div>
-                    <a href="https://wa.me/6285223128163" target="_blank" class="absolute -bottom-6 right-8 bg-white text-[var(--color-primary-dark)] px-6 py-2 rounded-full shadow-lg flex items-center gap-2 font-semibold hover:bg-gray-100 transition-colors">
+                    <a href="https://wa.me/6285223128163" target="_blank" rel="noopener" class="absolute -bottom-6 right-8 bg-white text-[var(--color-primary-dark)] px-6 py-2 rounded-full shadow-lg flex items-center gap-2 font-semibold hover:bg-gray-100 transition-colors" aria-label="Konsultasi sekarang via WhatsApp">
                         <i class="fa-solid fa-comment-dots"></i> Konsultasi
                     </a>
                 </div>
@@ -215,8 +219,8 @@
                     <p class="text-[var(--color-text-light)] mb-4">
                         Konsultasi keluhan kesehatan, pemeriksaan fisik, dan pengobatan dasar.
                     </p>
-                    <button class="btn btn-primary !bg-[var(--color-primary-light)] !text-white !border-[var(--color-primary-light)] px-6 py-2 text-sm !rounded-full listen-btn" data-audio-url="poli-umum.mp3">
-                        <i class="fa-solid fa-circle-play mr-2"></i> Dengarkan
+                    <button class="btn btn-primary !bg-[var(--color-primary-light)] !text-white !border-[var(--color-primary-light)] px-6 py-2 text-sm !rounded-full listen-btn" data-audio-url="poli-umum.mp3" aria-label="Dengarkan penjelasan Poli Umum">
+                        <i class="fa-solid fa-circle-play mr-2"></i> <span data-btn-text="Dengarkan">Dengarkan</span>
                     </button>
                 </div>
                 <div class="card service">
@@ -227,8 +231,8 @@
                     <p class="text-[var(--color-text-light)] mb-4">
                         Pemeriksaan kehamilan (ANC) dan edukasi kesehatan ibu & bayi. Jam pelayanan 07.00 – 17.00 WIB.
                     </p>
-                    <button class="btn btn-primary !bg-[var(--color-primary-light)] !text-white !border-[var(--color-primary-light)] px-6 py-2 text-sm !rounded-full listen-btn" data-audio-url="kia.mp3">
-                        <i class="fa-solid fa-circle-play mr-2"></i> Dengarkan
+                    <button class="btn btn-primary !bg-[var(--color-primary-light)] !text-white !border-[var(--color-primary-light)] px-6 py-2 text-sm !rounded-full listen-btn" data-audio-url="kia.mp3" aria-label="Dengarkan penjelasan KIA">
+                        <i class="fa-solid fa-circle-play mr-2"></i> <span data-btn-text="Dengarkan">Dengarkan</span>
                     </button>
                 </div>
                 <div class="card service">
@@ -239,8 +243,8 @@
                     <p class="text-[var(--color-text-light)] mb-4">
                         Layanan persalinan normal dan perawatan pasca melahirkan dengan bidan berpengalaman.
                     </p>
-                    <button class="btn btn-primary !bg-[var(--color-primary-light)] !text-white !border-[var(--color-primary-light)] px-6 py-2 text-sm !rounded-full listen-btn" data-audio-url="persalinan.mp3">
-                        <i class="fa-solid fa-circle-play mr-2"></i> Dengarkan
+                    <button class="btn btn-primary !bg-[var(--color-primary-light)] !text-white !border-[var(--color-primary-light)] px-6 py-2 text-sm !rounded-full listen-btn" data-audio-url="persalinan.mp3" aria-label="Dengarkan penjelasan Persalinan">
+                        <i class="fa-solid fa-circle-play mr-2"></i> <span data-btn-text="Dengarkan">Dengarkan</span>
                     </button>
                 </div>
                 <div class="card service">
@@ -251,8 +255,8 @@
                     <p class="text-[var(--color-text-light)] mb-4">
                         Penanganan kasus gawat darurat medis, observasi, dan perawatan penuh waktu.
                     </p>
-                    <button class="btn btn-primary !bg-[var(--color-primary-light)] !text-white !border-[var(--color-primary-light)] px-6 py-2 text-sm !rounded-full listen-btn" data-audio-url="ugd.mp3">
-                        <i class="fa-solid fa-circle-play mr-2"></i> Dengarkan
+                    <button class="btn btn-primary !bg-[var(--color-primary-light)] !text-white !border-[var(--color-primary-light)] px-6 py-2 text-sm !rounded-full listen-btn" data-audio-url="ugd.mp3" aria-label="Dengarkan penjelasan UGD dan Rawat Inap">
+                        <i class="fa-solid fa-circle-play mr-2"></i> <span data-btn-text="Dengarkan">Dengarkan</span>
                     </button>
                 </div>
                 <div class="card service">
@@ -263,8 +267,8 @@
                     <p class="text-[var(--color-text-light)] mb-4">
                         Pemeriksaan penunjang seperti hematologi, kimia klinik, dan tes urin.
                     </p>
-                    <button class="btn btn-primary !bg-[var(--color-primary-light)] !text-white !border-[var(--color-primary-light)] px-6 py-2 text-sm !rounded-full listen-btn" data-audio-url="laboratorium.mp3">
-                        <i class="fa-solid fa-circle-play mr-2"></i> Dengarkan
+                    <button class="btn btn-primary !bg-[var(--color-primary-light)] !text-white !border-[var(--color-primary-light)] px-6 py-2 text-sm !rounded-full listen-btn" data-audio-url="laboratorium.mp3" aria-label="Dengarkan penjelasan Laboratorium">
+                        <i class="fa-solid fa-circle-play mr-2"></i> <span data-btn-text="Dengarkan">Dengarkan</span>
                     </button>
                 </div>
                 <div class="card service">
@@ -275,8 +279,8 @@
                     <p class="text-[var(--color-text-light)] mb-4">
                         Menyediakan obat-obatan yang aman, terjangkau, dan sesuai dengan resep dokter.
                     </p>
-                    <button class="btn btn-primary !bg-[var(--color-primary-light)] !text-white !border-[var(--color-primary-light)] px-6 py-2 text-sm !rounded-full listen-btn" data-audio-url="apotek.mp3">
-                        <i class="fa-solid fa-circle-play mr-2"></i> Dengarkan
+                    <button class="btn btn-primary !bg-[var(--color-primary-light)] !text-white !border-[var(--color-primary-light)] px-6 py-2 text-sm !rounded-full listen-btn" data-audio-url="apotek.mp3" aria-label="Dengarkan penjelasan Apotek">
+                        <i class="fa-solid fa-circle-play mr-2"></i> <span data-btn-text="Dengarkan">Dengarkan</span>
                     </button>
                 </div>
             </div>
@@ -303,8 +307,8 @@
                         </div>
                     </div>
                     <div class="flex items-center gap-2">
-                        <input id="user-input" type="text" placeholder="Misalnya: 'Sakit tenggorokan, demam ringan' atau 'Tips menjaga kesehatan ibu hamil'" class="flex-grow p-3 rounded-xl border border-gray-300 outline-none" />
-                        <button id="send-btn" class="bg-[var(--color-primary-light)] text-white p-3 rounded-xl hover:bg-green-600 transition-colors">
+                        <input id="user-input" type="text" placeholder="Misalnya: 'Sakit tenggorokan, demam ringan' atau 'Tips menjaga kesehatan ibu hamil'" class="flex-grow p-3 rounded-xl border border-gray-300 outline-none" aria-label="Tuliskan keluhan Anda" />
+                        <button id="send-btn" class="bg-[var(--color-primary-light)] text-white p-3 rounded-xl hover:bg-green-600 transition-colors" aria-label="Kirim pesan">
                             <i class="fa-solid fa-paper-plane text-xl"></i>
                         </button>
                     </div>
@@ -322,7 +326,7 @@
                         </div>
                     </div>
                     <div class="mt-4 text-center">
-                        <button id="get-tip-btn" class="btn btn-primary w-full">Dapatkan Tips!</button>
+                        <button id="get-tip-btn" class="btn btn-primary w-full" aria-label="Dapatkan Tips Sehat">Dapatkan Tips!</button>
                     </div>
                 </div>
             </div>
@@ -342,7 +346,7 @@
                     Peserta JKN-KIS dapat berobat di Klinik Girimukti Medical Center sesuai ketentuan BPJS Kesehatan. Pendaftaran lebih mudah melalui <strong class="font-bold">Mobile JKN</strong> atau langsung di klinik.
                 </p>
             </div>
-            <a class="btn btn-primary flex-shrink-0" href="https://wa.me/6285223128163" target="_blank" rel="noopener">Daftar via WhatsApp</a>
+            <a class="btn btn-primary flex-shrink-0" href="https://wa.me/6285223128163" target="_blank" rel="noopener" aria-label="Daftar via WhatsApp">Daftar via WhatsApp</a>
         </div>
     </section>
 
@@ -439,9 +443,9 @@
                     <h4 class="text-lg font-bold mb-4">Klinik GMC Garut</h4>
                     <p class="text-sm text-white/90 mb-4">Layanan kesehatan terpercaya untuk keluarga di Garut dan sekitarnya.</p>
                     <div class="flex gap-4 text-xl">
-                        <a href="https://www.facebook.com/" target="_blank" class="hover:text-white/80 transition-colors" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/" target="_blank" class="hover:text-white/80 transition-colors" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/6285223128163" target="_blank" class="hover:text-white/80 transition-colors" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="hover:text-white/80 transition-colors" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="hover:text-white/80 transition-colors" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/6285223128163" target="_blank" rel="noopener" class="hover:text-white/80 transition-colors" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
                 <div>
@@ -478,6 +482,10 @@
             </div>
         </div>
     </footer>
+    
+    <button id="scroll-to-top" class="fixed bottom-6 right-6 z-50 p-3 bg-[var(--color-primary-dark)] text-white rounded-full shadow-lg hover:bg-green-600 transition-opacity duration-300 opacity-0 invisible" aria-label="Kembali ke atas">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script src="script.js"></script>
 </body>
