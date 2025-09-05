@@ -1,0 +1,115 @@
+@layer base {
+    :root {
+        --color-primary-dark: #10b981;
+        --color-primary-light: #34d399;
+        --color-accent-soft: #d1fae5;
+        --color-text-dark: #1f2937;
+        --color-text-light: #4b5563;
+        --color-bg-light: #f9fafb;
+        --color-card-bg: #ffffff;
+    }
+    html {
+        scroll-behavior: smooth;
+    }
+    body {
+        font-family: 'Montserrat', sans-serif;
+        color: var(--color-text-dark);
+        background-color: var(--color-bg-light);
+    }
+    .btn {
+        @apply inline-flex items-center justify-center rounded-full font-semibold px-8 py-3 transition-all duration-300 ease-in-out;
+    }
+    .btn-primary {
+        @apply bg-[var(--color-primary-dark)] text-white border-2 border-[var(--color-primary-dark)] shadow-md hover:bg-[var(--color-primary-light)] hover:border-[var(--color-primary-light)];
+    }
+    .btn-outline {
+        @apply bg-transparent text-[var(--color-primary-dark)] border-2 border-[var(--color-primary-dark)] hover:bg-[var(--color-primary-dark)] hover:text-white;
+    }
+    .card {
+        @apply bg-white p-8 rounded-3xl shadow-xl transition-all duration-300 ease-in-out;
+    }
+    .card:hover {
+        box-shadow: 0 0 25px rgba(52, 211, 153, 0.7);
+        transform: translateY(-5px);
+    }
+    .section-title {
+        @apply text-4xl font-bold text-center text-gray-800 mb-4;
+    }
+    .section-subtitle {
+        @apply text-lg text-center text-gray-500 mb-12;
+    }
+    .icon-sm-inline {
+        @apply text-[var(--color-primary-dark)] w-5 h-5 inline-block mr-2 align-middle;
+    }
+    .icon-lg-card {
+        @apply w-12 h-12 flex items-center justify-center rounded-lg mb-4 text-2xl;
+        background-color: var(--color-accent-soft);
+        color: var(--color-primary-dark);
+    }
+    .chat-message.user {
+        @apply flex justify-end mb-2;
+    }
+    .chat-message.user p {
+        @apply bg-[var(--color-primary-light)] text-white p-3 rounded-t-xl rounded-bl-xl max-w-xs;
+    }
+    .chat-message.bot {
+        @apply flex justify-start mb-2;
+    }
+    .chat-message.bot p {
+        @apply bg-gray-200 text-gray-800 p-3 rounded-t-xl rounded-br-xl max-w-xs;
+    }
+    .hero-card-bg {
+        background-image: linear-gradient(
+            45deg,
+            var(--color-primary-dark),
+            var(--color-primary-light)
+        );
+    }
+    .header-bg-soft-green {
+        background-color: var(--color-primary-light);
+    }
+    .interactive-shadow {
+        @apply shadow-lg transition-all duration-300 ease-in-out;
+    }
+    .interactive-shadow:hover {
+        box-shadow: 0 0 20px rgba(52, 211, 153, 0.6);
+        transform: translateY(-3px);
+    }
+    .interactive-shadow:focus {
+        box-shadow: 0 0 20px rgba(52, 211, 153, 0.6);
+        outline: none;
+    }
+    #user-input {
+        @apply interactive-shadow;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        @apply focus:ring-2 focus:ring-[var(--color-primary-light)] focus:border-transparent;
+    }
+    #send-btn, #get-tip-btn {
+        @apply interactive-shadow;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    #chat-window {
+        @apply card;
+    }
+    #daily-tip {
+        @apply card;
+    }
+    video {
+        @apply shadow-xl rounded-xl transition-all duration-300 ease-in-out;
+    }
+    video:hover {
+        box-shadow: 0 0 25px rgba(52, 211, 153, 0.7);
+        transform: translateY(-5px);
+    }
+    .testimonial-card {
+        @apply bg-white p-6 rounded-2xl shadow-lg flex flex-col items-center text-center;
+    }
+    .testimonial-avatar {
+        @apply w-16 h-16 rounded-full mb-4;
+    }
+    .service-icon {
+        @apply w-12 h-12 flex items-center justify-center rounded-lg mb-4 text-2xl;
+        background-color: var(--color-accent-soft);
+        color: var(--color-primary-dark);
+    }
+}
