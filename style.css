@@ -5,7 +5,7 @@
         --color-accent-soft: #d1fae5;
         --color-text-dark: #1f2937;
         --color-text-light: #4b5563;
-        --color-bg-light: #f9fafb;
+        --color-bg-light: #F8F9FA;
         --color-card-bg: #ffffff;
     }
     html {
@@ -29,7 +29,7 @@
         @apply bg-white p-8 rounded-3xl shadow-xl transition-all duration-300 ease-in-out;
     }
     .card:hover {
-        box-shadow: 0 0 25px rgba(52, 211, 153, 0.7);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.08);
         transform: translateY(-5px);
     }
     .section-title {
@@ -72,11 +72,11 @@
         @apply shadow-lg transition-all duration-300 ease-in-out;
     }
     .interactive-shadow:hover {
-        box-shadow: 0 0 20px rgba(52, 211, 153, 0.6);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.08);
         transform: translateY(-3px);
     }
     .interactive-shadow:focus {
-        box-shadow: 0 0 20px rgba(52, 211, 153, 0.6);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.08);
         outline: none;
     }
     #user-input {
@@ -98,7 +98,7 @@
         @apply shadow-xl rounded-xl transition-all duration-300 ease-in-out;
     }
     video:hover {
-        box-shadow: 0 0 25px rgba(52, 211, 153, 0.7);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.08);
         transform: translateY(-5px);
     }
     .testimonial-card {
