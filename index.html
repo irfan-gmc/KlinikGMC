@@ -39,7 +39,7 @@
           background-color: var(--color-bg-light);
         }
         .btn {
-          @apply inline-flex items-center justify-center rounded-xl font-semibold px-6 py-3.5 transition-all duration-300 ease-out;
+          @apply inline-flex items-center justify-center rounded-xl font-semibold px-6 py-3.5 transition-all duration-300 ease-out cursor-pointer;
         }
         .btn-primary {
           @apply bg-[var(--color-primary)] text-white shadow-lg shadow-teal-700/20 hover:bg-[var(--color-primary-hover)] hover:-translate-y-0.5;
@@ -127,6 +127,7 @@
         </a>
 
         <nav class="hidden lg:flex items-center gap-7" aria-label="Primary">
+          <a href="#edukasi-harian" class="text-sm font-bold text-teal-700 hover:text-teal-900 transition-colors">Edukasi Hari Ini</a>
           <a href="#visi-misi" class="text-sm font-semibold text-slate-600 hover:text-[var(--color-primary)] transition-colors">Visi & Misi</a>
           <a href="#layanan" class="text-sm font-semibold text-slate-600 hover:text-[var(--color-primary)] transition-colors">Layanan</a>
           <a href="#ai-feature" class="text-sm font-semibold text-slate-600 hover:text-[var(--color-primary)] transition-colors">Konsultasi AI</a>
@@ -157,6 +158,7 @@
       <!-- Mobile Nav -->
       <nav id="mobile-nav" class="lg:hidden hidden border-t border-slate-200 bg-white">
         <div class="px-4 py-4 flex flex-col gap-2">
+          <a href="#edukasi-harian" class="px-3 py-2.5 rounded-lg text-sm font-bold text-teal-700 bg-teal-50/70">Edukasi Hari Ini</a>
           <a href="#visi-misi" class="px-3 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-teal-50 hover:text-teal-700">Visi & Misi</a>
           <a href="#layanan" class="px-3 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-teal-50 hover:text-teal-700">Layanan</a>
           <a href="#ai-feature" class="px-3 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-teal-50 hover:text-teal-700">Konsultasi AI</a>
@@ -192,7 +194,7 @@
               Klinik Girimukti Medical Center hadir dengan tenaga medis berpengalaman, fasilitas nyaman, serta layanan gawat darurat dan persalinan 24 jam di Singajaya, Garut.
             </p>
 
-            <div class="flex flex-col sm:flex-row gap-4 mb-10">
+            <div class="flex flex-col sm:flex-row flex-wrap gap-4 mb-10">
               <a
                 href="https://wa.me/6285223128163"
                 target="_blank"
@@ -201,8 +203,8 @@
               >
                 <i class="fab fa-whatsapp text-lg"></i> Tanya Admin Klinik
               </a>
-              <a href="#layanan" class="btn btn-outline gap-2">
-                <i class="fa-solid fa-stethoscope"></i> Lihat Layanan
+              <a href="#edukasi-harian" class="btn btn-outline gap-2">
+                <i class="fa-solid fa-newspaper"></i> Info Kesehatan Hari Ini
               </a>
             </div>
 
@@ -306,6 +308,106 @@
         </div>
       </div>
     </main>
+
+    <!-- Edukasi Kesehatan Harian (Update Otomatis per Hari + Copy Link Status Medsos) -->
+    <section id="edukasi-harian" class="py-16 md:py-20 bg-gradient-to-b from-white via-teal-50/40 to-white border-y border-teal-100/80">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-10">
+          <span class="section-badge"><i class="fa-solid fa-calendar-check"></i> Update Otomatis Tiap Hari</span>
+          <h2 class="section-title">Info Edukasi Kesehatan Harian</h2>
+          <p class="section-subtitle !mb-4">
+            Topik kesehatan berganti otomatis setiap hari. Bagikan link halaman ini ke status WA/Medsos agar keluarga & warga sekitar lebih mudah membaca info kesehatan terpercaya.
+          </p>
+          <p id="edu-date-badge" class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900 text-teal-300 text-xs font-bold shadow-sm"></p>
+        </div>
+
+        <div class="max-w-5xl mx-auto card !p-6 sm:!p-9 border-teal-200/80 shadow-lg">
+          <div class="grid lg:grid-cols-12 gap-8 items-start">
+            <!-- Artikel Edukasi Hari Ini -->
+            <div class="lg:col-span-8 space-y-5">
+              <div class="flex flex-wrap items-center gap-2.5">
+                <span id="edu-category" class="px-3 py-1 rounded-full text-xs font-bold bg-teal-100 text-teal-800"></span>
+                <span id="edu-readtime" class="text-xs font-medium text-slate-500"></span>
+              </div>
+
+              <h3 id="edu-title" class="text-2xl sm:text-3xl font-extrabold text-slate-900 leading-snug"></h3>
+              <p id="edu-summary" class="text-slate-600 text-sm sm:text-base leading-relaxed"></p>
+
+              <div class="bg-teal-50/70 border border-teal-200/70 rounded-2xl p-5">
+                <h4 class="text-sm font-bold text-teal-950 mb-3 flex items-center gap-2">
+                  <i class="fa-solid fa-circle-check text-teal-600"></i> Poin Utama yang Perlu Diperhatikan:
+                </h4>
+                <ul id="edu-points" class="space-y-2.5 text-sm text-slate-700"></ul>
+              </div>
+
+              <div class="bg-amber-50 border border-amber-200/80 rounded-xl p-4 text-xs sm:text-sm text-amber-950 flex items-start gap-3">
+                <i class="fa-solid fa-stethoscope text-amber-600 mt-0.5 flex-shrink-0"></i>
+                <p id="edu-clinic-note"></p>
+              </div>
+            </div>
+
+            <!-- Panel Share Status Medsos -->
+            <div class="lg:col-span-4 bg-slate-900 text-white rounded-2xl p-6 space-y-4">
+              <div class="flex items-center gap-2.5">
+                <div class="w-9 h-9 rounded-xl bg-teal-500/20 text-teal-300 flex items-center justify-center">
+                  <i class="fa-solid fa-share-nodes"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-sm text-white">Sebarkan ke Status Medsos</h4>
+                  <p class="text-[11px] text-slate-400">Siap copas untuk WA Status, IG Story & FB</p>
+                </div>
+              </div>
+
+              <div>
+                <label for="share-caption-box" class="block text-[11px] font-semibold uppercase tracking-wider text-teal-300 mb-1.5">
+                  Teks & Link Otomatis Hari Ini
+                </label>
+                <textarea
+                  id="share-caption-box"
+                  rows="7"
+                  readonly
+                  class="w-full rounded-xl bg-slate-800/90 border border-slate-700 text-xs text-slate-100 p-3 leading-relaxed focus:outline-none focus:border-teal-400"
+                ></textarea>
+              </div>
+
+              <button
+                id="copy-share-btn"
+                type="button"
+                class="w-full py-3 px-4 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-xs sm:text-sm transition-colors flex items-center justify-center gap-2 shadow-md"
+              >
+                <i class="fa-solid fa-copy"></i>
+                <span id="copy-share-label">Salin Link & Teks Status</span>
+              </button>
+
+              <a
+                id="wa-share-link"
+                href="#"
+                target="_blank"
+                rel="noopener"
+                class="w-full py-2.5 px-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-xs transition-colors flex items-center justify-center gap-2"
+              >
+                <i class="fab fa-whatsapp text-emerald-400 text-sm"></i>
+                <span>Kirim / Bagikan via WhatsApp</span>
+              </a>
+
+              <div class="pt-3 border-t border-slate-800">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-[11px] text-slate-400 font-semibold">Pilih Topik Lain:</span>
+                  <button
+                    id="reset-today-btn"
+                    type="button"
+                    class="text-[11px] text-teal-300 hover:underline font-semibold"
+                  >
+                    Kembali ke Hari Ini
+                  </button>
+                </div>
+                <div id="topic-selector" class="flex flex-wrap gap-1.5"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Operational & Pillars Strip -->
     <section class="py-12 bg-slate-900 text-white">
@@ -898,6 +1000,220 @@
       menuBtn.addEventListener('click', () => {
         mobileNav.classList.toggle('hidden');
       });
+
+      // Edukasi Kesehatan Harian (Update Otomatis per Hari)
+      const SITE_EDU_URL = 'https://klinik-gmc.vercel.app/#edukasi-harian';
+
+      const dailyEducationTopics = [
+        {
+          shortLabel: 'Hidrasi & Ginjal',
+          category: 'Gaya Hidup Sehat',
+          readTime: 'Baca ±2 menit',
+          title: 'Kenali Tanda Tubuh Kurang Cairan Sebelum Terlambat',
+          summary: 'Kurang minum air putih sering memicu pusing ringan, lemas, sulit fokus, hingga gangguan saluran kemih—apalagi saat cuaca panas atau aktivitas padat.',
+          points: [
+            'Biasakan minum air putih sejak bangun tidur dan sediakan botol minum di dekat meja kerja atau saat perjalanan.',
+            'Perhatikan warna urine: warna kuning pucat menandakan hidrasi cukup, sedangkan kuning pekat tanda tubuh butuh cairan.',
+            'Kurangi minuman manis kemasan berlebihan karena tidak menggantikan kebutuhan air putih tubuh.'
+          ],
+          clinicNote: 'Bila keluhan lemas disertai pusing berat, muntah, atau demam, segera periksakan diri ke Poli Umum atau UGD 24 Jam Klinik GMC.'
+        },
+        {
+          shortLabel: 'Cegah ISPA & Flu',
+          category: 'Penyakit Musiman',
+          readTime: 'Baca ±2 menit',
+          title: 'Langkah Sederhana Cegah Batuk, Pilek & Radang Tenggorokan',
+          summary: 'Perubahan cuaca dan paparan debu dapat menurunkan daya tahan saluran napas sehingga mudah terserang batuk, pilek, atau nyeri tenggorokan.',
+          points: [
+            'Cuci tangan dengan sabun dan air mengalir setelah beraktivitas, naik kendaraan, atau sebelum makan.',
+            'Gunakan masker saat berada di keramaian atau ketika sedang mengalami batuk/pilek agar tidak menular ke keluarga.',
+            'Cukupi tidur 7–8 jam per malam agar sistem imun tetap optimal melawan virus.'
+          ],
+          clinicNote: 'Jika batuk/demam berlangsung lebih dari 3 hari atau disertai sesak napas, kunjungi Klinik GMC untuk pemeriksaan dokter.'
+        },
+        {
+          shortLabel: 'Kesehatan Ibu Hamil',
+          category: 'Kesehatan Ibu & Anak (KIA)',
+          readTime: 'Baca ±3 menit',
+          title: 'Pentingnya Rutin Periksa Kehamilan (ANC) & Tablet Tambah Darah',
+          summary: 'Pemeriksaan kehamilan secara rutin membantu memantau tumbuh kembang janin serta mendeteksi dini risiko seperti anemia atau tekanan darah tinggi.',
+          points: [
+            'Lakukan pemeriksaan ANC berkala sesuai jadwal bidan/dokter serta konsumsi tablet tambah darah sesuai anjuran.',
+            'Penuhi asupan protein, sayur hijau, dan buah-buahan setiap hari.',
+            'Kenali tanda bahaya kehamilan: sakit kepala hebat, pandangan kabur, bengkak pada wajah/kaki, atau perdarahan.'
+          ],
+          clinicNote: 'Pelayanan KIA Klinik GMC buka pukul 07.00 – 17.00 WIB, dan layanan Persalinan siap 24 jam.'
+        },
+        {
+          shortLabel: 'Waspada Hipertensi',
+          category: 'Penyakit Tidak Menular',
+          readTime: 'Baca ±2 menit',
+          title: 'Tekanan Darah Tinggi Sering Tanpa Gejala, Cek Rutin Itu Penting',
+          summary: 'Hipertensi kerap dijuluki "silent killer" karena banyak penderitanya merasa baik-baik saja hingga terjadi komplikasi jantung atau stroke.',
+          points: [
+            'Batasi konsumsi garam dapur, makanan instan/asin, serta penyedap rasa berlebihan.',
+            'Sempatkan jalan kaki santai minimal 30 menit sehari dan kelola stres dengan cukup istirahat.',
+            'Cek tekanan darah secara berkala, terutama bagi usia 40 tahun ke atas atau yang memiliki riwayat keluarga.'
+          ],
+          clinicNote: 'Peserta BPJS Kesehatan (Faskes 0121B009) dapat memanfaatkan layanan kontrol rutin di Klinik GMC.'
+        },
+        {
+          shortLabel: 'Gula Darah & Diabetes',
+          category: 'Pencegahan Dini',
+          readTime: 'Baca ±2 menit',
+          title: 'Kebiasaan Kecil untuk Menjaga Gula Darah Tetap Stabil',
+          summary: 'Pola makan tinggi gula dan karbohidrat olahan secara terus-menerus meningkatkan risiko diabetes melitus tipe 2.',
+          points: [
+            'Perhatikan porsi nasi putih dan imbangi dengan lauk berprotein serta sayur berserat.',
+            'Kurangi teh manis kental, minuman boba/kemasan manis, dan camilan tinggi gula.',
+            'Jika sering merasa mudah haus, sering buang air kecil malam hari, atau cepat lelah, lakukan cek gula darah.'
+          ],
+          clinicNote: 'Pemeriksaan gula darah sewaktu/puasa tersedia di layanan Laboratorium Klinik GMC.'
+        },
+        {
+          shortLabel: 'Pertolongan Pertama',
+          category: 'Keselamatan Keluarga',
+          readTime: 'Baca ±3 menit',
+          title: 'Pertolongan Pertama saat Demam Tinggi & Luka Ringan di Rumah',
+          summary: 'Penanganan awal yang tepat di rumah membantu mencegah kondisi memburuk sebelum mendapat pemeriksaan tenaga medis.',
+          points: [
+            'Untuk demam: kompres hangat (bukan air es), pakaian tipis yang nyaman, cukup minum, dan gunakan obat penurun panas sesuai dosis anjuran.',
+            'Untuk luka lecet/tergores: bersihkan dengan air mengalir, tekan lembut jika berdarah, lalu tutup dengan kasa bersih.',
+            'Hindari menempelkan bahan sembarangan pada luka terbuka karena berisiko memicu infeksi.'
+          ],
+          clinicNote: 'Untuk kondisi gawat darurat, luka cukup dalam, atau demam tinggi pada anak, UGD Klinik GMC siaga 24 jam.'
+        },
+        {
+          shortLabel: 'Anak Sehat & Aktif',
+          category: 'Tumbuh Kembang Anak',
+          readTime: 'Baca ±2 menit',
+          title: 'Membangun Kebiasaan Sehat Anak Sejak Usia Sekolah',
+          summary: 'Kebiasaan sehat yang ditanamkan sejak kecil akan terbawa hingga dewasa dan membantu anak lebih berprestasi serta jarang absen sekolah.',
+          points: [
+            'Biasakan sarapan bergizi sebelum berangkat sekolah agar konsentrasi belajar lebih terjaga.',
+            'Batasi waktu menatap layar gadget dan ajak anak bergerak aktif di luar ruangan.',
+            'Ajarkan anak cuci tangan pakai sabun sebelum makan dan setelah dari toilet.'
+          ],
+          clinicNote: 'Butuh konsultasi kesehatan anak atau info layanan BPJS? Hubungi admin Klinik GMC di 0852 2312 8163.'
+        }
+      ];
+
+      function getTodayIndex() {
+        const now = new Date();
+        const startOfYear = new Date(now.getFullYear(), 0, 0);
+        const diff = now - startOfYear;
+        const oneDay = 1000 * 60 * 60 * 24;
+        const dayOfYear = Math.floor(diff / oneDay);
+        return dayOfYear % dailyEducationTopics.length;
+      }
+
+      function formatTodayIndonesian() {
+        const now = new Date();
+        return now.toLocaleDateString('id-ID', {
+          weekday: 'long',
+          day: 'numeric',
+          month: 'long',
+          year: 'numeric'
+        });
+      }
+
+      const eduDateBadge = document.getElementById('edu-date-badge');
+      const eduCategory = document.getElementById('edu-category');
+      const eduReadtime = document.getElementById('edu-readtime');
+      const eduTitle = document.getElementById('edu-title');
+      const eduSummary = document.getElementById('edu-summary');
+      const eduPoints = document.getElementById('edu-points');
+      const eduClinicNote = document.getElementById('edu-clinic-note');
+      const shareCaptionBox = document.getElementById('share-caption-box');
+      const copyShareBtn = document.getElementById('copy-share-btn');
+      const copyShareLabel = document.getElementById('copy-share-label');
+      const waShareLink = document.getElementById('wa-share-link');
+      const topicSelector = document.getElementById('topic-selector');
+      const resetTodayBtn = document.getElementById('reset-today-btn');
+
+      let activeTopicIndex = getTodayIndex();
+
+      function buildShareCaption(topic, isToday) {
+        const labelWaktu = isToday ? `Edukasi Hari Ini (${formatTodayIndonesian()})` : `Info Kesehatan (${topic.shortLabel})`;
+        return [
+          `🩺 ${labelWaktu}`,
+          `📌 ${topic.title}`,
+          `${topic.summary}`,
+          `Baca selengkapnya di sini:`,
+          `${SITE_EDU_URL}`,
+          `— Klinik Girimukti Medical Center (BPJS: 0121B009)`
+        ].join('\n\n');
+      }
+
+      function renderEducationTopic(index) {
+        activeTopicIndex = index;
+        const topic = dailyEducationTopics[index];
+        const todayIdx = getTodayIndex();
+        const isToday = index === todayIdx;
+
+        eduDateBadge.innerHTML = `<i class="fa-solid fa-calendar-day"></i> ${formatTodayIndonesian()} ${isToday ? '• Topik Otomatis Hari Ini' : '• Topik Pilihan'}`;
+        eduCategory.textContent = topic.category;
+        eduReadtime.textContent = `• ${topic.readTime}`;
+        eduTitle.textContent = topic.title;
+        eduSummary.textContent = topic.summary;
+
+        eduPoints.innerHTML = topic.points
+          .map(
+            (pt) =>
+              `<li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-teal-600 mt-1 flex-shrink-0"></i><span>${pt}</span></li>`
+          )
+          .join('');
+
+        eduClinicNote.innerHTML = `<strong>Info Klinik GMC:</strong> ${topic.clinicNote}`;
+
+        const captionText = buildShareCaption(topic, isToday);
+        shareCaptionBox.value = captionText;
+        waShareLink.href = `https://wa.me/?text=${encodeURIComponent(captionText)}`;
+
+        // Highlight tombol topik
+        document.querySelectorAll('.topic-pill-btn').forEach((btn, idx) => {
+          if (idx === index) {
+            btn.className =
+              'topic-pill-btn px-2.5 py-1 rounded-lg text-[11px] font-bold bg-teal-500 text-slate-950 transition-colors cursor-pointer';
+          } else {
+            btn.className =
+              'topic-pill-btn px-2.5 py-1 rounded-lg text-[11px] font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition-colors cursor-pointer';
+          }
+        });
+      }
+
+      // Buat tombol topik cepat
+      dailyEducationTopics.forEach((topic, idx) => {
+        const pill = document.createElement('button');
+        pill.type = 'button';
+        pill.textContent = topic.shortLabel;
+        pill.addEventListener('click', () => renderEducationTopic(idx));
+        topicSelector.appendChild(pill);
+      });
+
+      resetTodayBtn.addEventListener('click', () => {
+        renderEducationTopic(getTodayIndex());
+      });
+
+      copyShareBtn.addEventListener('click', async () => {
+        const textToCopy = shareCaptionBox.value;
+        try {
+          await navigator.clipboard.writeText(textToCopy);
+        } catch (err) {
+          shareCaptionBox.select();
+          document.execCommand('copy');
+        }
+        copyShareLabel.textContent = 'Tersalin! Siap Tempel di Status';
+        copyShareBtn.classList.remove('bg-teal-500', 'hover:bg-teal-400', 'text-slate-950');
+        copyShareBtn.classList.add('bg-emerald-400', 'text-slate-950');
+        setTimeout(() => {
+          copyShareLabel.textContent = 'Salin Link & Teks Status';
+          copyShareBtn.classList.remove('bg-emerald-400');
+          copyShareBtn.classList.add('bg-teal-500', 'hover:bg-teal-400', 'text-slate-950');
+        }, 2500);
+      });
+
+      renderEducationTopic(activeTopicIndex);
 
       // Fitur AI
       const chatWindow = document.getElementById('chat-window');
