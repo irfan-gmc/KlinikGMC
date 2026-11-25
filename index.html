@@ -127,7 +127,7 @@
         </a>
 
         <nav class="hidden lg:flex items-center gap-7" aria-label="Primary">
-          <a href="#edukasi-harian" class="text-sm font-bold text-teal-700 hover:text-teal-900 transition-colors">Edukasi Hari Ini</a>
+          <a href="#edukasi-harian" class="text-sm font-bold text-teal-700 hover:text-teal-900 transition-colors">Edukasi Kesehatan GMC</a>
           <a href="#visi-misi" class="text-sm font-semibold text-slate-600 hover:text-[var(--color-primary)] transition-colors">Visi & Misi</a>
           <a href="#layanan" class="text-sm font-semibold text-slate-600 hover:text-[var(--color-primary)] transition-colors">Layanan</a>
           <a href="#ai-feature" class="text-sm font-semibold text-slate-600 hover:text-[var(--color-primary)] transition-colors">Konsultasi AI</a>
@@ -158,7 +158,7 @@
       <!-- Mobile Nav -->
       <nav id="mobile-nav" class="lg:hidden hidden border-t border-slate-200 bg-white">
         <div class="px-4 py-4 flex flex-col gap-2">
-          <a href="#edukasi-harian" class="px-3 py-2.5 rounded-lg text-sm font-bold text-teal-700 bg-teal-50/70">Edukasi Hari Ini</a>
+          <a href="#edukasi-harian" class="px-3 py-2.5 rounded-lg text-sm font-bold text-teal-700 bg-teal-50/70">Edukasi Kesehatan GMC</a>
           <a href="#visi-misi" class="px-3 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-teal-50 hover:text-teal-700">Visi & Misi</a>
           <a href="#layanan" class="px-3 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-teal-50 hover:text-teal-700">Layanan</a>
           <a href="#ai-feature" class="px-3 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-teal-50 hover:text-teal-700">Konsultasi AI</a>
@@ -309,12 +309,12 @@
       </div>
     </main>
 
-    <!-- Edukasi Kesehatan Harian (Update Otomatis per Hari + Copy Link Status Medsos) -->
+    <!-- Edukasi Kesehatan GMC (Update Otomatis per Hari + Copy Link Status Medsos) -->
     <section id="edukasi-harian" class="py-16 md:py-20 bg-gradient-to-b from-white via-teal-50/40 to-white border-y border-teal-100/80">
       <div class="container mx-auto px-4">
         <div class="text-center mb-10">
           <span class="section-badge"><i class="fa-solid fa-calendar-check"></i> Update Otomatis Tiap Hari</span>
-          <h2 class="section-title">Info Edukasi Kesehatan Harian</h2>
+          <h2 class="section-title">Info Edukasi Kesehatan GMC</h2>
           <p class="section-subtitle !mb-4">
             Topik kesehatan berganti otomatis setiap hari. Bagikan link halaman ini ke status WA/Medsos agar keluarga & warga sekitar lebih mudah membaca info kesehatan terpercaya.
           </p>
@@ -714,7 +714,7 @@
           <div class="lg:col-span-5 card flex flex-col justify-between bg-gradient-to-br from-teal-900 to-slate-900 text-white border-none">
             <div>
               <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-teal-300 text-xs font-bold mb-4">
-                <i class="fa-solid fa-sun"></i> Edukasi Harian
+                <i class="fa-solid fa-sun"></i> Edukasi Kesehatan GMC
               </div>
               <h3 class="font-bold text-2xl text-white mb-2">Tips Sehat Harian</h3>
               <p class="text-sm text-slate-300 mb-6">
@@ -1134,7 +1134,7 @@
       let activeTopicIndex = getTodayIndex();
 
       function buildShareCaption(topic, isToday) {
-        const labelWaktu = isToday ? `Edukasi Hari Ini (${formatTodayIndonesian()})` : `Info Kesehatan (${topic.shortLabel})`;
+        const labelWaktu = isToday ? `Edukasi Kesehatan GMC (${formatTodayIndonesian()})` : `Info Kesehatan (${topic.shortLabel})`;
         return [
           `🩺 ${labelWaktu}`,
           `📌 ${topic.title}`,
