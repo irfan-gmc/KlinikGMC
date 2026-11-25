@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,17 +8,16 @@
       name="description"
       content="Klinik Girimukti Medical Center – Layanan kesehatan ramah, cepat, profesional. Sudah bekerjasama dengan BPJS Kesehatan."
     />
-    <meta name="theme-color" content="#34d399" />
+    <meta name="theme-color" content="#0f766e" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.3/css/all.min.css"
-      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ98VAnw/M/uNP5bTq5pB3I7mQ3vR5tA4T7jR12a2A/8W7VvNl/p8Fj5+B6vW0g=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
@@ -27,246 +26,232 @@
     <style type="text/tailwindcss">
       @layer base {
         :root {
-          --color-primary-dark: #10b981;
-          --color-primary-light: #34d399;
-          --color-accent-soft: #d1fae5;
-          --color-text-dark: #1f2937;
-          --color-text-light: #4b5563;
-          --color-bg-light: #f9fafb;
-          --color-card-bg: #ffffff;
-        }
-        html {
-          scroll-behavior: smooth;
+          --color-primary: #0f766e;       /* Teal 700 */
+          --color-primary-hover: #115e59; /* Teal 800 */
+          --color-secondary: #0284c7;     /* Sky 600 */
+          --color-accent-soft: #ccfbf1;   /* Teal 100 */
+          --color-navy: #0f172a;          /* Slate 900 */
+          --color-bg-light: #f8fafc;      /* Slate 50 */
         }
         body {
-          font-family: 'Montserrat', sans-serif;
-          color: var(--color-text-dark);
+          font-family: 'Plus Jakarta Sans', sans-serif;
+          color: #1e293b;
           background-color: var(--color-bg-light);
         }
         .btn {
-          @apply inline-flex items-center justify-center rounded-full font-semibold px-8 py-3 transition-all duration-300 ease-in-out;
+          @apply inline-flex items-center justify-center rounded-xl font-semibold px-6 py-3.5 transition-all duration-300 ease-out;
         }
         .btn-primary {
-          @apply bg-[var(--color-primary-dark)] text-white border-2 border-[var(--color-primary-dark)] shadow-md hover:bg-[var(--color-primary-light)] hover:border-[var(--color-primary-light)];
+          @apply bg-[var(--color-primary)] text-white shadow-lg shadow-teal-700/20 hover:bg-[var(--color-primary-hover)] hover:-translate-y-0.5;
         }
         .btn-outline {
-          @apply bg-transparent text-[var(--color-primary-dark)] border-2 border-[var(--color-primary-dark)] hover:bg-[var(--color-primary-dark)] hover:text-white;
+          @apply bg-white text-[var(--color-primary)] border border-teal-200 shadow-sm hover:border-[var(--color-primary)] hover:bg-teal-50/60 hover:-translate-y-0.5;
         }
         .card {
-          @apply bg-white p-8 rounded-3xl shadow-xl transition-all duration-300 ease-in-out;
+          @apply bg-white p-7 rounded-2xl border border-slate-200/80 shadow-sm transition-all duration-300 ease-out;
         }
         .card:hover {
-          box-shadow: 0 0 25px rgba(52, 211, 153, 0.7);
-          transform: translateY(-5px);
+          @apply shadow-xl shadow-teal-900/5 border-teal-200 -translate-y-1;
+        }
+        .section-badge {
+          @apply inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-teal-50 text-teal-700 border border-teal-200/60 mb-3;
         }
         .section-title {
-          @apply text-4xl font-bold text-center text-gray-800 mb-4;
+          @apply text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-3;
         }
         .section-subtitle {
-          @apply text-lg text-center text-gray-500 mb-12;
-        }
-        .icon-sm-inline {
-          @apply text-[var(--color-primary-dark)] w-5 h-5 inline-block mr-2 align-middle;
+          @apply text-base sm:text-lg text-slate-600 max-w-2xl mx-auto mb-12;
         }
         .icon-lg-card {
-          @apply w-12 h-12 flex items-center justify-center rounded-lg mb-4 text-2xl;
-          background-color: var(--color-accent-soft);
-          color: var(--color-primary-dark);
+          @apply w-14 h-14 flex items-center justify-center rounded-2xl mb-5 text-2xl bg-gradient-to-br from-teal-50 to-sky-50 text-[var(--color-primary)] border border-teal-100;
         }
         .chat-message.user {
-          @apply flex justify-end mb-2;
+          @apply flex justify-end mb-3;
         }
         .chat-message.user p {
-          @apply bg-[var(--color-primary-light)] text-white p-3 rounded-t-xl rounded-bl-xl max-w-xs;
+          @apply bg-[var(--color-primary)] text-white text-sm px-4 py-3 rounded-2xl rounded-br-sm max-w-[85%] shadow-sm;
         }
         .chat-message.bot {
-          @apply flex justify-start mb-2;
+          @apply flex justify-start mb-3;
         }
         .chat-message.bot p {
-          @apply bg-gray-200 text-gray-800 p-3 rounded-t-xl rounded-br-xl max-w-xs;
+          @apply bg-white border border-slate-200 text-slate-700 text-sm px-4 py-3 rounded-2xl rounded-bl-sm max-w-[85%] shadow-sm leading-relaxed;
         }
         .hero-card-bg {
-          background-image: linear-gradient(
-            45deg,
-            var(--color-primary-dark),
-            var(--color-primary-light)
-          );
+          background: linear-gradient(145deg, #0f172a 0%, #115e59 65%, #0d9488 100%);
         }
-        .header-bg-soft-green {
-          background-color: var(--color-primary-light);
-        }
-        .interactive-shadow {
-          @apply shadow-lg transition-all duration-300 ease-in-out;
-        }
-        .interactive-shadow:hover {
-          box-shadow: 0 0 20px rgba(52, 211, 153, 0.6);
-          transform: translateY(-3px);
-        }
-        .interactive-shadow:focus {
-          box-shadow: 0 0 20px rgba(52, 211, 153, 0.6);
-          outline: none;
-        }
-        #user-input {
-          @apply interactive-shadow;
-          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-          @apply focus:ring-2 focus:ring-[var(--color-primary-light)] focus:border-transparent;
-        }
-        #send-btn, #get-tip-btn {
-          @apply interactive-shadow;
-          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
-        #chat-window {
-          @apply card;
-        }
-        #daily-tip {
-          @apply card;
-        }
-        video {
-          @apply shadow-xl rounded-xl transition-all duration-300 ease-in-out;
-        }
-        video:hover {
-          box-shadow: 0 0 25px rgba(52, 211, 153, 0.7);
-          transform: translateY(-5px);
-        }
-        .testimonial-card {
-          @apply bg-white p-6 rounded-2xl shadow-lg flex flex-col items-center text-center;
-        }
-        .testimonial-avatar {
-          @apply w-16 h-16 rounded-full mb-4;
-        }
-        .service-icon {
-            @apply w-12 h-12 flex items-center justify-center rounded-lg mb-4 text-2xl;
-            background-color: var(--color-accent-soft);
-            color: var(--color-primary-dark);
+        .bg-grid-pattern {
+          background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+          background-size: 24px 24px;
         }
       }
     </style>
   </head>
-  <body class="bg-gray-50">
-    <header class="sticky top-0 z-40 header-bg-soft-green backdrop-blur-md shadow-md">
-      <div class="container mx-auto px-4 py-3 flex items-center justify-between">
-        <a href="#" class="flex items-center gap-3">
-          <div class="relative w-12 h-12 flex-shrink-0">
+  <body class="antialiased selection:bg-teal-600 selection:text-white">
+    <!-- Top Info Bar -->
+    <div class="bg-slate-900 text-slate-300 text-xs py-2 hidden sm:block border-b border-slate-800">
+      <div class="container mx-auto px-4 flex justify-between items-center">
+        <div class="flex items-center gap-6">
+          <span><i class="fa-solid fa-hospital text-teal-400 mr-1.5"></i> Kode Faskes BPJS: <strong class="text-white">0121B009</strong></span>
+          <span><i class="fa-solid fa-clock text-teal-400 mr-1.5"></i> UGD, Rawat Inap & Persalinan: <strong class="text-white">24 Jam</strong></span>
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="mailto:klinik.gmc.01@gmail.com" class="hover:text-teal-400 transition-colors">
+            <i class="fa-solid fa-envelope mr-1"></i> klinik.gmc.01@gmail.com
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-lg border-b border-slate-200/80 shadow-sm">
+      <div class="container mx-auto px-4 py-3.5 flex items-center justify-between">
+        <a href="#" class="flex items-center gap-3.5 group">
+          <div class="relative w-12 h-12 flex-shrink-0 rounded-xl bg-teal-50 border border-teal-100 p-1.5 flex items-center justify-center group-hover:scale-105 transition-transform">
             <img
               src="logogmc.png"
               alt="Logo Klinik GMC"
-              class="w-12 h-12 rounded-md object-contain p-1 bg-white"
+              class="w-full h-full object-contain"
               loading="lazy"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              onerror="this.style.display='none';"
             />
           </div>
-          <div class="flex flex-col leading-tight items-center">
-            <strong class="text-xs text-white/90 font-bold">Yayasan Insan Medika Cendikia Garut</strong>
-            <strong class="text-base text-white">Girimukti Medical Center</strong>
+          <div class="flex flex-col leading-tight">
+            <span class="text-[11px] font-semibold uppercase tracking-wider text-teal-700">
+              Yayasan Insan Medika Cendikia Garut
+            </span>
+            <strong class="text-base sm:text-lg font-extrabold text-slate-900">
+              Girimukti Medical Center
+            </strong>
           </div>
         </a>
-        <nav class="hidden md:flex items-center gap-6" aria-label="Primary">
-          <a href="#layanan" class="text-white/90 hover:text-white font-medium transition-colors">Layanan</a>
-          <a href="#bpjs" class="text-white/90 hover:text-white font-medium transition-colors">BPJS</a>
-          <a href="#ai-feature" class="text-white/90 hover:text-white font-medium transition-colors">Konsultasi AI</a>
-          <a href="#kontak" class="text-white/90 hover:text-white font-medium transition-colors">Kontak</a>
-          <a href="#visi-misi" class="text-white/90 hover:text-white font-medium transition-colors">Visi & Misi</a>
+
+        <nav class="hidden lg:flex items-center gap-7" aria-label="Primary">
+          <a href="#visi-misi" class="text-sm font-semibold text-slate-600 hover:text-[var(--color-primary)] transition-colors">Visi & Misi</a>
+          <a href="#layanan" class="text-sm font-semibold text-slate-600 hover:text-[var(--color-primary)] transition-colors">Layanan</a>
+          <a href="#ai-feature" class="text-sm font-semibold text-slate-600 hover:text-[var(--color-primary)] transition-colors">Konsultasi AI</a>
+          <a href="#bpjs" class="text-sm font-semibold text-slate-600 hover:text-[var(--color-primary)] transition-colors">BPJS</a>
+          <a href="#kontak" class="text-sm font-semibold text-slate-600 hover:text-[var(--color-primary)] transition-colors">Kontak</a>
         </nav>
-        <div class="hidden md:block">
+
+        <div class="hidden md:flex items-center gap-3">
           <a
             href="https://wa.me/6285223128163"
             target="_blank"
             rel="noopener"
-            class="btn bg-white text-[var(--color-primary-dark)] border-2 border-white shadow-md hover:bg-gray-100 hover:border-gray-100"
-            >WhatsApp</a
+            class="btn btn-primary !py-2.5 !px-5 text-sm gap-2"
           >
+            <i class="fab fa-whatsapp text-base"></i> Hubungi Admin
+          </a>
         </div>
+
         <button
           id="menu-btn"
-          class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl border border-white/50 text-white"
+          class="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-100"
           aria-label="Buka menu"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="w-6 h-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 8h16M4 16h16"
-            />
-          </svg>
+          <i class="fa-solid fa-bars text-lg"></i>
         </button>
       </div>
-      <nav id="mobile-nav" class="md:hidden hidden border-t border-white/20">
-        <div class="px-4 py-3 flex flex-col gap-2 bg-[var(--color-primary-light)]">
-          <a href="#layanan" class="py-2 text-white hover:text-gray-100">Layanan</a>
-          <a href="#bpjs" class="py-2 text-white hover:text-gray-100">BPJS</a>
-          <a href="#ai-feature" class="py-2 text-white hover:text-gray-100">Konsultasi AI</a>
-          <a href="#kontak" class="py-2 text-white hover:text-gray-100">Kontak</a>
-          <a href="#visi-misi" class="py-2 text-white hover:text-gray-100">Visi & Misi</a>
+
+      <!-- Mobile Nav -->
+      <nav id="mobile-nav" class="lg:hidden hidden border-t border-slate-200 bg-white">
+        <div class="px-4 py-4 flex flex-col gap-2">
+          <a href="#visi-misi" class="px-3 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-teal-50 hover:text-teal-700">Visi & Misi</a>
+          <a href="#layanan" class="px-3 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-teal-50 hover:text-teal-700">Layanan</a>
+          <a href="#ai-feature" class="px-3 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-teal-50 hover:text-teal-700">Konsultasi AI</a>
+          <a href="#bpjs" class="px-3 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-teal-50 hover:text-teal-700">BPJS</a>
+          <a href="#kontak" class="px-3 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-teal-50 hover:text-teal-700">Kontak</a>
           <a
             href="https://wa.me/6285223128163"
             target="_blank"
             rel="noopener"
-            class="btn bg-white text-[var(--color-primary-dark)] w-full"
-            >WhatsApp</a
+            class="btn btn-primary w-full mt-2 gap-2"
           >
+            <i class="fab fa-whatsapp text-lg"></i> Chat via WhatsApp
+          </a>
         </div>
       </nav>
     </header>
 
-    <main class="py-16 md:py-24">
-      <div class="container mx-auto px-4">
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <h1
-              class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mb-4 text-gray-800"
-            >
-              Girimukti Medical Center
+    <!-- Hero Section -->
+    <main class="relative overflow-hidden bg-gradient-to-b from-teal-50/70 via-white to-slate-50 pt-12 pb-20 md:py-20">
+      <div class="absolute inset-0 bg-grid-pattern opacity-40 pointer-events-none"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+          <!-- Left Content -->
+          <div class="lg:col-span-7">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-teal-200 shadow-sm text-xs font-bold text-teal-800 mb-6">
+              <span class="w-2 h-2 rounded-full bg-teal-500 animate-pulse"></span>
+              Klinik Pratama Rawat Inap & Mitra Resmi BPJS Kesehatan
+            </div>
+            <h1 class="text-4xl sm:text-5xl lg:text-[54px] font-extrabold leading-[1.15] tracking-tight text-slate-900 mb-5">
+              Pelayanan Kesehatan <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-700 to-sky-600">Terpercaya</span> untuk Keluarga Anda
             </h1>
-            <p class="text-lg text-gray-600 max-w-xl mb-8">
-              Layanan kesehatan terpercaya dengan kenyamanan pasien dan tenaga medis berpengalaman di Garut, Jawa Barat.
+            <p class="text-base sm:text-lg text-slate-600 max-w-xl mb-8 leading-relaxed">
+              Klinik Girimukti Medical Center hadir dengan tenaga medis berpengalaman, fasilitas nyaman, serta layanan gawat darurat dan persalinan 24 jam di Singajaya, Garut.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4">
+
+            <div class="flex flex-col sm:flex-row gap-4 mb-10">
               <a
                 href="https://wa.me/6285223128163"
                 target="_blank"
                 rel="noopener"
-                class="btn btn-primary"
-                >Tanya Admin Klinik</a
+                class="btn btn-primary gap-2.5"
               >
-              <a href="#layanan" class="btn btn-outline">Lihat Layanan</a>
+                <i class="fab fa-whatsapp text-lg"></i> Tanya Admin Klinik
+              </a>
+              <a href="#layanan" class="btn btn-outline gap-2">
+                <i class="fa-solid fa-stethoscope"></i> Lihat Layanan
+              </a>
+            </div>
+
+            <!-- Quick Highlights -->
+            <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-200/80 max-w-lg">
+              <div>
+                <p class="text-xl sm:text-2xl font-extrabold text-slate-900">24 Jam</p>
+                <p class="text-xs text-slate-500 font-medium">UGD & Rawat Inap</p>
+              </div>
+              <div>
+                <p class="text-xl sm:text-2xl font-extrabold text-teal-700">BPJS</p>
+                <p class="text-xs text-slate-500 font-medium">Kode: 0121B009</p>
+              </div>
+              <div>
+                <p class="text-xl sm:text-2xl font-extrabold text-slate-900">Profesional</p>
+                <p class="text-xs text-slate-500 font-medium">Dokter & Bidan</p>
+              </div>
             </div>
           </div>
-          <div class="relative w-full max-w-lg mx-auto lg:mx-0">
-            <div class="relative hero-card-bg p-8 rounded-3xl shadow-2xl overflow-hidden">
-              <div class="absolute w-40 h-40 bg-white/10 rounded-full -top-10 -right-10 transform rotate-45"></div>
-              <div class="absolute w-32 h-32 bg-white/10 rounded-full -bottom-10 -left-10 opacity-70 transform -rotate-30"></div>
-              <div class="absolute w-20 h-20 bg-white/10 rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-50"></div>
+
+          <!-- Right Profile Card -->
+          <div class="lg:col-span-5 relative w-full max-w-lg mx-auto">
+            <div class="relative hero-card-bg p-6 sm:p-8 rounded-3xl shadow-2xl shadow-slate-900/20 border border-white/10 overflow-hidden">
+              <div class="absolute w-48 h-48 bg-teal-400/10 rounded-full -top-12 -right-12 blur-xl"></div>
+              <div class="absolute w-40 h-40 bg-sky-400/10 rounded-full -bottom-12 -left-12 blur-xl"></div>
 
               <div class="relative z-10 text-white">
-                <div class="flex flex-col items-center justify-center text-center mb-6">
-                  <div class="flex items-center justify-center gap-3 mb-2">
+                <div class="flex items-center justify-between gap-3 mb-5 pb-4 border-b border-white/15">
+                  <div class="flex items-center gap-3">
                     <img
                       src="logogmc.png"
                       alt="Logo Klinik GMC"
-                      class="w-10 h-10 rounded-md object-contain p-1 bg-white"
+                      class="w-11 h-11 rounded-xl object-contain p-1.5 bg-white shadow-sm"
                       loading="lazy"
                     />
-                    <div class="flex flex-col leading-tight items-center text-center">
-                      <strong class="text-xs text-white/80 font-bold">Klinik Pratama</strong>
-                      <strong class="text-base text-white">Girimukti Medical Center</strong>
+                    <div class="leading-tight">
+                      <span class="text-[11px] uppercase tracking-wider text-teal-200 font-bold block">Klinik Pratama</span>
+                      <strong class="text-sm sm:text-base text-white font-bold">Girimukti Medical Center</strong>
                     </div>
-                    <img
-                      src="logobpjsputih.png"
-                      alt="Logo BPJS Kesehatan"
-                      class="w-10 h-10 object-contain p-1 bg-white rounded-md"
-                      loading="lazy"
-                    />
                   </div>
+                  <img
+                    src="logobpjsputih.png"
+                    alt="Logo BPJS Kesehatan"
+                    class="h-10 w-auto object-contain p-1.5 bg-white rounded-xl shadow-sm"
+                    loading="lazy"
+                  />
                 </div>
-                
-                <div class="relative rounded-xl overflow-hidden shadow-inner w-full aspect-video mb-6">
+
+                <div class="relative rounded-2xl overflow-hidden shadow-lg border border-white/15 w-full aspect-video mb-6 bg-slate-900">
                   <video
                     class="w-full h-full object-cover"
                     src="vidgmc.mp4"
@@ -277,393 +262,549 @@
                   ></video>
                 </div>
 
-                <div class="space-y-3 text-sm mb-6">
-                  <div class="flex items-start">
-                    <i class="fa-solid fa-location-dot text-white/80 w-5 h-5 mr-3 flex-shrink-0 mt-1"></i>
-                    <p>Jl. Raya Cikadu, RT 001, RW 003, Desa Girimukti, Kec. Singajaya, Kab. Garut (44173)</p>
+                <div class="space-y-3 text-xs sm:text-sm mb-6 bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/10">
+                  <div class="flex items-start gap-3">
+                    <i class="fa-solid fa-location-dot text-teal-300 mt-1 flex-shrink-0"></i>
+                    <p class="text-slate-100 leading-relaxed">
+                      Jl. Raya Cikadu, RT 001, RW 003, Desa Girimukti, Kec. Singajaya, Kab. Garut (44173)
+                    </p>
                   </div>
-                  <div class="flex items-center">
-                    <i class="fa-solid fa-phone text-white/80 w-5 h-5 mr-3 flex-shrink-0"></i>
-                    <p>IOK/ Sertifikat Standar: 91203057521250001</p>
+                  <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-certificate text-teal-300 flex-shrink-0"></i>
+                    <p class="text-slate-100">IOK / Sertifikat Standar: <strong>91203057521250001</strong></p>
                   </div>
-                  <div class="flex items-center">
-                    <i class="fa-solid fa-envelope text-white/80 w-5 h-5 mr-3 flex-shrink-0"></i>
-                    <p>Kode FASKES BPJS Kesehatan: 0121B009</p>
+                  <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-id-card-clip text-teal-300 flex-shrink-0"></i>
+                    <p class="text-slate-100">Kode FASKES BPJS Kesehatan: <strong>0121B009</strong></p>
                   </div>
                 </div>
 
-                <div class="flex justify-center gap-4 mb-6 text-xl">
-                  <a href="https://www.facebook.com/" target="_blank" class="text-white/80 hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
-                  <a href="https://www.instagram.com/" target="_blank" class="text-white/80 hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
-                  <a href="https://wa.me/6285223128163" target="_blank" class="text-white/80 hover:text-white transition-colors"><i class="fab fa-whatsapp"></i></a>
+                <div class="flex items-center justify-between pt-1">
+                  <div class="flex gap-3 text-base">
+                    <a href="https://www.facebook.com/" target="_blank" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors" aria-label="Facebook">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/" target="_blank" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors" aria-label="Instagram">
+                      <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/6285223128163" target="_blank" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors" aria-label="WhatsApp">
+                      <i class="fab fa-whatsapp"></i>
+                    </a>
+                  </div>
+
+                  <a
+                    href="https://wa.me/6285223128163"
+                    target="_blank"
+                    class="bg-white text-teal-900 px-5 py-2.5 rounded-full shadow-md flex items-center gap-2 text-xs sm:text-sm font-bold hover:bg-teal-50 transition-colors"
+                  >
+                    <i class="fa-solid fa-comment-medical text-teal-600"></i> Konsultasi Cepat
+                  </a>
                 </div>
               </div>
             </div>
-            <a href="https://wa.me/6285223128163" target="_blank"
-              class="absolute -bottom-6 right-8 bg-white text-[var(--color-primary-dark)] px-6 py-2 rounded-full shadow-lg flex items-center gap-2 font-semibold hover:bg-gray-100 transition-colors">
-              <i class="fa-solid fa-comment-dots"></i> Konsultasi
-            </a>
           </div>
         </div>
       </div>
     </main>
 
-    <section id="visi-misi" class="bg-white py-24">
-      <div class="container mx-auto px-4">
-        <h2 class="section-title">Visi, Misi & Tujuan Klinik</h2>
-        <p class="section-subtitle">
-          Nilai-nilai yang kami pegang teguh dalam melayani Anda.
-        </p>
-        <div class="grid md:grid-cols-3 gap-8">
-          <div class="card p-8 border border-gray-100 flex flex-col items-center justify-center text-center">
-            <h3 class="font-bold text-2xl text-[var(--color-text-dark)] mb-4">
-              <i class="fa-solid fa-eye icon-sm-inline"></i> Visi
-            </h3>
-            <p class="text-[var(--color-text-light)] text-lg">
-              “Menjadi KLINIK Pilihan dan Kepercayaan Masyarakat”.
-            </p>
-          </div>
-          <div class="card p-8 border border-gray-100 flex flex-col items-center text-center">
-            <h3 class="font-bold text-2xl text-[var(--color-text-dark)] mb-4">
-              <i class="fa-solid fa-bullseye icon-sm-inline"></i> Misi
-            </h3>
-            <ul class="list-none text-[var(--color-text-light)] space-y-2 text-left max-w-xs mx-auto">
-              <li class="flex items-start text-lg"><i class="fa-solid fa-circle-check text-[var(--color-primary-dark)] mr-2 mt-1 flex-shrink-0"></i> Menyediakan SDM yang santun dan berbudi.</li>
-              <li class="flex items-start text-lg"><i class="fa-solid fa-circle-check text-[var(--color-primary-dark)] mr-2 mt-1 flex-shrink-0"></i> Mengembangkan fasilitas yang dapat mewujudkan kondisi nyaman dan aman.</li>
-              <li class="flex items-start text-lg"><i class="fa-solid fa-circle-check text-[var(--color-primary-dark)] mr-2 mt-1 flex-shrink-0"></i> Memberikan pelayanan bermutu berlandaskan Etika Profesionalisme.</li>
-            </ul>
-          </div>
-          <div class="card p-8 border border-gray-100 flex flex-col items-center justify-center text-center">
-            <h3 class="font-bold text-2xl text-[var(--color-text-dark)] mb-4">
-              <i class="fa-solid fa-flag-checkered icon-sm-inline"></i> Tujuan
-            </h3>
-            <p class="text-[var(--color-text-light)] text-lg">
-              Memberikan pelayanan kesehatan yang berorientasi pada pelayanan dan kepuasan pasien.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="bg-gray-100 py-16">
+    <!-- Operational & Pillars Strip -->
+    <section class="py-12 bg-slate-900 text-white">
       <div class="container mx-auto px-4">
         <div class="grid md:grid-cols-3 gap-6">
-          <div class="card p-6 border border-gray-100">
-            <h3 class="flex items-center text-lg font-bold text-[var(--color-text-dark)] mb-2">
-              <i class="fa-solid fa-clock icon-sm-inline"></i>
-              Jam Operasional
-            </h3>
-            <p class="text-[var(--color-text-light)]">
-              Rawat Jalan, Rawat Inap & UGD: 24 Jam<br />
-              Persalinan: 24 Jam<br />
-              KIA: 07.00 – 17.00 WIB
-            </p>
-          </div>
-          <div class="card p-6 border border-gray-100">
-            <h3 class="flex items-center text-lg font-bold text-[var(--color-text-dark)] mb-2">
-              <i class="fa-solid fa-user-doctor icon-sm-inline"></i>
-              Tenaga Profesional
-            </h3>
-            <p class="text-[var(--color-text-light)]">
-              Dokter umum, bidan, dan perawat yang terlatih dan ramah.
-            </p>
-          </div>
-          <div class="card p-6 border border-gray-100">
-            <h3 class="flex items-center text-lg font-bold text-[var(--color-text-dark)] mb-2">
-              <i class="fa-solid fa-hospital-user icon-sm-inline"></i>
-              Fasilitas Terbaik
-            </h3>
-            <p class="text-[var(--color-text-light)]">
-              Fasilitas bersih, ruang tunggu nyaman, dan standar keselamatan pasien.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="layanan" class="py-24">
-      <div class="container mx-auto px-4">
-        <h2 class="section-title">Layanan Kami</h2>
-        <p class="section-subtitle">
-          Kami melayani dengan sepenuh hati untuk kebutuhan kesehatan Anda.
-        </p>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="card service">
-            <div class="icon-lg-card">
-              <i class="fa-solid fa-stethoscope"></i>
+          <div class="bg-slate-800/80 border border-slate-700/80 p-6 rounded-2xl flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-teal-500/20 text-teal-400 flex items-center justify-center text-xl flex-shrink-0">
+              <i class="fa-solid fa-clock"></i>
             </div>
-            <h3 class="font-bold text-xl mb-2">Poli Umum</h3>
-            <p class="text-[var(--color-text-light)] mb-4">
-              Konsultasi keluhan kesehatan, pemeriksaan fisik, dan pengobatan dasar.
-            </p>
-            <button
-              class="btn btn-primary !bg-[var(--color-primary-light)] !text-white !border-[var(--color-primary-light)] px-6 py-2 text-sm !rounded-full listen-btn"
-              data-audio-url="poli-umum.mp3"
-            >
-              <i class="fa-solid fa-circle-play mr-2"></i> Dengarkan
-            </button>
-          </div>
-          <div class="card service">
-            <div class="icon-lg-card">
-              <i class="fa-solid fa-baby-carriage"></i>
-            </div>
-            <h3 class="font-bold text-xl mb-2">Kesehatan Ibu & Anak (KIA)</h3>
-            <p class="text-[var(--color-text-light)] mb-4">
-              Pemeriksaan kehamilan (ANC) dan edukasi kesehatan ibu & bayi. Jam pelayanan 07.00 – 17.00 WIB.
-            </p>
-            <button
-              class="btn btn-primary !bg-[var(--color-primary-light)] !text-white !border-[var(--color-primary-light)] px-6 py-2 text-sm !rounded-full listen-btn"
-              data-audio-url="kia.mp3"
-            >
-              <i class="fa-solid fa-circle-play mr-2"></i> Dengarkan
-            </button>
-          </div>
-          <div class="card service">
-            <div class="icon-lg-card">
-              <i class="fa-solid fa-hand-holding-heart"></i>
-            </div>
-            <h3 class="font-bold text-xl mb-2">Persalinan 24 Jam</h3>
-            <p class="text-[var(--color-text-light)] mb-4">
-              Layanan persalinan normal dan perawatan pasca melahirkan dengan bidan berpengalaman.
-            </p>
-            <button
-              class="btn btn-primary !bg-[var(--color-primary-light)] !text-white !border-[var(--color-primary-light)] px-6 py-2 text-sm !rounded-full listen-btn"
-              data-audio-url="persalinan.mp3"
-            >
-              <i class="fa-solid fa-circle-play mr-2"></i> Dengarkan
-            </button>
-          </div>
-          <div class="card service">
-            <div class="icon-lg-card">
-              <i class="fa-solid fa-hospital-alt"></i>
-            </div>
-            <h3 class="font-bold text-xl mb-2">UGD & Rawat Inap 24 Jam</h3>
-            <p class="text-[var(--color-text-light)] mb-4">
-              Penanganan kasus gawat darurat medis, observasi, dan perawatan penuh waktu.
-            </p>
-            <button
-              class="btn btn-primary !bg-[var(--color-primary-light)] !text-white !border-[var(--color-primary-light)] px-6 py-2 text-sm !rounded-full listen-btn"
-              data-audio-url="ugd.mp3"
-            >
-              <i class="fa-solid fa-circle-play mr-2"></i> Dengarkan
-            </button>
-          </div>
-          <div class="card service">
-            <div class="icon-lg-card">
-              <i class="fa-solid fa-microscope"></i>
-            </div>
-            <h3 class="font-bold text-xl mb-2">Laboratorium</h3>
-            <p class="text-[var(--color-text-light)] mb-4">
-              Pemeriksaan penunjang seperti hematologi, kimia klinik, dan tes urin.
-            </p>
-            <button
-              class="btn btn-primary !bg-[var(--color-primary-light)] !text-white !border-[var(--color-primary-light)] px-6 py-2 text-sm !rounded-full listen-btn"
-              data-audio-url="laboratorium.mp3"
-            >
-              <i class="fa-solid fa-circle-play mr-2"></i> Dengarkan
-            </button>
-          </div>
-          <div class="card service">
-            <div class="icon-lg-card">
-              <i class="fa-solid fa-prescription-bottle-alt"></i>
-            </div>
-            <h3 class="font-bold text-xl mb-2">Apotek</h3>
-            <p class="text-[var(--color-text-light)] mb-4">
-              Menyediakan obat-obatan yang aman, terjangkau, dan sesuai dengan resep dokter.
-            </p>
-            <button
-              class="btn btn-primary !bg-[var(--color-primary-light)] !text-white !border-[var(--color-primary-light)] px-6 py-2 text-sm !rounded-full listen-btn"
-              data-audio-url="apotek.mp3"
-            >
-              <i class="fa-solid fa-circle-play mr-2"></i> Dengarkan
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="ai-feature" class="py-24 bg-gray-100">
-      <div class="container mx-auto px-4">
-        <h2 class="section-title">Layanan Mandiri Berbasis AI</h2>
-        <p class="section-subtitle">
-          Fitur ini dirancang untuk memberikan informasi yang cepat, tepat, dan profesional. 🧑‍⚕️
-        </p>
-        <div class="grid md:grid-cols-2 gap-8">
-          <div class="card p-8">
-            <h3 class="font-bold text-2xl text-[var(--color-text-dark)] mb-2">
-              <i class="fa-solid fa-robot icon-sm-inline"></i> Konsultasi Gejala & Saran Mandiri ✨
-            </h3>
-            <p class="text-sm text-red-500 font-medium mb-4">
-              **DISCLAIMER:** Informasi ini hanyalah saran awal dan bukan pengganti diagnosis medis profesional. Hubungi dokter untuk pemeriksaan lebih lanjut.
-            </p>
-            <div
-              id="chat-window"
-              class="card p-4 h-64 overflow-y-auto mb-4 bg-gray-50 flex flex-col-reverse"
-            >
-              <div class="chat-message bot">
-                <p class="text-sm text-gray-700">
-                  Halo! Saya adalah asisten AI dari Klinik Girimukti. Sampaikan keluhan Anda. Saya akan bantu berikan informasi awal, tips kesehatan, atau referensi layanan yang mungkin Anda butuhkan.
-                </p>
-              </div>
-            </div>
-            <div class="flex items-center gap-2">
-              <input
-                id="user-input"
-                type="text"
-                placeholder="Misalnya: 'Sakit tenggorokan, demam ringan' atau 'Tips menjaga kesehatan ibu hamil'"
-                class="flex-grow p-3 rounded-xl border border-gray-300 outline-none"
-              />
-              <button
-                id="send-btn"
-                class="bg-[var(--color-primary-light)] text-white p-3 rounded-xl hover:bg-green-600 transition-colors"
-              >
-                <i class="fa-solid fa-paper-plane text-xl"></i>
-              </button>
-            </div>
-          </div>
-          <div class="card p-8 flex flex-col justify-between">
             <div>
-              <h3 class="font-bold text-2xl text-[var(--color-text-dark)] mb-2">
-                <i class="fa-solid fa-lightbulb icon-sm-inline"></i> Tips Sehat Harian ☀️
-              </h3>
-              <p class="text-sm text-gray-500 mb-4">
-                Dapatkan tips kesehatan sederhana yang mudah diterapkan sehari-hari.
+              <h3 class="text-base font-bold text-white mb-1">Jam Operasional</h3>
+              <p class="text-sm text-slate-300 leading-relaxed">
+                Rawat Jalan, Rawat Inap & UGD: <strong class="text-teal-300">24 Jam</strong><br />
+                Persalinan: <strong class="text-teal-300">24 Jam</strong><br />
+                Poli KIA: 07.00 – 17.00 WIB
               </p>
-              <div
-                id="daily-tip"
-                class="card min-h-[220px] flex items-center justify-center p-4 text-center text-gray-500 bg-gray-50 border border-dashed border-gray-300"
-              >
-                <p>Klik tombol di bawah untuk mendapatkan tips sehat hari ini! 🍀</p>
-              </div>
             </div>
-            <div class="mt-4 text-center">
-              <button id="get-tip-btn" class="btn btn-primary w-full">Dapatkan Tips!</button>
+          </div>
+
+          <div class="bg-slate-800/80 border border-slate-700/80 p-6 rounded-2xl flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center text-xl flex-shrink-0">
+              <i class="fa-solid fa-user-doctor"></i>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-white mb-1">Tenaga Profesional</h3>
+              <p class="text-sm text-slate-300 leading-relaxed">
+                Ditangani langsung oleh dokter umum, bidan, dan perawat tersertifikasi yang terlatih dan ramah.
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-slate-800/80 border border-slate-700/80 p-6 rounded-2xl flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl flex-shrink-0">
+              <i class="fa-solid fa-hospital-user"></i>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-white mb-1">Fasilitas Terbaik</h3>
+              <p class="text-sm text-slate-300 leading-relaxed">
+                Lingkungan klinik bersih, ruang tunggu nyaman, serta mengutamakan standar keselamatan pasien.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="bpjs" class="container mx-auto px-4 py-16">
-      <div class="card p-8 flex flex-col md:flex-row items-center gap-6">
-        <div
-          class="w-24 h-24 flex items-center justify-center text-white rounded-xl text-4xl font-bold flex-shrink-0"
-        >
-          <img
-            src="logobpjsputih.png"
-            alt="Logo BPJS Kesehatan"
-            class="h-full w-full object-contain p-2"
-          />
-        </div>
-        <div class="flex-grow text-center md:text-left">
-          <h3 class="text-2xl font-bold text-[var(--color-text-dark)] mb-1">
-            <i class="fa-solid fa-handshake icon-sm-inline"></i> Kerja Sama BPJS Kesehatan
-          </h3>
-          <p class="text-[var(--color-text-light)]">
-            Peserta JKN-KIS dapat berobat di Klinik Girimukti Medical Center sesuai ketentuan BPJS Kesehatan. Pendaftaran lebih mudah melalui <strong class="font-bold">Mobile JKN</strong> atau langsung di klinik.
+    <!-- Visi, Misi & Tujuan -->
+    <section id="visi-misi" class="py-20 md:py-24 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center">
+          <span class="section-badge"><i class="fa-solid fa-shield-heart"></i> Komitmen Kami</span>
+          <h2 class="section-title">Visi, Misi & Tujuan Klinik</h2>
+          <p class="section-subtitle">
+            Nilai-nilai utama yang kami pegang teguh dalam memberikan pelayanan kesehatan terbaik bagi masyarakat.
           </p>
         </div>
-        <a
-          class="btn btn-primary flex-shrink-0"
-          href="https://wa.me/6285223128163"
-          target="_blank"
-          rel="noopener"
-          >Daftar via WhatsApp</a
-        >
-      </div>
-    </section>
 
-    <section id="bpjs-video" class="py-16">
-      <div class="container mx-auto px-4">
-        <h2 class="section-title">Video Edukasi</h2>
-        <p class="section-subtitle">
-          Tonton video panduan pendaftaran antrean BPJS Kesehatan via Mobile JKN.
-        </p>
-        <div class="card p-6">
-          <video
-            class="w-full h-auto rounded-xl"
-            controls
-            autoplay
-            muted
-            loop
-            playsinline
-          >
-            <source src="video_edukasi_bpjs_kesehatan.mp4" type="video/mp4" />
-            Browser Anda tidak mendukung tag video.
-          </video>
-        </div>
-      </div>
-    </section>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="card flex flex-col justify-between bg-gradient-to-b from-white to-teal-50/30">
+            <div>
+              <div class="icon-lg-card">
+                <i class="fa-solid fa-eye"></i>
+              </div>
+              <h3 class="font-bold text-xl text-slate-900 mb-3">Visi</h3>
+              <p class="text-slate-600 text-base leading-relaxed font-medium">
+                “Menjadi KLINIK Pilihan dan Kepercayaan Masyarakat”.
+              </p>
+            </div>
+          </div>
 
-    <section
-      id="kontak"
-      class="py-24 bg-white rounded-t-[40px] md:rounded-t-[80px] shadow-inner"
-    >
-      <div class="container mx-auto px-4">
-        <div class="grid lg:grid-cols-2 gap-8">
-          <div>
-            <h2 class="text-3xl font-bold text-[var(--color-text-dark)] mb-4">
-              <i class="fa-solid fa-headset icon-sm-inline"></i> Hubungi Kami
-            </h2>
-            <p class="text-lg text-[var(--color-text-light)] mb-6">
-              Untuk pendaftaran, informasi layanan, atau pertanyaan lainnya, silakan hubungi kami.
-            </p>
-            <div class="card p-6">
-              <h3 class="text-xl font-bold text-[var(--color-text-dark)] mb-4">
-                    Detail Kontak
-              </h3>
-              <ul class="space-y-4 text-[var(--color-text-light)]">
-                <li class="flex items-start gap-3">
-                  <i class="fa-solid fa-location-dot icon-sm-inline !w-6 !h-6 !mt-1"></i>
-                  <div class="text-[var(--color-text-light)]">
-                    <strong class="font-medium block">Alamat:</strong> Jl. Raya Cikadu, RT 001, RW 003, Desa Girimukti, Kec. Singajaya, Kab. Garut (44173)
-                  </div>
+          <div class="card flex flex-col justify-between bg-gradient-to-b from-white to-sky-50/30">
+            <div>
+              <div class="icon-lg-card">
+                <i class="fa-solid fa-bullseye"></i>
+              </div>
+              <h3 class="font-bold text-xl text-slate-900 mb-3">Misi</h3>
+              <ul class="space-y-3 text-slate-600 text-sm sm:text-base">
+                <li class="flex items-start gap-2.5">
+                  <i class="fa-solid fa-circle-check text-teal-600 mt-1 flex-shrink-0"></i>
+                  <span>Menyediakan SDM yang santun dan berbudi.</span>
                 </li>
-                <li class="flex items-center gap-3">
-                  <i class="fa-solid fa-phone icon-sm-inline !w-6 !h-6"></i>
-                  <div class="text-[var(--color-text-light)]">
-                    <strong class="font-medium block">Telepon/WA:</strong>
-                    <a href="tel:085223128163" class="text-[var(--color-primary-light)] hover:underline">0852 2312 8163</a>
-                  </div>
+                <li class="flex items-start gap-2.5">
+                  <i class="fa-solid fa-circle-check text-teal-600 mt-1 flex-shrink-0"></i>
+                  <span>Mengembangkan fasilitas yang dapat mewujudkan kondisi nyaman dan aman.</span>
                 </li>
-                <li class="flex items-center gap-3">
-                  <i class="fa-solid fa-envelope icon-sm-inline !w-6 !h-6"></i>
-                  <div class="text-[var(--color-text-light)]">
-                    <strong class="font-medium block">Email:</strong>
-                    <a href="mailto:klinik.gmc.01@gmail.com" class="text-[var(--color-primary-light)] hover:underline">klinik.gmc.01@gmail.com</a>
-                  </div>
+                <li class="flex items-start gap-2.5">
+                  <i class="fa-solid fa-circle-check text-teal-600 mt-1 flex-shrink-0"></i>
+                  <span>Memberikan pelayanan bermutu berlandaskan Etika Profesionalisme.</span>
                 </li>
               </ul>
             </div>
           </div>
-          <div class="flex flex-col gap-8">
-            <h3 class="text-xl font-bold text-[var(--color-text-dark)] mb-4 lg:mb-0">
-              <i class="fa-solid fa-star-half-stroke icon-sm-inline"></i> Apa Kata Pasien Kami?
-            </h3>
-            <div class="grid md:grid-cols-2 gap-4">
-              <div class="testimonial-card">
-                <img src="https://via.placeholder.com/150/d1fae5/10b981?text=C" alt="Avatar Cecep" class="testimonial-avatar interactive-shadow">
-                <div class="text-yellow-400 mb-2">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </div>
-                <p class="text-sm italic text-gray-600 mb-3">"Pelayanan di sini cepat dan ramah. Dokter dan perawatnya sangat profesional. Hatur nuhun..!"</p>
-                <span class="font-semibold text-sm text-[var(--color-primary-dark)]">— Cecep, Pasien Poli Umum</span>
+
+          <div class="card flex flex-col justify-between bg-gradient-to-b from-white to-teal-50/30">
+            <div>
+              <div class="icon-lg-card">
+                <i class="fa-solid fa-flag-checkered"></i>
               </div>
-              <div class="testimonial-card">
-                <img src="https://via.placeholder.com/150/d1fae5/10b981?text=U" alt="Avatar Putri" class="testimonial-avatar interactive-shadow">
-                <div class="text-yellow-400 mb-2">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
+              <h3 class="font-bold text-xl text-slate-900 mb-3">Tujuan</h3>
+              <p class="text-slate-600 text-base leading-relaxed">
+                Memberikan pelayanan kesehatan yang berorientasi pada pelayanan dan kepuasan pasien.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Layanan Kami -->
+    <section id="layanan" class="py-20 md:py-24 bg-slate-50 border-y border-slate-200/70">
+      <div class="container mx-auto px-4">
+        <div class="text-center">
+          <span class="section-badge"><i class="fa-solid fa-kit-medical"></i> Fasilitas Medis</span>
+          <h2 class="section-title">Layanan Kami</h2>
+          <p class="section-subtitle">
+            Kami melayani dengan sepenuh hati untuk memenuhi kebutuhan kesehatan Anda dan keluarga.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
+          <div class="card flex flex-col justify-between">
+            <div>
+              <div class="icon-lg-card">
+                <i class="fa-solid fa-stethoscope"></i>
+              </div>
+              <h3 class="font-bold text-xl text-slate-900 mb-2">Poli Umum</h3>
+              <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                Konsultasi keluhan kesehatan, pemeriksaan fisik, dan pengobatan dasar.
+              </p>
+            </div>
+            <div>
+              <button
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold bg-teal-50 text-teal-700 border border-teal-200 hover:bg-teal-600 hover:text-white transition-colors listen-btn"
+                data-audio-url="poli-umum.mp3"
+              >
+                <i class="fa-solid fa-circle-play text-sm"></i> Dengarkan Info
+              </button>
+            </div>
+          </div>
+
+          <div class="card flex flex-col justify-between">
+            <div>
+              <div class="icon-lg-card">
+                <i class="fa-solid fa-baby-carriage"></i>
+              </div>
+              <h3 class="font-bold text-xl text-slate-900 mb-2">Kesehatan Ibu & Anak (KIA)</h3>
+              <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                Pemeriksaan kehamilan (ANC) dan edukasi kesehatan ibu & bayi. Jam pelayanan 07.00 – 17.00 WIB.
+              </p>
+            </div>
+            <div>
+              <button
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold bg-teal-50 text-teal-700 border border-teal-200 hover:bg-teal-600 hover:text-white transition-colors listen-btn"
+                data-audio-url="kia.mp3"
+              >
+                <i class="fa-solid fa-circle-play text-sm"></i> Dengarkan Info
+              </button>
+            </div>
+          </div>
+
+          <div class="card flex flex-col justify-between">
+            <div>
+              <div class="icon-lg-card">
+                <i class="fa-solid fa-hand-holding-heart"></i>
+              </div>
+              <h3 class="font-bold text-xl text-slate-900 mb-2">Persalinan 24 Jam</h3>
+              <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                Layanan persalinan normal dan perawatan pasca melahirkan dengan bidan berpengalaman.
+              </p>
+            </div>
+            <div>
+              <button
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold bg-teal-50 text-teal-700 border border-teal-200 hover:bg-teal-600 hover:text-white transition-colors listen-btn"
+                data-audio-url="persalinan.mp3"
+              >
+                <i class="fa-solid fa-circle-play text-sm"></i> Dengarkan Info
+              </button>
+            </div>
+          </div>
+
+          <div class="card flex flex-col justify-between">
+            <div>
+              <div class="icon-lg-card">
+                <i class="fa-solid fa-truck-medical"></i>
+              </div>
+              <h3 class="font-bold text-xl text-slate-900 mb-2">UGD & Rawat Inap 24 Jam</h3>
+              <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                Penanganan kasus gawat darurat medis, observasi, dan perawatan penuh waktu.
+              </p>
+            </div>
+            <div>
+              <button
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold bg-teal-50 text-teal-700 border border-teal-200 hover:bg-teal-600 hover:text-white transition-colors listen-btn"
+                data-audio-url="ugd.mp3"
+              >
+                <i class="fa-solid fa-circle-play text-sm"></i> Dengarkan Info
+              </button>
+            </div>
+          </div>
+
+          <div class="card flex flex-col justify-between">
+            <div>
+              <div class="icon-lg-card">
+                <i class="fa-solid fa-microscope"></i>
+              </div>
+              <h3 class="font-bold text-xl text-slate-900 mb-2">Laboratorium</h3>
+              <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                Pemeriksaan penunjang seperti hematologi, kimia klinik, dan tes urin.
+              </p>
+            </div>
+            <div>
+              <button
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold bg-teal-50 text-teal-700 border border-teal-200 hover:bg-teal-600 hover:text-white transition-colors listen-btn"
+                data-audio-url="laboratorium.mp3"
+              >
+                <i class="fa-solid fa-circle-play text-sm"></i> Dengarkan Info
+              </button>
+            </div>
+          </div>
+
+          <div class="card flex flex-col justify-between">
+            <div>
+              <div class="icon-lg-card">
+                <i class="fa-solid fa-prescription-bottle-medical"></i>
+              </div>
+              <h3 class="font-bold text-xl text-slate-900 mb-2">Apotek</h3>
+              <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                Menyediakan obat-obatan yang aman, terjangkau, dan sesuai dengan resep dokter.
+              </p>
+            </div>
+            <div>
+              <button
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold bg-teal-50 text-teal-700 border border-teal-200 hover:bg-teal-600 hover:text-white transition-colors listen-btn"
+                data-audio-url="apotek.mp3"
+              >
+                <i class="fa-solid fa-circle-play text-sm"></i> Dengarkan Info
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Layanan Mandiri AI -->
+    <section id="ai-feature" class="py-20 md:py-24 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center">
+          <span class="section-badge"><i class="fa-solid fa-sparkles"></i> Asisten Digital</span>
+          <h2 class="section-title">Layanan Mandiri Berbasis AI</h2>
+          <p class="section-subtitle">
+            Dapatkan informasi awal seputar keluhan kesehatan, layanan klinik, maupun tips kebugaran harian.
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-12 gap-8">
+          <!-- Chat Assistant -->
+          <div class="lg:col-span-7 card bg-slate-50/60">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-xl bg-teal-600 text-white flex items-center justify-center text-lg">
+                <i class="fa-solid fa-robot"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg text-slate-900">Konsultasi Gejala & Saran Mandiri</h3>
+                <span class="text-xs text-teal-700 font-semibold">Asisten Virtual Klinik GMC</span>
+              </div>
+            </div>
+
+            <div class="bg-amber-50 border border-amber-200 text-amber-900 text-xs p-3 rounded-xl mb-4 flex items-start gap-2.5">
+              <i class="fa-solid fa-triangle-exclamation text-amber-600 mt-0.5"></i>
+              <p>
+                <strong>DISCLAIMER:</strong> Informasi ini hanyalah saran awal dan bukan pengganti diagnosis medis profesional. Hubungi dokter untuk pemeriksaan lebih lanjut.
+              </p>
+            </div>
+
+            <div
+              id="chat-window"
+              class="h-64 overflow-y-auto p-4 mb-4 rounded-2xl bg-slate-100/80 border border-slate-200/80 flex flex-col-reverse"
+            >
+              <div class="chat-message bot">
+                <p>
+                  Halo! Saya adalah asisten AI dari Klinik Girimukti. Sampaikan keluhan Anda. Saya akan bantu berikan informasi awal, tips kesehatan, atau referensi layanan yang mungkin Anda butuhkan.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2.5">
+              <input
+                id="user-input"
+                type="text"
+                placeholder="Misalnya: 'Sakit tenggorokan, demam ringan' atau 'Info BPJS'"
+                class="flex-grow px-4 py-3 text-sm bg-white rounded-xl border border-slate-300 focus:border-teal-600 focus:ring-2 focus:ring-teal-500/20 outline-none transition-all"
+              />
+              <button
+                id="send-btn"
+                class="btn btn-primary !px-5 !py-3 rounded-xl"
+                aria-label="Kirim pesan"
+              >
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Daily Health Tips -->
+          <div class="lg:col-span-5 card flex flex-col justify-between bg-gradient-to-br from-teal-900 to-slate-900 text-white border-none">
+            <div>
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-teal-300 text-xs font-bold mb-4">
+                <i class="fa-solid fa-sun"></i> Edukasi Harian
+              </div>
+              <h3 class="font-bold text-2xl text-white mb-2">Tips Sehat Harian</h3>
+              <p class="text-sm text-slate-300 mb-6">
+                Dapatkan tips kesehatan sederhana yang mudah diterapkan sehari-hari untuk menjaga daya tahan tubuh.
+              </p>
+
+              <div
+                id="daily-tip"
+                class="min-h-[190px] flex items-center justify-center p-6 text-center rounded-2xl bg-white/10 backdrop-blur-sm border border-white/15 text-teal-100"
+              >
+                <p class="text-sm sm:text-base">Klik tombol di bawah untuk mendapatkan tips sehat hari ini!</p>
+              </div>
+            </div>
+
+            <div class="mt-6">
+              <button
+                id="get-tip-btn"
+                class="w-full py-3.5 px-6 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-sm transition-colors shadow-lg"
+              >
+                <i class="fa-solid fa-lightbulb mr-2"></i> Dapatkan Tips Baru
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BPJS Kesehatan & Video Edukasi -->
+    <section id="bpjs" class="py-20 bg-slate-50 border-t border-slate-200/70">
+      <div class="container mx-auto px-4 space-y-12">
+        <!-- BPJS Banner -->
+        <div class="rounded-3xl bg-gradient-to-r from-teal-800 via-teal-700 to-sky-700 p-8 md:p-10 text-white shadow-xl flex flex-col md:flex-row items-center gap-8">
+          <div class="w-24 h-24 bg-white rounded-2xl p-3 flex items-center justify-center flex-shrink-0 shadow-md">
+            <img
+              src="logobpjsputih.png"
+              alt="Logo BPJS Kesehatan"
+              class="h-full w-full object-contain"
+            />
+          </div>
+          <div class="flex-grow text-center md:text-left">
+            <span class="inline-block px-3 py-1 rounded-full bg-white/15 text-xs font-bold uppercase tracking-wider mb-2">
+              Mitra Resmi JKN-KIS
+            </span>
+            <h3 class="text-2xl sm:text-3xl font-extrabold mb-2">
+              Kerja Sama BPJS Kesehatan
+            </h3>
+            <p class="text-teal-50 text-sm sm:text-base max-w-2xl leading-relaxed">
+              Peserta JKN-KIS dapat berobat di Klinik Girimukti Medical Center (Kode Faskes: <strong>0121B009</strong>) sesuai ketentuan BPJS Kesehatan. Pendaftaran lebih mudah melalui <strong>Mobile JKN</strong> atau langsung di klinik.
+            </p>
+          </div>
+          <a
+            class="btn bg-white text-teal-900 hover:bg-teal-50 shadow-lg flex-shrink-0 gap-2"
+            href="https://wa.me/6285223128163"
+            target="_blank"
+            rel="noopener"
+          >
+            <i class="fab fa-whatsapp text-teal-600 text-lg"></i> Daftar via WhatsApp
+          </a>
+        </div>
+
+        <!-- Video Edukasi -->
+        <div id="bpjs-video" class="max-w-4xl mx-auto pt-4">
+          <div class="text-center mb-8">
+            <span class="section-badge"><i class="fa-solid fa-video"></i> Panduan Pasien</span>
+            <h2 class="section-title">Video Edukasi Mobile JKN</h2>
+            <p class="text-slate-600">
+              Tonton video panduan pendaftaran antrean BPJS Kesehatan via aplikasi Mobile JKN.
+            </p>
+          </div>
+          <div class="card p-3 sm:p-4 bg-white shadow-lg">
+            <video
+              class="w-full h-auto rounded-xl bg-slate-900"
+              controls
+              autoplay
+              muted
+              loop
+              playsinline
+            >
+              <source src="video_edukasi_bpjs_kesehatan.mp4" type="video/mp4" />
+              Browser Anda tidak mendukung tag video.
+            </video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontak & Testimoni -->
+    <section id="kontak" class="py-20 md:py-24 bg-white border-t border-slate-200/70">
+      <div class="container mx-auto px-4">
+        <div class="grid lg:grid-cols-12 gap-10 items-start">
+          <!-- Detail Kontak -->
+          <div class="lg:col-span-6">
+            <span class="section-badge"><i class="fa-solid fa-headset"></i> Lokasi & Informasi</span>
+            <h2 class="text-3xl font-extrabold text-slate-900 mb-3">Hubungi Kami</h2>
+            <p class="text-slate-600 mb-6">
+              Untuk pendaftaran, informasi layanan, atau pertanyaan lainnya, silakan hubungi kami melalui kontak resmi di bawah ini.
+            </p>
+
+            <div class="card bg-slate-50/70 space-y-5">
+              <div class="flex items-start gap-4">
+                <div class="w-11 h-11 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <i class="fa-solid fa-location-dot text-lg"></i>
                 </div>
-                <p class="text-sm italic text-gray-600 mb-3">"Kliniknya bersih dan nyaman. Petugasnya informatif dan membantu. Terima kasih GMC!"</p>
-                <span class="font-semibold text-sm text-[var(--color-primary-dark)]">— Putri, Pasien KIA</span>
+                <div>
+                  <strong class="text-sm font-bold text-slate-900 block mb-0.5">Alamat Klinik</strong>
+                  <p class="text-sm text-slate-600 leading-relaxed">
+                    Jl. Raya Cikadu, RT 001, RW 003, Desa Girimukti, Kec. Singajaya, Kab. Garut (44173)
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="w-11 h-11 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center flex-shrink-0">
+                  <i class="fa-solid fa-phone text-lg"></i>
+                </div>
+                <div>
+                  <strong class="text-sm font-bold text-slate-900 block mb-0.5">Telepon / WhatsApp</strong>
+                  <a href="tel:085223128163" class="text-sm font-semibold text-teal-700 hover:underline">
+                    0852 2312 8163
+                  </a>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="w-11 h-11 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center flex-shrink-0">
+                  <i class="fa-solid fa-envelope text-lg"></i>
+                </div>
+                <div>
+                  <strong class="text-sm font-bold text-slate-900 block mb-0.5">Email Resmi</strong>
+                  <a href="mailto:klinik.gmc.01@gmail.com" class="text-sm font-semibold text-teal-700 hover:underline">
+                    klinik.gmc.01@gmail.com
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimoni Pasien -->
+          <div class="lg:col-span-6">
+            <span class="section-badge"><i class="fa-solid fa-star"></i> Ulasan Pasien</span>
+            <h2 class="text-3xl font-extrabold text-slate-900 mb-3">Apa Kata Pasien Kami?</h2>
+            <p class="text-slate-600 mb-6">
+              Kepercayaan dan kenyamanan pasien menjadi prioritas utama pelayanan kami setiap hari.
+            </p>
+
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div class="card flex flex-col justify-between bg-slate-50/50">
+                <div>
+                  <div class="flex items-center gap-3 mb-4">
+                    <div class="w-11 h-11 rounded-full bg-teal-700 text-white font-bold flex items-center justify-center text-base">
+                      C
+                    </div>
+                    <div>
+                      <strong class="text-sm font-bold text-slate-900 block">Cecep</strong>
+                      <span class="text-xs text-slate-500">Pasien Poli Umum</span>
+                    </div>
+                  </div>
+                  <div class="text-amber-400 text-xs mb-3 flex gap-1">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                  <p class="text-sm italic text-slate-600 leading-relaxed">
+                    "Pelayanan di sini cepat dan ramah. Dokter dan perawatnya sangat profesional. Hatur nuhun..!"
+                  </p>
+                </div>
+              </div>
+
+              <div class="card flex flex-col justify-between bg-slate-50/50">
+                <div>
+                  <div class="flex items-center gap-3 mb-4">
+                    <div class="w-11 h-11 rounded-full bg-sky-700 text-white font-bold flex items-center justify-center text-base">
+                      P
+                    </div>
+                    <div>
+                      <strong class="text-sm font-bold text-slate-900 block">Putri</strong>
+                      <span class="text-xs text-slate-500">Pasien Poli KIA</span>
+                    </div>
+                  </div>
+                  <div class="text-amber-400 text-xs mb-3 flex gap-1">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                  <p class="text-sm italic text-slate-600 leading-relaxed">
+                    "Kliniknya bersih dan nyaman. Petugasnya informatif dan membantu. Terima kasih GMC!"
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -671,22 +812,37 @@
       </div>
     </section>
 
-    <footer class="bg-[var(--color-primary-light)] text-white py-12 md:py-16">
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-300 pt-16 pb-10">
       <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
           <div>
-            <h4 class="text-lg font-bold mb-4">Klinik GMC Garut</h4>
-            <p class="text-sm text-white/90 mb-4">Layanan kesehatan terpercaya untuk keluarga di Garut dan sekitarnya.</p>
-            <div class="flex gap-4 text-xl">
-              <a href="https://www.facebook.com/" target="_blank" class="hover:text-white/80 transition-colors"><i class="fab fa-facebook-f"></i></a>
-              <a href="https://www.instagram.com/" target="_blank" class="hover:text-white/80 transition-colors"><i class="fab fa-instagram"></i></a>
-              <a href="https://wa.me/6285223128163" target="_blank" class="hover:text-white/80 transition-colors"><i class="fab fa-whatsapp"></i></a>
+            <div class="flex items-center gap-3 mb-4">
+              <img src="logogmc.png" alt="Logo GMC" class="w-10 h-10 rounded-lg bg-white p-1 object-contain" />
+              <div>
+                <h4 class="text-base font-bold text-white leading-tight">Klinik GMC Garut</h4>
+                <span class="text-xs text-teal-400">Girimukti Medical Center</span>
+              </div>
+            </div>
+            <p class="text-sm text-slate-400 mb-5 leading-relaxed">
+              Layanan kesehatan terpercaya untuk keluarga di Singajaya, Garut dan sekitarnya.
+            </p>
+            <div class="flex gap-3">
+              <a href="https://www.facebook.com/" target="_blank" class="w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 hover:border-teal-500 hover:text-teal-400 flex items-center justify-center transition-colors">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://www.instagram.com/" target="_blank" class="w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 hover:border-teal-500 hover:text-teal-400 flex items-center justify-center transition-colors">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="https://wa.me/6285223128163" target="_blank" class="w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 hover:border-teal-500 hover:text-teal-400 flex items-center justify-center transition-colors">
+                <i class="fab fa-whatsapp"></i>
+              </a>
             </div>
           </div>
 
           <div>
-            <h4 class="text-lg font-bold mb-4">Layanan</h4>
-            <ul class="space-y-2 text-sm text-white/90">
+            <h4 class="text-sm font-bold uppercase tracking-wider text-white mb-4">Layanan Medis</h4>
+            <ul class="space-y-2.5 text-sm text-slate-400">
               <li>Poli Umum</li>
               <li>Kesehatan Ibu & Anak (KIA)</li>
               <li>Persalinan</li>
@@ -698,39 +854,39 @@
           </div>
 
           <div>
-            <h4 class="text-lg font-bold mb-4">Kontak</h4>
-            <ul class="space-y-2 text-sm text-white/90">
-              <li class="flex items-start gap-2">
-                <i class="fa-solid fa-location-dot mt-1"></i>
+            <h4 class="text-sm font-bold uppercase tracking-wider text-white mb-4">Kontak</h4>
+            <ul class="space-y-3 text-sm text-slate-400">
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-location-dot text-teal-400 mt-1"></i>
                 <span>Jl. Raya Cikadu, RT 001, RW 003, Desa Girimukti, Kec. Singajaya, Kab. Garut (44173)</span>
               </li>
-              <li class="flex items-center gap-2">
-                <i class="fa-solid fa-phone"></i>
-                <a href="tel:085223128163" class="hover:underline">0852 2312 8163</a>
+              <li class="flex items-center gap-2.5">
+                <i class="fa-solid fa-phone text-teal-400"></i>
+                <a href="tel:085223128163" class="hover:text-teal-400 transition-colors">0852 2312 8163</a>
               </li>
-              <li class="flex items-center gap-2">
-                <i class="fa-solid fa-envelope"></i>
-                <a href="mailto:klinik.gmc.01@gmail.com" class="hover:underline">klinik.gmc.01@gmail.com</a>
+              <li class="flex items-center gap-2.5">
+                <i class="fa-solid fa-envelope text-teal-400"></i>
+                <a href="mailto:klinik.gmc.01@gmail.com" class="hover:text-teal-400 transition-colors">klinik.gmc.01@gmail.com</a>
               </li>
             </ul>
           </div>
 
           <div>
-            <h4 class="text-lg font-bold mb-4">Jam Operasional</h4>
-            <ul class="space-y-2 text-sm text-white/90">
-              <li>Rawat Jalan: 24 Jam</li>
-              <li>Rawat Inap: 24 Jam</li>
-              <li>UGD: 24 Jam</li>
-              <li>Persalinan: 24 Jam</li>
-              <li>KIA: 07.00 - 17.00 WIB</li>
-              <li>Khitan: On Call</li>
+            <h4 class="text-sm font-bold uppercase tracking-wider text-white mb-4">Jam Operasional</h4>
+            <ul class="space-y-2.5 text-sm text-slate-400">
+              <li class="flex justify-between"><span>Rawat Jalan:</span> <strong class="text-slate-200">24 Jam</strong></li>
+              <li class="flex justify-between"><span>Rawat Inap:</span> <strong class="text-slate-200">24 Jam</strong></li>
+              <li class="flex justify-between"><span>UGD:</span> <strong class="text-slate-200">24 Jam</strong></li>
+              <li class="flex justify-between"><span>Persalinan:</span> <strong class="text-slate-200">24 Jam</strong></li>
+              <li class="flex justify-between"><span>Poli KIA:</span> <strong class="text-slate-200">07.00 - 17.00</strong></li>
+              <li class="flex justify-between"><span>Khitan:</span> <strong class="text-slate-200">On Call</strong></li>
             </ul>
           </div>
         </div>
-      </div>
-      
-      <div class="border-t border-white/20 mt-8 pt-8 text-center text-sm text-white/70">
-        © 2023 Klinik Girimukti Medical Center. All rights reserved | Developed by GMC IT.
+
+        <div class="pt-8 text-center text-xs text-slate-500">
+          © Klinik Girimukti Medical Center — Yayasan Insan Medika Cendikia Garut. All rights reserved | Developed by GMC IT.
+        </div>
       </div>
     </footer>
 
@@ -749,7 +905,7 @@
       const sendBtn = document.getElementById('send-btn');
       const dailyTipContainer = document.getElementById('daily-tip');
       const getTipBtn = document.getElementById('get-tip-btn');
-      
+
       const audioPlayer = new Audio();
       let currentAudioUrl = null;
 
@@ -760,7 +916,6 @@
         p.textContent = text;
         messageDiv.appendChild(p);
         chatWindow.prepend(messageDiv);
-        // Autoscroll to bottom is not needed with flex-col-reverse
       }
 
       function handleUserInput() {
@@ -770,7 +925,6 @@
         createMessage(userText, 'user');
         userInput.value = '';
 
-        // Simulate AI response
         setTimeout(() => {
           let botResponse = '';
           const lowerCaseText = userText.toLowerCase();
@@ -782,12 +936,12 @@
           } else if (lowerCaseText.includes('layanan')) {
             botResponse = "Kami melayani Poli Umum, Kesehatan Ibu & Anak, Persalinan 24 Jam, UGD & Rawat Inap, Laboratorium, dan Apotek.";
           } else if (lowerCaseText.includes('bpjs')) {
-            botResponse = "Klinik kami bekerjasama dengan BPJS Kesehatan. Anda bisa mendaftar antrean melalui aplikasi Mobile JKN atau langsung di klinik. Kami siap membantu prosesnya.";
+            botResponse = "Klinik kami bekerjasama dengan BPJS Kesehatan (Kode Faskes: 0121B009). Anda bisa mendaftar antrean melalui aplikasi Mobile JKN atau langsung di klinik. Kami siap membantu prosesnya.";
           } else {
             botResponse = "Terima kasih atas pertanyaannya. Informasi ini bersifat umum. Untuk diagnosis yang lebih akurat, silakan datang ke klinik kami dan konsultasi langsung dengan dokter.";
           }
           createMessage(botResponse, 'bot');
-        }, 1000);
+        }, 800);
       }
 
       sendBtn.addEventListener('click', handleUserInput);
@@ -796,7 +950,7 @@
           handleUserInput();
         }
       });
-      
+
       // Fitur Tips Harian
       const dailyTips = [
         "Minum setidaknya 8 gelas air per hari untuk menjaga tubuh tetap terhidrasi dan organ berfungsi optimal.",
@@ -811,54 +965,43 @@
       getTipBtn.addEventListener('click', () => {
         const randomIndex = Math.floor(Math.random() * dailyTips.length);
         const randomTip = dailyTips[randomIndex];
-        dailyTipContainer.innerHTML = `<p class="font-semibold text-lg text-gray-800">${randomTip}</p>`;
+        dailyTipContainer.innerHTML = `<p class="font-semibold text-base sm:text-lg text-white leading-relaxed">"${randomTip}"</p>`;
       });
 
       // Fitur Dengarkan Audio
       document.querySelectorAll('.listen-btn').forEach(button => {
-        const icon = button.querySelector('i');
         const originalText = button.innerHTML;
         let isPlaying = false;
-        
+
         button.addEventListener('click', () => {
           const audioUrl = button.getAttribute('data-audio-url');
 
           if (isPlaying && currentAudioUrl === audioUrl) {
             audioPlayer.pause();
             isPlaying = false;
-            icon.classList.remove('fa-circle-stop');
-            icon.classList.add('fa-circle-play');
-            button.innerHTML = originalText; // Mengembalikan teks asli
+            button.innerHTML = originalText;
             return;
           }
 
-          // Stop any currently playing audio
-          if (audioPlayer.paused === false) {
+          if (!audioPlayer.paused) {
             audioPlayer.pause();
             document.querySelectorAll('.listen-btn').forEach(btn => {
-              const prevIcon = btn.querySelector('i');
-              prevIcon.classList.remove('fa-circle-stop');
-              prevIcon.classList.add('fa-circle-play');
-              btn.innerHTML = btn.getAttribute('data-original-text');
+              if (btn.getAttribute('data-original-text')) {
+                btn.innerHTML = btn.getAttribute('data-original-text');
+              }
             });
           }
 
-          // Play new audio
           audioPlayer.src = audioUrl;
           audioPlayer.play();
           currentAudioUrl = audioUrl;
           isPlaying = true;
-          
-          // Update button state
-          icon.classList.remove('fa-circle-play');
-          icon.classList.add('fa-circle-stop');
+
           button.setAttribute('data-original-text', originalText);
-          button.innerHTML = `<i class="fa-solid fa-circle-stop mr-2"></i> Stop`;
-          
+          button.innerHTML = `<i class="fa-solid fa-circle-stop text-sm"></i> Stop Audio`;
+
           audioPlayer.onended = () => {
             isPlaying = false;
-            icon.classList.remove('fa-circle-stop');
-            icon.classList.add('fa-circle-play');
             button.innerHTML = originalText;
           };
         });
